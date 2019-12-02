@@ -1,0 +1,76 @@
+//git用户名.github.io
+git配置:
+# 显示当前的Git配置
+$ git config --list
+# 设置提交代码时的用户信息
+$ git config user.name "githud用户名"
+$ git config user.email "邮箱地址"
+
+
+git使用:
+
+git clone git链接    	   ---git下载
+cd 项目名	     	   ---路径指向项目
+git branch       	   ---查看本地所有分支
+git checkout master        ---切换分支（会自动更新项目）
+或:git checkout -b 新分支名---切换并创建分支
+
+
+//提交dev分支
+git status -s        	   ---查看状态
+git pull origin dev   	   ---拉取分支
+git status -s         	   ---查看状态
+git add .		   ---选择所有文件进入暂存区
+git commit -m 提交说明     ---进入版本库
+git push origin dev        ---提交分支
+
+
+//master合并dev
+git checkout dev
+git pull origin dev
+git checkout master
+git pull origin master
+git merge dev       合并分支
+git status -s
+git ls-files -u   显示未合并文件
+git status -s
+最后提交master分支上
+
+
+
+
+查看提交历史日志
+git log
+
+显示被修改文件的修改统计信息，添加或删除了多少行。
+git log --stat
+
+清空add与commit即是清空修改代码：
+git stash
+
+当前的路径
+pwd
+
+初始化
+git init
+
+//取消合并
+ git merge --abort
+
+//返回历史记录
+ git log
+ git reset --hard 139dcfaa558e3276b30b6b2e5cbbb9c00bbdca96
+
+//展示历史
+git log
+git show  1bb8e0275fce3fddaa4b62511735ae3b35472e82
+
+选择一个commit，合并进当前分支
+git log
+git cherry-pick 1bb8e0275fce3fddaa4b62511735ae3b35472e82
+
+查看远程所有分支
+git branch -r
+
+查看本地和远程所有分支
+git branch -a

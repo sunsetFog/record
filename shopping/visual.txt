@@ -1,0 +1,440 @@
+1.查看--资源管理器
+2.F11全屏
+3.查看-拆分编辑器
+4.查看-集成终端
+Ctrl + /：快速注释或取消注释；
+
+Ctrl + o：打开当前文件所在目录；
+
+Ctrl + p：打开跳转到某文件的窗口；
+
+Ctrl + `：调出控制台终端；
+li:last-child
+vuex 的基本用法：
+https://www.cnblogs.com/gsgs/p/6738249.html
+ vuex:
+ 　mapState(['a'])             　　　　　　　　　　　　　　　　或者使用：this.$store.state 　　获取state对象。
+　mapGetters([ 'doneTodosCount', 'anotherGetter',])    　　或者使用:this.$store.getters　　获取getters对象。
+
+window.localStorage.setItem("tempIndex", JSON.stringify(response.data));
+let wx = window.localStorage.isWeiXin;
+let llq = window.localStorage.myuserinfo;
+
+
+
+
+pwd
+git status -s
+ll
+git log
+
+
+githud创建新分支
+https://blog.csdn.net/top_code/article/details/51931916
+git常用的命令：
+https://www.cnblogs.com/chenwolong/p/GIT.html
+git拉取远程分支到本地：
+https://blog.csdn.net/carfge/article/details/79691360
+git checkout apple
+git add .
+git commit -m bin
+git push origin apple
+http://localhost:8081/addons/yun_shop/?menu#/commodityManagement?i=3&type=5&mid=0&shop_id
+
+git checkout -b feature-ali origin/master
+C:\zoo\bingo\src\views\member\supplier\commodityManagement
+http://localhost:8081/addons/yun_shop/?menu#/member?i=3&mid=0
+https://dev3.yunzshop.com/addons/yun_shop/?menu#/member?i=3&mid=0
+
+http://localhost:8081/addons/yun_shop/?menu#/member?i=3&mid=0
+
+
+http://localhost:8081/addons/yun_shop/?menu#/member?i=3&mid=0
+本地的：
+http://localhost:8081/addons/yun_shop/?menu#/supplier_center?i=3&type=5&mid=0&shop_id
+线上的：
+https://dev3.yunzshop.com/addons/yun_shop/?menu#/home?i=3&type=5&mid=0&shop_id
+
+git配置:
+# 显示当前的Git配置
+$ git config --list
+# 设置提交代码时的用户信息
+$ git config user.name "[name]"
+$ git config user.email "[email address]"
+
+git使用:
+初始化
+git init
+查看状态
+git status -s
+清空add与commit即是清空修改代码：
+git stash
+当前的路径
+pwd
+
+切换分支
+git checkout master
+拉取分支
+git pull origin dev
+
+切换并创建分支
+git checkout -b 新分支名
+
+查看提交历史日志
+git log
+显示被修改文件的修改统计信息，添加或删除了多少行。
+git log --stat
+显示未合并文件
+ git ls-files -u
+ 查看本地所有分支
+git branch
+查看远程所有分支
+git branch -r
+查看本地和远程所有分支
+git branch -a
+
+
+ //提交
+git status -s
+ git add .
+ git commit -m 添加供应商前端管理页面
+git push origin dev-new-supplier-manage
+
+合并dev
+git checkout dev
+git pull origin dev
+git checkout supplier
+git pull origin supplier
+git merge dev       合并分支
+git status -s
+git ls-files -u
+//取消合并
+ git merge --abort
+
+//返回历史记录
+ git reset --hard 139dcfaa558e3276b30b6b2e5cbbb9c00bbdca96
+//展示历史
+git show  1bb8e0275fce3fddaa4b62511735ae3b35472e82
+
+ 选择一个commit，合并进当前分支
+ git log
+git cherry-pick 1bb8e0275fce3fddaa4b62511735ae3b35472e82
+
+
+
+
+M改过
+??新建未知
+
+dev3
+15046101656
+111111
+
+feature-jx-0620
+
+
+C:\zoo\business\src\views\o2o\store\store_apply.vue
+http://localhost:8081/addons/yun_shop/?menu#/member/supplier?i=3&type=5&mid=0&shop_id
+C:\zoo\business\src\views\member\supplier\supplier.vue
+http://localhost:8081/addons/yun_shop/?menu#/o2o/storeApply?i=3&type=5&mid=0&shop_id
+68
+/member/extensiyunzhong888
+经销商
+http://wiki.yunzshop.com/docs/show/277
+推广-团队分红
+http://localhost:8081/addons/yun_shop/?menu#/member/extension?i=3&type=5&mid=0&shop_id
+http://localhost:8081/addons/yun_shop/?menu#/teamAgentCenter?i=3&type=5&mid=0&shop_id
+
+//会员中心--待付款  dev-transfer-accounts
+http://localhost:8081/addons/yun_shop/?menu#/member/orderdetail/2107?i=3&type=5&mid=0&shop_id
+member/extension
+http://localhost:8081/addons/yun_shop/?menu#/member/extension?i=3&type=5&mid=0&shop_id
+
+https://release.yunzshop.com/web/index.php?c=platform&a=cover&eid=1&version_id=0
+
+https://dev3.yunzshop.com/web/index.php?c=site&a=entry&m=yun_shop&do=3409&route=plugin.team-dividend.admin.team-dividend-set.index
+公众号
+https://dev3.yunzshop.com/web/index.php?c=account&a=display&
+
+支付转账: dev-transfer-accounts
+http://localhost:8081/addons/yun_shop/?menu#/transfer_account/49?i=3&type=5&mid=0&shop_id
+http://localhost:8081/addons/yun_shop/?menu#/member/orderpay/2143?i=3&type=5&mid=0&shop_id
+C:\zoo\tocal_git\yunshop-front\src\views\member\order\order_payment.vue
+C:\zoo\tocal_git\yunshop-front\src\views\member\pay\pay_transfer_account.vue
+
+https://pro.modao.cc/app/mAQGNb8dEV1aCy9g5ylOKM359Ww6DYy#screen=sE6C11C39DA1530002011951
+
+新建分支在门店申请添加商品按钮
+门店添加商品
+add_product_s
+商品管理
+commodity_management_s
+导航
+https://dev3.yunzshop.com/web/index.php?c=site&a=entry&m=yun_shop&do=6820&route=plugin.designer.admin.list.index
+
+<card @click.native="clickFn">按钮</card>
+Vue.component('card',{
+        template:'<p>这是card组件<button>按钮</button></p>'
+    })
+.native - 主要是给自定义的组件添加原生事件。
+C:\zoo\tocal_git\yunshop-front\src\views\o2o\store\store.vue
+
+sss：
+supplier-center-manage-s
+manage-goods-701
+gooList    home/home store/store   views\search.vue
+o2o/home
+http://localhost:8081/addons/yun_shop/?menu#/o2o/home?i=6&type=5&mid=0&shop_id
+C:\zoo\yunshop-front\src\views\o2o\search.vue
+C:\zoo\yunshop-front\src\views\search.vue
+C:\zoo\yunshop-front\src\components\temp\search.vue
+@click.stop.prevent
+信息管理
+info-manage-bank-509
+
+
+
+知识体系
+//小知识1
+tads标签页:分隔内容上有关联但属于不同类别的数据集合
+1.定义存tab下标值(tabIndex)
+2.点击同tab 不刷新界面,return返回 
+    if(this.tabIndex  == index){
+		return;
+	}else{
+		this.tabIndex == index;
+		this.getData();
+	}
+3.防止重复加载:限制请求一次,后用保存的数据
+if(this.tabIndex == 0&&this.state == false){
+	this.state = true;
+	请求数据
+}
+if(this.tabIndex == 0&&this.state == true){
+	切换保存的数据
+}
+4.传入一个tab下标就能请求数据
+//知识点2
+加载更多
+1.定义当前页数current_page: 0
+2.页面初始化数据当前页数为0
+3.当前页数加一
+loadMore(){
+this.current_page = Number(this.current_page) + 1;
+}
+4.改变this指向
+let that = this;
+5.用最后页数控制"加载更多"按钮出现
+if(that.current_page >= response.data.last_page){
+	按钮消失;
+}
+6.数据获取,数组拼接
+that.content = that.content.concat(response.data.data);
+//知识点3
+上传
+1.上传前钩子设置
+设置文件大小，和类型
+const isJPG = (file.type === 'image/jpeg'||file.type === 'image/png');
+const isLt2M = file.size / 1024 / 1024 < 2;
+2.ui组件bug数量限制
+可用事件冒泡@click.stop遮挡层限制上传
+3.上传成功,保存url
+4.遍历上传，得需要额外参数:data="'actact':item.params",并前后配合,后台返回作为索引值判断用
+5.上传删除钩子
+6.遍历保存的url数组，判断url相等获取要删url下标，从而截取该url
+7.对接时,提交保存的url
+//知识点4
+商品管理的增删改查对接
+1.增:添加商品
+初始化清空数据
+条件判断是否填写信息完整,完整为true,不完整为false,并弹出提示信息
+引入Field，纯数字输入价格，无需监听
+import { Field } from 'mint-ui';
+v-model的商品信息,返回后台,弹出添加成功,路由跳转
+this.$message.success('发布商品成功');
+2.删:删除商品
+有个删除提示弹窗
+删除事件返回下标index，用来获取该商品id，将该id返回给后台，后台返回删除状态
+前端由index截取商品,商品数量减一,弹出删除成功
+3.改:编辑商品
+初始获取商品详情数据,包括上传组件显示图片
+条件判断是否填写信息完整,完整为true,不完整为false,并弹出提示信息
+4.查:搜索商品
+引入mint-ui,实现下拉加载更多loadmore
+import { Loadmore } from 'mint-ui';
+定义当前页数current_page为1
+下拉执行bottomMethod钩子,当前页数加一
+this.current_page = Number(this.current_page) + 1;
+路由传参获取门店id,v-model搜索值,当前页数current_page三个值请求数据
+当前页数大于或等于总数,或条数为0,使下拉bottomMethod钩子不执行,不再加载数据
+:bottom-all-loaded = "loadState"
+if(that.current_page>=response.data.last_page||response.data.total == 0){
+	this.loadState = true;
+	没有更多按钮隐藏
+	return;
+}
+//知识点5
+公众号 微信支付
+由订单号请求数据
+判断taken_id是否为空，为空路由跳转，不为空即是url，用window.localhost.href跳转
+WeixinJSBridge.invoke为微信浏览器内置对象，在那才能测试
+WeixinJSBridge.invoke(
+            'getBrandWCPayRequest', {
+              "appId": response.data.pay_info.appId,     //公众号名称，由商户传入     
+              "timeStamp": response.data.pay_info.timeStamp,//时间戳，自1970年以来的秒数     
+              "nonceStr": response.data.pay_info.nonceStr, //随机串     
+              "package": response.data.pay_info.package,
+              "signType": response.data.pay_info.signType,//微信签名方式：     
+              "paySign": response.data.pay_info.paySign //微信签名 
+            },function (res) {
+              if (res.err_msg == "get_brand_wcpay_request:ok") {
+                if(that.fun.isTextEmpty(response.data.token_id)){
+                  that.$router.push(that.fun.getUrl("home"));
+                  MessageBox.alert('支付成功', '提示');
+                }else{
+                  window.location.href=response.data.token_id;
+                  MessageBox.alert('支付成功', '提示');
+                }
+              } else {
+                MessageBox.alert('支付失败', '提示');
+              }
+            }
+          );
+//知识点6
+git运用
+1.git克隆指定分支，初始化后拉取dev分支,创建并新切换分支new,推上new分支,就可以项目写作。
+2.写作完后,查看状态，可以看见修改的文件,若写作不需要，可以Git stash清空为原来模板，需要的进行提交
+3.提交后，git log查看commit记录,也可git show 'commit'查看修改那些内容
+4.进行合并dev,先拉取dev,再拉取new,git merge dev合并,查看状态,上代码修改冲突,修改后预览页面,就可提交new
+5.当你发现合并冲突出错,git log 用其commit返回合并前历史git reset --hard,重新合并
+6.合并确认无误后,就可上线,流程完毕.
+
+欢声雷动而不言笑,
+听闻
+偏爱
+http://www.siandian.com/haojuzi/28843.html
+shop-home-68002
+//home-38399002
+shop-7392001
+
+:style="{height:(datas.params.num=='20%')?'13vw':'17vw'}"
+:class="[btnclass(btn.value)]"
+let ios = ''
+        if(ios){
+            console.log('ios-left');
+        }else{
+            console.log('ios-right');
+        }
+ <component
+            :is="currentView"
+            @changeview="changeViewFun"
+            :datas="pathUrl"
+></component>
+每个组件popos值datas
+ //组件切换方法
+changeViewFun(val){
+     this.currentView = val;
+}
+//设置localstorage
+window.localStorage.setItem('integral',response.data.integral)
+//获取
+window.localStorage.integral
+window.localStorage.getItem('')
+花括号
+{{integral?integral:'积分'}}       //判断是否为空,不为空第一个,为空第二个;
+<h4>三目运算3>5:{{3>5?"对":"错"}}</h4>
+<h4>{{!hasMore}}</h4>
+
+setTimeout(() => {
+                    this.$message({
+                        message: '恭喜你，这是一条成功消息',
+                        type: 'success'
+                    });
+                    this.submit_active = true;
+                }, 2000);
+
+button-red-2002
+https://release.yunzshop.com/addons/yun_shop/?menu#/o2o/home?i=6&type=5&mid=0&shop_id
+goods-picture-80028
+activity-20001822
+
+order-pay-200390
+你确定会员已收到货物
+
+element.style {
+    width: 120px;
+}
+integral-name-2000388
+fast-mail-40595958
+json在线解析
+在线编码
+拉取
+https://dev1.yunzshop.com/addons/yun_shop/?menu#/member/orderList/0/store?i=5&type=5&mid=0&shop_id&test_uid=1
+1.全局接口的全局变量用vuex或cookie，2.封装公用的方法
+//路径
+C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
+//主机设置虚拟域名www.lcr.com
+C:\Windows\System32\drivers\etc\hosts
+
+//浏览路径
+http://www.lcr.com/app/wq/install.php
+环境
+apache啊帕其
+nginx。。ng
+wamp
+phpstudy
+//设置虚拟域名
+http://www.w3school.com.cn/php/php_mysql_connect.asp
+//mysql
+https://dev.mysql.com/
+Aa123456
+http://app.com/api.php?format=xml
+http://www.php.cn/php-weizijiaocheng-392051.html
+C:\wamp64\www\yunzhong-dockerfiles\add\posts\posts.sql
+C:\wamp64\www\yunzhong-dockerfiles\app\wq\framework\table\menu.table.php
+
+
+C:\wamp64\www\yunzhong-dockerfiles\app\wq\payment\alipay\notify.php
+
+C:\wamp64\www\yunzhong-dockerfiles\add\PHP_08\test.php
+https://dev1.yunzshop.com/addons/yun_shop/?menu#/home?i=5
+//获取屏幕当前高度
+window.addEventListener('scroll', this.slider);
+C:\zoo\yunshop-front\src\views\member\microshop\home\home_controller.js
+
+排队奖励--base64解密
+C:\zoo\yunshop-front\src\views\extension\spread\extension_page.js
+@mouseover="mouseOver(index2)" @mouseout="mouseOut(index2)"
+vue vue-loader.conf
+版本
+npm --version
+webpack下一篇，看到最后
+https://www.cnblogs.com/ye-hcj/p/7056518.html
+
+https://www.cnblogs.com/ye-hcj/p/7096341.html
+
+// 如果删除的过程中出现错误，就抛出这个错误，同时程序终止
+  if (err) throw err
+  
+  https://blog.csdn.net/qq_36543956/article/details/79712263
+  https://blog.csdn.net/yw00yw/article/details/81328126
+  重庆市万州区第五人民医院
+  
+  
+  商品管理   ==== 门店id
+   <router-link :to="fun.getUrl('CommodityManagement',{store_id: store.store_id})">
+   提现记录+++正常
+ 
+
+					
+
+
+
+
+
+
+
+
+
+
+

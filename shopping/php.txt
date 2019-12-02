@@ -1,0 +1,24 @@
+webstorm的官网
+https://www.jetbrains.com/webstorm/
+
+http://www.php.net/
+phpstorm激活大全
+https://blog.csdn.net/voke_/article/details/78794567
+-javaagent:C:\Program Files\JetBrains\PhpStorm 2018.2.1\lib\JetbrainsCrack.jar
+
+php中文网
+http://www.php.cn/
+
+PhpStorm 18.2.1 Win版
+http://www.php.cn/xiazai/gongju/122
+图解
+C:\Windows\System32\drivers\etc\hosts
+0.0.0.0 account.jetbrains.com
+
+PhpStorm最新使用教程：http://www.php.cn/tool/phpstorm.html
+php集成环境upupw
+http://down.chinaz.com/soft/38691.htm?qq-pf-to=pcqq.c2c
+
+phpstorm git使用
+https://blog.csdn.net/fationyyk/article/details/79071204
+

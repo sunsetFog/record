@@ -1,0 +1,362 @@
+mail邮箱:
+https://mail.google.com/mail/#inbox
+lu12345678
+
+禅道
+http://zentao.jndsfs.com/zentaopms/www/index.php?m=my&f=index
+账号 lvans
+密码 123Qwe
+
+10.1.101.79
+lu12345678
+
+电脑
+LGROUP\Lvans
+2wsx#EDC
+LUlu12345678
+SUNsun2468
+Aa123456
+
+搜索:
+glode套餐
+
+gitlab账号
+http://git.lgroup.co
+Lvans
+lu12345678
+2wsx#EDC
+
+1,3
+钉钉:
+http://10.1.1.81:81/wui/main.jsp?templateId=1
+
+钻石娱乐游戏:
+http://10.1.101.48:8085/t/q/
+游戏前台账号  test+000(三位数字）
+test78  12345678
+test28
+test965
+test6668
+test23  123456资金密码
+123456
+17817836852 123456
+17817836853 123456
+运营后台
+http://10.1.101.120:500/#/gameconfmgr/order
+lvans
+123456
+代理系统
+http://10.1.101.120:501/#/login
+谷歌搜---云端硬盘---第一个---转
+
+live800
+12698    admin    123qweasd
+需求原型:
+https://uurrh3.axshare.com
+123456
+
+web_game
+pre:
+http://webgame.predyfqp1.com
+online:
+http://webgame.premsqp72.com
+ol
+open.predyfqp49.com
+open.predyfqp83.com
+open.premsqp16.com
+open.premsqp37.com
+open.premsqp52.com
+open.aohuiyule.com
+open.yxleframework.com
+
+
+账号xingxing1   密码000000
+内网:
+http://10.1.101.79:8080
+
+http://10.1.101.120:502/?RrBwq0x2x   推广网站（内部测试）下载页 
+http://10.1.101.120:503/?q1qsAsVMQ   钻石娱乐h5下载
+http://10.1.101.120:504/?num=数字    推广站点
+
+http://buyu.vip-zjhx.com/   钻石捕鱼官方下载ol
+http://qihang.osiksw.com/   启航2
+https://xy.zsw3e.com/   雄鹰百度竞价
+pre:
+https://paiqu.maijiandl.com/?B0NdP3irN
+http://paiqu.dyfqp1.com/?n5Lkhjc5r和http://paiqu.predyfqp1.com/?n5Lkhjc5r
+ol:
+http://paiqu.ls8fja.com/?n5Lkhjc5r     下载页
+
+
+http://10.1.101.120:502/registered.html   注册页面（内部测试）
+
+http://10.1.101.120:88   代理系统-开发环境
+http://10.1.101.120:501   代理系统-测试环境
+
+运营后台
+1.开发地址:
+http://10.1.101.120
+2.测试地址
+http://10.1.101.120:500
+代理后台
+1.开发地址:
+http://10.1.101.120:501
+2.测试地址
+http://10.1.101.120:88
+
+周报:
+https://docs.google.com/spreadsheets/d/1-2t_Id27OXhIrFSKY-C41t-uksCl933TSlFWaUAeY-4/edit?usp=sharing
+
+computed//缓存作用(1.里面的方法转定义在data数据，不是方法调用2.监听改变触动)===vuex刷新问题是与localstorage
+menu
+router-view与路由children
+导航栏刷新问题
+打印this
+vuex的dispatch-action同步
+异步
+css nth-of-type(1)的影响
+滚屏高度为0，APP样式定位了
+路由参数可以在path上，也可以不在path上，如meta:{}
+
+{{计算}}
+自动化更新package.json 的version
+https://www.jianshu.com/p/33235b203770
+视频
+file:///D:/vscode/环境配置/profit/aqweb/calendar/2017/1.html
+
+拦截器
+音频audio
+二维码
+https://segmentfault.com/q/1010000008676956/a-1020000008677591
+
+
+子router路径
+刷新判断
+
+vue全局使用less样式文件
+https://www.jianshu.com/p/2b1cd98c3062
+需要安装sass-resources-loader。
+找到build文件夹下面的utils.js 找到 
+less: generateLoaders('less') 修改成
+less: generateLoaders('less').concat({
+ 
+    loader: 'sass-resources-loader',
+    options: {
+      resources: path.resolve(__dirname, '../src/assets/css/1.less')
+    }
+}), 1.less就是你全局文件
+
+
+
+    less: generateLoaders('less').concat({
+      loader: 'sass-resources-loader',
+      options: {
+        resources: path.resolve(__dirname, '../src/assets/styles/common.less')
+      }
+    }),
+
+
+
+vue 移动端屏幕适配 使用rem
+https://www.cnblogs.com/huangenai/p/9700883.html
+
+
+      var date1=new Date();  //开始时间
+sessionStorage.setItem('date1',date1.getTime());
+
+var date1 = sessionStorage.getItem('date1');
+        var date2=new Date();    //结束时间
+        // sessionStorage.setItem('date2',date2.getTime());
+        var date3=date2.getTime()-date1;  //时间差的毫秒数
+        sessionStorage.setItem('date3',date3);
+
+
+子父互相执行发放
+this.$refs.selection.selectAll(status);
+this.$parent.contacts_accept(newArr);
+
+vue中子路由跳转父组件不跟着刷新怎么办
+父组件监听路由
+
+父div不撑开:
+1.父设置高度
+2.<div style="clear:both;"></div>
+3.父overflow: hidden;
+子div的高100%不继承父元素的min-height
+
+组合:
+margin-top: 5px;
+float: left;
+
+vue-router嵌套路由，从二级路由跳转到一级路由时，间歇性导致一级路由重叠
+/router
+params与query
+背景拉伸
+
+
+给其他window对象发送消息
+window.parent.postMessage('back','*')
+https://www.cnblogs.com/webbest/p/7161174.html
+https://blog.csdn.net/localhost_1314/article/details/81076153
+iframe跨域通信的通用解决方案-第二弹!（终极解决方案）
+https://www.iteye.com/blog/justcoding-2026396
+
+@keyup.enter="submit"
+vue怎么检测窗口的大小变动
+https://segmentfault.com/q/1010000007725271
+
+
+vue执行完一个函数再执行另一个函数
+一.用promise实现、
+https://www.csdn.net/gather_22/MtTaAg3sMDcwOC1ibG9n.html
+function2(){
+    // 你的逻辑代码 
+    return Promise.resolve(/* 这里是需要返回的数据*/)
+}
+
+function3(){
+    // 你的逻辑代码 
+    return Promise.resolve(/* 这里是需要返回的数据*/)
+}
+
+// 调用
+function1(){
+    this.function2().then(val => { 
+        this.function3();
+    });
+}
+
+
+vue 客服功能
+https://www.cnblogs.com/polk6/p/vue-im.html
+在vue中使用socket.io
+一旦数据进行更新，服务端可主动将数据推送至客户端
+https://www.jianshu.com/p/552af264d2ea
+如何在vue项目中使用md5加密
+https://www.cnblogs.com/zhaojunhao/p/9622299.html
+JavaScript获取时间戳与时间戳转化
+https://www.cnblogs.com/zhaojunhao/p/9630315.html
+修改电脑ipv4地址怎么弄
+https://zhidao.baidu.com/question/1514844616048342820.html
+
+纯数字
+/^[0-9]+$/
+六位数字的密码
+/^[0-9]{1,6}$/
+//方法里传this
+this.means(this);
+
+组件通过 getters 从 store 中获取 state，并通过调用 actions 来改变 state。
+
+内部调用this.getters.getCount(state)
+外部调用this.$store.getters.getCount
+引用store来调用
+import store from '@/store/store.js'
+store.getters.getCount
+mapGetters 辅助函数调用
+  computed: {
+    ...mapGetters(['getCount'])
+  },
+
+Vue实现生成二维码并且能下载到本地_vue-qr的使用
+http://www.fly63.com/article/detial/1086
+
+vue实现PC端分辨率适配
+https://blog.csdn.net/weixin_41257563/article/details/97266234
+
+vue-quill-editor如何设置字体默认大小？
+https://segmentfault.com/q/1010000018124399
+
+shift+alt+F
+alt+z
+
+vue中使用babel-polyfill解决低版本浏览器不兼容问题
+https://www.cnblogs.com/chenguiya/p/9255202.html
+
+移动端web开发常见问题
+https://blog.csdn.net/qq_34543438/article/details/72794122
+
+
+
+GA注册
+https://analytics.google.com/analytics/web/provision/?authuser=0#/provision
+ga_123456
+钻石娱乐
+https://analytics.google.com/analytics/web/provision/?authuser=0#/a149354487w211770202p203288927/admin/tracking/tracking-code/
+
+
+vue-cli的工程如何正确使用Google Analytics？
+https://www.cnblogs.com/pheye/p/9014797.html
+Vue-Analgtics 用户文档翻译（部分）
+https://blog.csdn.net/qq_35569020/article/details/83027897
+
+google调试工具
+https://chrome.google.com/webstore/detail/tag-assistant-by-google/kejbdjndbnbjgmefkgdddjlbokphdefk
+
+html ga网站:
+https://developers.google.cn/analytics/devguides/collection/analyticsjs/events?hl=zh-cn
+
+
+解决老浏览器不支持ES6的方法
+npm install babel-core@5
+<script src="browser.min.js"></script>
+<script type="text/babel">
+https://blog.csdn.net/qq_36380426/article/details/71082158
+
+css 动画:animate.css
+https://daneden.github.io/animate.css/
+css3动画  懒人之家
+
+
+VUE—解决第三方ui库（mint ui）px和rem的转换问题（图文详情）
+https://blog.csdn.net/Poppy_LYT/article/details/98395916
+
+webpack打包
+npm init
+npm install -g webpack
+npm install webpack --save-dev
+npm install -g webpack-cli
+
+(二)构建本地服务器
+webpack-dev-server是一个轻量级的服务器，修改文件源码后，自动刷新页面将修改同步到页面上
+npm install webpack-dev-server --save-dev
+"server": "webpack-dev-server --open"    npm run server
+"dev": "webpack-dev-server --hot --inline"   npm run dev
+
+集中拷贝静态资源
+npm install copy-webpack-plugin --save-dev
+
+webpack入门之打包html,css,js,img(二)
+https://www.cnblogs.com/luojianjian/p/8074903.html
+
+webpack打包前端资源项目
+https://www.jianshu.com/p/56a24a7a66b6
+webpack配置：打包第三方类库、第三方类库抽离、watch自动打包、集中拷贝静态资源
+https://www.cnblogs.com/goloving/p/8657205.html
+
+
+
+
+npm install cheerio --save-dev
+npm install fs --save-dev
+npm install compression-webpack-plugin --save-dev
+
+
+
+
+        function(){
+            this.plugin('done', stats => {
+                fs.readFile('./page/index.html', 'utf8', (err, data) => {
+                    var dataStr = data.toString();
+                    dataStr = dataStr.replace('js/rem.js', 'js/rem656.js');
+
+                    fs.writeFile('./dist/index.html', dataStr, err => {
+                        if (!err) {
+                            console.log('HTML file copy successfully');
+                        } else {
+                            console.log(err);
+                        }
+                    })
+                })
+            })
+        }

@@ -1,0 +1,25 @@
+hello你好，hobby爱好，flag旗，props道具，
+publish发行，active积极，initial最初的，list清单，dream梦想，special特殊的
+habit习惯，hail欢呼，happy高兴，hate恨，eye眼，holy神圣的，home家，honey蜜蜂，hope希望，
+hot热，huge巨大的，hurry仓促，luck运气，matter物质，own拥有，over在...上，
+per每个，permit允许，persist坚持，pick采摘，photo照片，plan计划，design设计，praise赞扬
+futurn未来，provide提供，purple紫色，rain雨，rainbow彩虹，ready准备，freeze冻结，
+friend朋友，fun玩笑，game游戏，nice好，like喜欢，crazy疯狂，curve曲线，only唯一的
+park公园，means方法，far远，fancy想象，fan迷，lack缺少，joke笑话，
+lens透镜，lie撒谎，light光，lucky幸运，magic魔法，marry结婚
+tree树，revive复活，risk风险，river河，robot机器人，rose玫瑰，sea海洋，
+secret秘密，shop商店，summer夏天，forget忘记，weep哭泣，fly飞，grows生长，wake唤醒
+wind风，wing翼，topic话题，sort种类，skill技能，cat猫，cookie饼干，cool凉，
+solo独唱，pure纯洁的，ocean海洋，nice美好，flame火焰，flash闪光，free自由，dear亲爱的
+honey亲爱的，darling亲爱的，money钱，hook钩，
+bingo答对了，yahoo雅虎，note笔记，
+comic动漫  common常见的
+
+//常用容器
+frame框架 example实例 container容器，origin起源，heart心脏，content内容，main主要，
+
+颜色：
+green，yellow黄色，deeppink，deepskyblue
+
+cosplay角色扮演 already已经
+quality 质量

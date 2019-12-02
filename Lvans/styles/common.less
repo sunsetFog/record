@@ -1,0 +1,81 @@
+@sidebar:240px;
+@colors: red;
+
+.mixin_button(@width,@height,@background,@color){
+    width: @width;
+    height: @height;
+    text-align: center;
+    line-height: @height;
+    border-radius: 4px;
+    background: @background;
+    color: @color;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.mixin_div(@width,@height,@background,@color,@center){
+    width: @width;
+    height: @height;
+    text-align: @center;
+    line-height: @height;
+    background: @background;
+    color: @color;
+}
+
+.mixin_span(@width,@height){
+    width: @width;
+    height: @height;
+    display: inline-block;
+    text-align: center;
+    line-height: @height;
+}
+
+.mixin_li(@width,@height){
+    width: @width;
+    height: @height;
+    float: left;
+    text-align: center;
+    line-height: @height;
+    list-style: none;
+}
+
+.mixin_input(@width,@height){
+    width: @width;
+    height: @height;
+    text-align: left;
+    line-height: @height;
+    text-indent: 10px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mixin_float(@width,@height,@float){
+    width: @width;
+    height: @height;
+    float: @float;
+}
+
+.mixin_img(@width,@height){
+    width: @width;
+    height: @height;
+    vertical-align: middle;
+    border: none;
+}
+// 背景图片
+.mixin_image(@url){
+    background-image: @url;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+// 垂直居中
+.mixin_center(@width,@height){
+    width: @width;
+    height: @height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -@height/2 0px 0px -@width/2;
+}

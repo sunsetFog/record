@@ -1,0 +1,4 @@
+stars星星   moon月亮  sun太阳   light光    coin硬币  secret秘密   idea主意  goods商品   gift礼物   nice美好的    public公用   watch看  stick棒
+game游戏   stimulate刺激   collection收藏
+http://localhost:8081/addons/yun_shop/?menu#/microShop/home?i=3&type=5&mid&shop_id
+http://localhost:8081/addons/yun_shop/?menu#/microShop/home?shop_id=2&type=5&mid&i=3
