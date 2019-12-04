@@ -337,26 +337,66 @@ https://www.cnblogs.com/goloving/p/8657205.html
 
 
 
-npm install cheerio --save-dev
-npm install fs --save-dev
-npm install compression-webpack-plugin --save-dev
+tag:   201911291853
+7982f13c4651c69b6e7741dd1c639161c5ecef47
+
+1.推广网站下载页
+文件夹: paiqu/HQT_Spweb/public
+
+
+2.派趣-百度竞价
+http://buyu.vip-zjhx.com/    {"agent_id":"12880"}
+文件夹:  paiqu/HQT_ground
+
+3.好运-今日头条
+https://haoyun.0oiske.com/hytt/   {"agent_id":"16"}
+文件夹:  haoyun/HQT_jinritoutiao
+
+4.好运-猎豹广告
+http://yjby.iyangyang.cn/yjby/    {"agent_id":"13077"}
+文件夹:  haoyun/HQT_liebao
+
+5.雄鹰-百度竞价
+http://zs.ahstups.com/xybd   {"agent_id":"13086"}
+文件夹:  xiongying/HQT_xiongying
+
+6.好运-百度竞价
+{"agent_id":"13758"}
+文件夹:  haoyun/HQT_baidu
+
+启航站点1
+{"agent_id":"14224"}
+文件夹:  qihang/HQT_qihang1
+
+启航站点2
+{"agent_id":"14225"}
+文件夹:  qihang/HQT_qihang2
+
+启航站点3
+{"agent_id":"14226"}
+文件夹:  qihang/HQT_qihang3
+
+
+雄鹰-百度竞价   {"agent_id":"15511"}
+文件夹:  xiongying/HQT_baidujingjia
 
 
 
+tag:   201911141637
+25e04c521d5b9a7d03c5c88354a19260be27d520
+代理系统
+文件夹:   http://git.lgroup.co/GameStudio/HQT_Agentsys/tree/master/public
+修改内容: 添加自适应，修改输入限制，美化功能界面
 
-        function(){
-            this.plugin('done', stats => {
-                fs.readFile('./page/index.html', 'utf8', (err, data) => {
-                    var dataStr = data.toString();
-                    dataStr = dataStr.replace('js/rem.js', 'js/rem656.js');
+钻石娱乐网页版pre
+tag:   201912021152
+2ee85b7c89320017622be420d1a7fe5a512b72d5
+钻石娱乐网页版ol
+tag:	201912021157
+f44c33a68f8147f8f5150611952dcde023a6798b
+文件夹: HQT_entertainment/dist
+修改内容: 更新游戏版本
 
-                    fs.writeFile('./dist/index.html', dataStr, err => {
-                        if (!err) {
-                            console.log('HTML file copy successfully');
-                        } else {
-                            console.log(err);
-                        }
-                    })
-                })
-            })
-        }
+
+
+import 'lib-flexible';
