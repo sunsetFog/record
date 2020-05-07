@@ -1,32 +1,58 @@
 
-前端网:
-http://www.qdfuns.com/
+
 百度:
 https://www.baidu.com/
 百度翻译:
 fanyi.baidu.com
-w3cschool:
-https://www.w3cschool.cn/
-图表:
-http://echarts.baidu.com
-知乎网:
-https://www.zhihu.com/   万花筒-ABC123456  
+github网:    账号:sunsetFog  密码:SUNsun2468
+https://github.com/
+
+禅道（演示链接）
+https://demo.zentao.net/my/
+工作周报（演示链接）
+http://www.gongzuozhoubao.com/
+工作邮箱:（演示链接）
+https://mail.qq.com/
+
+
+json在线解析:
+http://www.json.cn/
+json在线各类解析:
+https://www.bejson.com/
 图标下载:
 http://www.iconfont.cn/
 bootstrap图标:
 http://www.bootcss.com/
+图表:
+http://echarts.baidu.com
+
+
+百度网盘:    账号:17817836856  密码:ABC123456
+https://pan.baidu.com/
+学信网:      账号:17817836856  密码:ABC123456
+http://www.chsi.com.cn/
+
+
+
+前端网:
+http://www.qdfuns.com/
+w3cschool:
+https://www.w3cschool.cn/
+知乎网:
+https://www.zhihu.com/   万花筒-ABC123456  
 慕课网:
 https://www.imooc.com/
-学信网:
-http://www.chsi.com.cn/
 站长素材:
 http://sc.chinaz.com/
 凡科网:
 http://www.faisco.com/
-github网:
-https://github.com/
 中国石墨网:
 http://news.shimo.3.biz/
+
+
+
+
+
 淘宝网:
 https://www.taobao.com/
 京东网:
@@ -40,10 +66,6 @@ http://www.18183.com/
 http://www.shuowan.com/
 东方头条:
 http://mini.eastday.com
-json在线解析:
-http://www.json.cn/
-json数据网:
-https://www.bejson.com/
 博客园:
 https://www.cnblogs.com/
 石墨文档:
@@ -54,5 +76,3 @@ Git 远程仓库
 http://www.shouce.ren/api/view/a/7492
 vue swiper
 http://www.swiper.com.cn/api/
-或者github
-https://www.cnblogs.com/maomao93/p/6830626.html
