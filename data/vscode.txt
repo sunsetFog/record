@@ -1,0 +1,46 @@
+1.查看--资源管理器
+2.F11全屏
+3.查看-拆分编辑器
+4.查看-集成终端
+Ctrl + /：快速注释或取消注释；
+
+Ctrl + o：打开当前文件所在目录；
+
+Ctrl + p：打开跳转到某文件的窗口；
+
+Ctrl + `：调出控制台终端；
+
+C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
+//主机设置虚拟域名www.lcr.com
+C:\Windows\System32\drivers\etc\hosts
+
+//浏览路径
+http://www.lcr.com/app/wq/install.php
+环境
+apache啊帕其
+nginx。。ng
+wamp
+phpstudy
+//设置虚拟域名
+http://www.w3school.com.cn/php/php_mysql_connect.asp
+//mysql
+https://dev.mysql.com/
+Aa123456
+http://app.com/api.php?format=xml
+http://www.php.cn/php-weizijiaocheng-392051.html
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
