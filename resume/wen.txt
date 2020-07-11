@@ -1,3 +1,11 @@
+技能标签: html、javascript、css、node.js、webpack、vue、
+
+vue全家桶:vue、vuex、vue-router、生命周期、钩子函数、组件通讯、vue-cli脚手架
+
+
+
+
+
 css盒子模型
 数组去重
 es6
@@ -13,3 +21,16 @@ es6
 
 vue生命周期
 vuex
+
+
+
+es6的...是啥意思，比如...mapGetter
+有没有自己封装组件，比如:分页
+
+Vue中computed和watch的区别
+计算属性computed :
+1. 支持缓存,数据改变而触发
+2. 不支持异步
+侦听属性watch：
+1. 不支持缓存,数据改变而触发
+2.watch支持异步

@@ -1,0 +1,111 @@
+react cli 使用
+https://www.jianshu.com/p/d7b0f6a10f33
+React的生命周期
+https://www.jianshu.com/p/b331d0e4b398
+React常用的5个UI框架
+https://www.jianshu.com/p/22e401efe9d6
+常用Ant-design
+https://ant.design/components/overview-cn/
+
+react-redux实践(全局数据状态管理工具)
+https://www.jianshu.com/p/b872ec0f3f5c
+
+管理react路由的history对象的插件history的使用介绍
+https://www.cnblogs.com/ye-hcj/p/7741742.html
+
+React-router路由模块化封装
+https://www.jianshu.com/p/d4283e7f3c3c
+
+
+生命周期:
+import React, {Component} from 'react';
+class App extends Component {
+  state = {//数据  (要使用，否则报错)
+  },
+  constructor(){//数据的初始化
+  },
+  componentDidMount(){//渲染完成
+  },
+  componentWillUnmount (){//卸载
+  },
+
+  //方法
+
+  render() {//生成的dom结构
+    return (
+      
+    );
+  }
+}
+export default App;
+
+
+
+
+
+跳转
+history.push('/docs');
+
+import React from 'react'
+import { Router, Route, Link } from 'react-router'
+<Link to="/about">About</Link>
+
+事件
+onClick={this.handleBrowserChange}
+图片
+import logo from '~/assets/logo.png';
+src={logo}
+样式
+my-react/src/style/src/style/index.styl   样式格式
+className="logo"
+style={{width: '1000px', margin: '0 auto',paddingTop: 100}}
+
+
+const {home: {movelogo}} = this.props;
+className={`center ${movelogo ? 'logo-move' : ''}`}
+翻译: class="center"或者class="center logo-move"
+
+
+组件通讯
+import Documentation from '~/components/documentation';
+render() {
+    return (
+      <Documentation />
+    );
+  }
+
+利用connect实现页面间传参：
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as homeActions from '../redux/reduces/home';
+@connect(
+  state => ({home: state.home}),
+  dispatch => bindActionCreators(homeActions, dispatch)
+)
+const {initalLogo} = this.props;
+initalLogo();
+
+
+app.js里
+npm install --save axios
+import Http from "axios"; //导入axios
+还能添加拦截功能
+
+        let data = {
+          params:{
+              id: '007'
+          }
+        }
+	Http.get('/api/todolist', data).then(res => {
+            console.log(res)
+        }).catch(error => {
+            console.error(error)
+        })
+
+
+常用路径:
+D:\bingo\shuju\设计图\my-react\src\containers\app.js
+D:\bingo\shuju\设计图\my-react\src\redux\reduces\home.js
+
+git config --global http.postBuffer 2813163520 
+2813163520 
