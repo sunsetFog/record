@@ -1,6 +1,11 @@
 webstorm的官网
 https://www.jetbrains.com/webstorm/
 
+四.php,用wamp集成环境，在phpMyAdmin操作数据库，
+表，行，列，做好字段和主键。然后new mysqli连接数据库就可以操作数据库了。
+而数据库和表的逻辑关系才是最重要的，实现着复用性，与好使性！
+
+
 http://www.php.net/
 phpstorm激活大全
 https://blog.csdn.net/voke_/article/details/78794567

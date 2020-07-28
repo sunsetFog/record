@@ -4,12 +4,6 @@
 4.查看-集成终端
 Ctrl + /：快速注释或取消注释；
 
-Ctrl + o：打开当前文件所在目录；
-
-Ctrl + p：打开跳转到某文件的窗口；
-
-Ctrl + `：调出控制台终端；
-
 C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
 //主机设置虚拟域名www.lcr.com
 C:\Windows\System32\drivers\etc\hosts
@@ -29,6 +23,25 @@ Aa123456
 http://app.com/api.php?format=xml
 http://www.php.cn/php-weizijiaocheng-392051.html
 
+
+
+粘贴了文件,记得点刷新资源管理器
+
+vue文档间隔线用4格
+点右下角的空格---更改视图---选4
+选好范围用Tab键就四格
+
+代码对齐
+选好范围,Shift + Alt + F
+
+查找替换
+ctr+F
+
+返回
+ctr+z  和  ctr+y
+
+浏览器:
+	控制台F12
 
 
 
