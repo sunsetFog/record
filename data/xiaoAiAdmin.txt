@@ -1,0 +1,44 @@
+基于vue搭建的后台管理系统
+https://blog.csdn.net/qq_40126542/article/details/81065825
+
+http://www.jiouai.com/permission/login
+
+git clone https://github.com/wdlhao/vue2-element-touzi-admin
+https://github.com/wdlhao/vue2-element-touzi-admin.git
+
+http://127.0.0.1:8888
+https://github.com/wdlhao/vue2-element-touzi-admin.git
+
+cnpm install image-webpack-loader --save-dev
+
+
+cnpm install vue-i18n --save
+cnpm install js-cookie --save
+cnpm install core-js --save
+cnpm install qrcodejs2 --save
+
+
+
+
+根据角色判断是否出现路由？
+角色的判断---路由拦截里调用接口---action---mutation---getter---menu菜单
+				---通过router.addRoutes()合并路由表
+超级管理员可以手动添加删除其他角色访问路由权限，或搜索不出某些数据权限
+
+
+
+网站中文与英文翻译
+cnpm install vue-i18n --save
+main.js设置原型this.$i18n
+{{ $t('commons.infoShow') }}
+
+
+头部
+D:\bingo\shuju\svn_system\trunk\src\layout\headNav.vue
+菜单
+D:\bingo\shuju\svn_system\trunk\src\layout\leftMenu.vue
+
+
+
+
+

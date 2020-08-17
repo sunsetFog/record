@@ -1,8 +1,0 @@
-TortoiseSVN 使用教程
-https://www.runoob.com/svn/tortoisesvn-intro.html
-
-下载地址：https://tortoisesvn.net/downloads.html
-
-下拉代码: svn检出---github链接去掉.git---选择项---确定
-下拉更新代码: svn更新
-提交代码: svn提交---信息commit---确定

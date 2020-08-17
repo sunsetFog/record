@@ -1,0 +1,36 @@
+TortoiseSVN 使用教程
+https://www.runoob.com/svn/tortoisesvn-intro.html
+
+下载地址：https://tortoisesvn.net/downloads.html
+
+3大文件夹:
+trunk: 主干
+branches：分支
+tags: 标记某个旧版本（略略略，不需要这个）
+
+
+下拉代码:  右击---svn检出---github链接去掉.git---选择项(这步略也行)---确定
+
+下拉更新代码:  右击---svn更新
+ 
+查看改动:  右击---检查修改
+
+先下拉更新再提交:  右击---svn提交---信息commit---确定   （ctr+A全选，点框框全选，全不选）
+
+新建分支（branches）： 	1.选中要复制的分支（如:点trunk右击，或进入trunk空白处右击）
+	   		2.右击---分支/标记---/branches/名---确定---确定
+	   		3.右击---svn更新（才能看到）
+
+新建标记（tags）: 	和上面一样（/tags/名）
+
+删除分支或标记：直接在branches或tags文件里删除再提交就行
+注意：在branches或tags里新建文件，提交不了，操作错误，要删除
+
+切换分支:  右击---切换---选/branches/分支名---确定   （若"没有共同的祖先"就别用切换了）
+
+
+清理改的代码:  右击---清理  
+
+冲突: 提交不成功，显示冲突文件，改文件冲突，提交
+
+树冲突: 选中带叹号的文件---右击---解决
