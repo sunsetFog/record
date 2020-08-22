@@ -174,15 +174,16 @@ crm-zbdw\config\config.js
 import QueryTable from '_components/Basic/QueryTable'
 _components指的是crm-master\lib插件库里的东西
 
+html：
+crm-zbdw\src\pages\document.ejs
+
 namespace: '名'与yield select(state => state.名
 src\pages\BasicData\ProductType\models\index.js
 
-src\pages\BasicData\ProductType\index.js
-class ProductType extends Component {
 
-ProductType\BasicInfo\components\Attachment\index.js
 
-获取props
+
+获取props（model数据）
 const { listData, listLoading, addBtnLoading, updateBtnLoading } = this.props
 获取state数据：
 const { formValues } = this.state
