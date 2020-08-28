@@ -1,0 +1,58 @@
+大屏   Sugar开发演示地址：https://star.midea.com/
+账号：da1.chen@midea.com
+密码：sugar12345
+
+echarts官网: https://echarts.apache.org/examples/en/index.html
+
+vue地图(高德地图): https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
+vue地图(百度地图): https://dafrok.github.io/vue-baidu-map/#/zh/index
+
+VUE 中引入百度地图(vue-baidu-map):  https://www.cnblogs.com/zqyw/p/11132152.html
+百度地图开放平台: http://lbsyun.baidu.com/  (开发文档---web开发选项)
+vue 地图可视化: https://segmentfault.com/a/1190000014258343
+
+
+vue定位---获取当前位置的详细信息: https://blog.csdn.net/weixin_42062838/article/details/99705505
+vue------实现获取当前地理位置: https://www.jianshu.com/p/ad4c126e9b41
+vue移动端进入页面获取当前地理位置实现方法: https://blog.csdn.net/YY110621/article/details/87921605
+vue 获取当前位置经纬度: https://blog.csdn.net/weixin_41625322/article/details/103935030?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+
+
+价格管理三个页面--项目价格动态分析：
+切换项目点无效
+竞品均价，，暂无
+查看竞品价格，，暂无
+点四个业态切换线图
+
+wifi/git/RDM--账号:
+修改密码：https://aq.mideazy.com
+账号：ex_lucr
+密码：#sun123456
+
+RDM: https://itrdm.mideazy.com/login.html
+gitLab: http://10.18.40.88/bi/mti-service
+
+npm uninstall node-sass
+"node-sass": "^4.9.0",
+yarn install node-sass@4.5.3 --save-dev
+
+yarn add node-sass@4.5.3 --dev
+
+VUE_APP_VCONSOLE=true
+D:\2020\mti\.env.development
+
+
+npm run dev-test
+
+--disable-web-security --user-data-dir=C:\MyChromeDevUserData，–user-data-dir
+chrome浏览器的跨域设置
+https://www.cnblogs.com/laden666666/p/5544572.html
+
+139257-178
+
+
+request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+har-validator@5.1.5: this 
+
+npm ERR! chromedriver@2.46.0 install: `node install.js`
+npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver

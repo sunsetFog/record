@@ -59,6 +59,12 @@ https://classic.yarnpkg.com/zh-Hans/docs/install/#windows-stable
 点下载安装>>>
 查看版本: 测试 Yarn 是否安装
 yarn --version
+使用与npm不同:
+yarn的安装和使用： https://blog.csdn.net/yw00yw/article/details/81354533
+
+TortoiseGit:
+下载: https://tortoisegit.org/download/
+Git小乌龟的安装及使用: https://www.jianshu.com/p/33108325fc87
 
 error An unexpected error occurred: "https://registry.npm.taobao.org
 taobao镜像不可用：yarn config set registry https://registry.npmjs.org --global
