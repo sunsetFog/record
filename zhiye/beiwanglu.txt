@@ -7,4 +7,63 @@ weet使移动开发性能和动态好,  grid表格
 cordova移动应用设备功能的api,如摄像头，麦克风
 elechron跨平台桌面应用框架
 
-弹性布局flex
+css测试：https://www.runoob.com/cssref/css3-pr-justify-content.html
+弹性布局flex     
+基本网格布局
+  <div class="Grid">
+    <div class="Grid-cell">1/3</div>
+    <div class="Grid-cell">1/3</div>
+    <div class="Grid-cell">1/3</div>
+  </div>
+
+.Grid {
+  display: flex;
+}
+.Grid-cell {
+  flex: 1;// 等比伸缩
+}
+----------------------
+百分比布局
+  <div class="Grid">
+    <div class="Grid-cell">1/3</div>
+    <div class="Grid-cell col2">1/3</div>
+    <div class="Grid-cell col2">1/3</div>
+  </div>
+
+.Grid {
+  display: flex;
+}
+.col2 {
+  flex: 0 0 50%;
+}
+.col3 {
+  flex: 0 0 33.3%;
+}
+-----------------------
+
+
+
+
+
+
+
+css：透明，图片文字对齐
+样式规范
+
+
+  props: {
+    date: {
+      type: String,
+      default: function () {
+        return window.defalutDate
+      }
+    },
+    time: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'date'
+    }
+  },
