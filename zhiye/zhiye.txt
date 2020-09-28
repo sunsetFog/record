@@ -1,8 +1,51 @@
-大屏   Sugar开发演示地址：https://star.midea.com/
+原型:   Sugar开发演示地址：https://star.midea.com/
 账号：da1.chen@midea.com
 密码：sugar12345
+接口文档swagger：http://10.18.69.86:9000/mti/swagger-ui.html#/
+腾讯文档-价格地图：https://docs.qq.com/sheet/DTGtRWGZ0SmF1YXlG?tab=asf8fc
+
+原型-应收账款: http://10.18.68.183:8000/dashboard/b00a4e3cbb77f0d83588e9c2e5303e99
+腾讯文档-应收账款：https://docs.qq.com/sheet/DQ3VVZmp6T2dWRENC?tab=kgaq16
+
+OA系统:
+http://oa.e-lead.cn:9099/OA/login.aspx
+luchanrong/111
+
+易立德邮箱:
+http://mail.e-lead.cn:88/
+luchanrong
+Elead2020
+
+wifi/git/RDM--账号:
+修改密码：https://aq.mideazy.com
+账号：ex_lucr
+密码：#sun123456
+
+RDM: https://itrdm.mideazy.com/login.html
+gitLab: http://10.18.40.88/bi/mti-service
+
+
+云帮手（测试环境）：全部---启明星
+账号：hefw1/123456
+
+易立德工作人天及工作记录表：
+八月：https://docs.qq.com/sheet/DWnpqZWpmR2R0Q3pY?tab=bb08j2
+九月：https://docs.qq.com/sheet/DWkpIZXRaTE5GeVlt
+
+美信云移动平台：https://dctest.mideadc.com/muc-sso/mam/login
+admin@mam / As123456.
+先登录云帮手---APP登录日志---查询hefw1---复制token（有效期24小时）
+部署测试环境：H5模块---启明星---新增版本（zip）---应用关联（地产员工）---安卓与iOS全选
+注意点：
+1.打包返回token: 'test'
+2.该json文件的"build": 346,"version": "3.4.6"
+
+
+
+
 
 echarts官网: https://echarts.apache.org/examples/en/index.html
+w3c_echarts教程：https://www.w3cschool.cn/echarts_tutorial/echarts_tutorial-mec528xa.html
 
 vue地图(高德地图): https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
 vue地图(百度地图): https://dafrok.github.io/vue-baidu-map/#/zh/index
@@ -10,6 +53,29 @@ vue地图(百度地图): https://dafrok.github.io/vue-baidu-map/#/zh/index
 VUE 中引入百度地图(vue-baidu-map):  https://www.cnblogs.com/zqyw/p/11132152.html
 百度地图开放平台: http://lbsyun.baidu.com/  (开发文档---web开发选项)
 vue 地图可视化: https://segmentfault.com/a/1190000014258343
+
+vue-amap中添加高德地图地图的自定义样式：https://blog.csdn.net/weixin_41767649/article/details/99838052
+amap刷新报错：TypeError: v.w.uh is not a constructor
+懒加载路由改成正常的路由    https://blog.csdn.net/qq_40190624/article/details/90788560
+
+高德地图key的获取（详细）
+https://blog.csdn.net/qq_36473318/article/details/89226935
+'keytool' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+keytool.exe
+Program Files没有Java文件
+百度java官网---https://developer.oracle.com/cn/java/---OpenJDK 下载---https://openjdk.java.net/
+
+高德地图key的获取---第一个---新手指南---获取key---注册
+高德开放平台: https://console.amap.com/dev/index
+手机、邮箱、支付宝绑定、
+https://www.jianshu.com/p/4183d541dcb5
+
+定位问题：https://lbs.amap.com/faq/js-api/map-js-api/position-related/43361
+
+百度地图开放平台
+http://lbsyun.baidu.com/apiconsole/key#/home
+baidu-map bm-overlay     https://www.jianshu.com/p/1ddc9947437c
+:position="{lng: item.lng, lat: item.lat}"
 
 
 vue定位---获取当前位置的详细信息: https://blog.csdn.net/weixin_42062838/article/details/99705505
@@ -24,23 +90,22 @@ vue 获取当前位置经纬度: https://blog.csdn.net/weixin_41625322/article/details/10
 查看竞品价格，，暂无
 点四个业态切换线图
 
-wifi/git/RDM--账号:
-修改密码：https://aq.mideazy.com
-账号：ex_lucr
-密码：#sun123456
+search-tips
+浦发银行
+户名：陆澶荣
+开户行：广州白云高尔夫花园小微支行
+卡号：6217921087000520
 
-RDM: https://itrdm.mideazy.com/login.html
-gitLab: http://10.18.40.88/bi/mti-service
-云帮手（测试环境）：全部---云帮手
-账号：hefw1/123456
-易立德工作人天及工作记录表：https://docs.qq.com/sheet/DWnpqZWpmR2R0Q3pY?tab=bb08j2
+D:\program\mti\src\views\LatestIndex.vue
+/mktinformationoperativemenu/orgCityListFull
+if (parseInt(ints) < 10) {
+van-icon van-icon-search
 
 
 npm uninstall node-sass
 "node-sass": "^4.9.0",
-yarn install node-sass@4.5.3 --save-dev
-
 yarn add node-sass@4.5.3 --dev
+
 
 VUE_APP_VCONSOLE=true
 D:\2020\mti\.env.development
@@ -49,8 +114,9 @@ npm run dev
 npm run dev-test
 
 --disable-web-security --user-data-dir=C:\MyChromeDevUserData，–user-data-dir
-chrome浏览器的跨域设置
-https://www.cnblogs.com/laden666666/p/5544572.html
+chrome浏览器的跨域设置: https://www.cnblogs.com/laden666666/p/5544572.html
+
+vant ui轻量、可靠的移动端 Vue 组件库: https://youzan.github.io/vant/#/zh-CN/
 
 139257-178
 
@@ -63,8 +129,13 @@ D:\2020\mti\.env.development-test
 D:\2020\mti\.env.production
 D:\2020\mti\.env.production-test
 
+vant的样式怎么修改不了？：https://blog.csdn.net/sslcsq/article/details/105297344
+
+https://blog.csdn.net/lijingshan34/article/details/88350456
+[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080
 
 
+eslint语法报错:
 预期缩进2个空格，但找到4个空格: Expected indentation of 2 spaces but found 4
 意外的尾随逗号: Unexpected trailing comma
 额外分号: Extra semicolon
@@ -75,10 +146,53 @@ D:\2020\mti\.env.production-test
 文件末尾需要换行符，但未找到: Newline required at end of file but not found
 “，”后需要空格: A space is required after ','
 “{”后需要空格: A space is required after '{'
-迭代中的元素应具有“v”-绑定：键'指令: Elements in iteration expect to have 'v-bind:key' directives
+迭代中的元素应具有“v”-绑定：键'指令: Elements in iteration expect to have 'v-bind:key' directives       （v-for加 :key="index"）
+标识符“text_settings”不是驼峰大小写： Identifier 'text_settings' is not in camel case
+函数括号前缺少空格：Missing space before function parentheses
+不允许尾随空格: Trailing spaces not allowed
+混合空格和制表符：Mixed spaces and tabs    -----看行选择删除空格
+
+
+echarts_渲染出的图表和文字模糊问题：https://blog.csdn.net/lianflower/article/details/105064529
+echarts移动端字体模糊解决方法：https://www.cnblogs.com/mengff/p/8980814.html
+echarts各种字体颜色的修改：https://www.cnblogs.com/webtall/p/7238593.html
+echarts 修改legend字体颜色、x轴或y轴文本字体颜色改变
+https://blog.csdn.net/qq_25391785/article/details/81705627
+
+问题1：legend字体颜色、x轴或y轴文本字体颜色改变    https://blog.csdn.net/qq_25391785/article/details/81705627
+问题2：Y轴添加单位    https://blog.csdn.net/weixin_42659644/article/details/87856634
+问题3：折线图的每个折点都显示数值   https://www.cnblogs.com/jiangyunfeng/p/12925302.html
+问题4：Y轴数据变化小，折线图看起来不明显    https://blog.csdn.net/dhdhdh0920/article/details/103270010
+问题5:  echarts适配问题   https://blog.csdn.net/wuxiaoqing_818/article/details/106839845
+问题6：设置图标图例legend为圆，长方形，扇形等  https://blog.csdn.net/qq_15390381/article/details/81736796
+echarts折线图线条颜色和区域颜色设置
+https://blog.csdn.net/qq_36538012/article/details/100641267
+ // stack: '总量', // 去掉可以重叠线，数值正常    areaStyle: { normal: { color: '' } }, // 改变区域颜色
+
+vue滑动页面卡顿：https://blog.csdn.net/qq_39897005/article/details/100693443
+vue项目--浏览器出现卡顿及崩溃的原因查找与解决方案：https://www.cnblogs.com/webhmy/p/12162675.html
+
+如何解决failed to push some refs to git
+解决github里的readme文件没有下载下来的问题
+$ git pull --rebase origin master
+git push -u origin master
+https://jingyan.baidu.com/article/f3e34a12a25bc8f5ea65354a.html
+
+echarts 折线图线y轴不以0起步
+
+
+Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
+
+百度地图定位，并获取当前省市区Id：https://blog.csdn.net/u013214705/article/details/54345513
+
+
+
 
 request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
 har-validator@5.1.5: this 
 
 npm ERR! chromedriver@2.46.0 install: `node install.js`
 npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/chromedriver
+
+CSS 颜色十六进制值：https://www.w3school.com.cn/cssref/css_colorsfull.asp
+http://10.18.68.183:8000/dashboard/b00a4e3cbb77f0d83588e9c2e5303e99

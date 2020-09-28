@@ -37,18 +37,21 @@ http://www.chsi.com.cn/
 
 
 
-vue ui组件的使用
-element ui
+vue ui组件库:
+element ui (pc端（主）与移动端)
 https://element.eleme.cn
-iview ui
+iview ui (纯pc端)
 https://www.iviewui.com
-mint ui
+mint ui (纯移动端)
 http://mint-ui.github.io
-muse ui
+vant ui (纯移动端):
+https://vant-contrib.gitee.io/vant/#/zh-CN/
+muse ui: (纯移动端)
 http://www.muse-ui.org
-yd ui:
+yd ui: (纯移动端)
 http://www.ydui.org
-lay ui
+
+lay ui: (原生开发的ui)（忽略）
 http://www.layui.com
 
  

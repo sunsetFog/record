@@ -8,6 +8,8 @@ cordova移动应用设备功能的api,如摄像头，麦克风
 elechron跨平台桌面应用框架
 
 css测试：https://www.runoob.com/cssref/css3-pr-justify-content.html
+Flex常见布局实例：https://www.zhihu.com/tardis/sogou/art/60516052
+详解CSS的Flex布局：https://www.zhihu.com/tardis/sogou/art/52280195
 弹性布局flex     
 基本网格布局
   <div class="Grid">
@@ -20,7 +22,7 @@ css测试：https://www.runoob.com/cssref/css3-pr-justify-content.html
   display: flex;
 }
 .Grid-cell {
-  flex: 1;// 等比伸缩
+  flex: 1;// 等比伸缩   相对与flex: 0 0 33.33%;
 }
 ----------------------
 百分比布局
@@ -45,7 +47,9 @@ css测试：https://www.runoob.com/cssref/css3-pr-justify-content.html
 
 
 
-
+.open-menu * {
+        vertical-align: middle;
+}
 
 css：透明，图片文字对齐
 样式规范
@@ -67,3 +71,21 @@ css：透明，图片文字对齐
       default: 'date'
     }
   },
+
+
+
+
+|- src/  --------------------- 项目源代码
+    |- App.vue
+    |- main.js  -------------- 入口文件
+|- .babelrc  ----------------- babel 配置文件
+|- index.html  --------------- HTML 模板
+|- package.json  ------------- npm 配置文件
+|- webpack.config.js  -------- webpack 配置文件
+
+这情况下渲染变量：content: `content ${this.zoom}`, 
+
+<article class="contain">
+<menu>
+         <li>定义列表</li>
+</menu>
