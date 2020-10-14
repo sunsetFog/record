@@ -31,6 +31,9 @@ gitLab: http://10.18.40.88/bi/mti-service
 易立德工作人天及工作记录表：
 八月：https://docs.qq.com/sheet/DWnpqZWpmR2R0Q3pY?tab=bb08j2
 九月：https://docs.qq.com/sheet/DWkpIZXRaTE5GeVlt
+十月：https://docs.qq.com/sheet/DWmNHeUlLcmVBQVF5
+
+打卡考勤: http://zyattendance.midea.com
 
 美信云移动平台：https://dctest.mideadc.com/muc-sso/mam/login
 admin@mam / As123456.
@@ -196,3 +199,7 @@ npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/ch
 
 CSS 颜色十六进制值：https://www.w3school.com.cn/cssref/css_colorsfull.asp
 http://10.18.68.183:8000/dashboard/b00a4e3cbb77f0d83588e9c2e5303e99
+console.log('pp===', amapManager._map.destroy())
+price-map
+中山美的公馆
+https://blog.csdn.net/yuanmengdage/article/details/93384254?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
