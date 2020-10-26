@@ -27,6 +27,7 @@ gitLab: http://10.18.40.88/bi/mti-service
 
 云帮手（测试环境）：全部---启明星
 账号：hefw1/123456
+账号：zengxc4/123456
 
 易立德工作人天及工作记录表：
 八月：https://docs.qq.com/sheet/DWnpqZWpmR2R0Q3pY?tab=bb08j2
@@ -42,7 +43,6 @@ admin@mam / As123456.
 注意点：
 1.打包返回token: 'test'
 2.该json文件的"build": 346,"version": "3.4.6"
-
 
 
 
@@ -72,6 +72,9 @@ Program Files没有Java文件
 高德开放平台: https://console.amap.com/dev/index
 手机、邮箱、支付宝绑定、
 https://www.jianshu.com/p/4183d541dcb5
+
+高德地图官网：https://www.amap.com/
+js高德：https://lbs.amap.com/api/javascript-api/guide/abc/prepare
 
 定位问题：https://lbs.amap.com/faq/js-api/map-js-api/position-related/43361
 
@@ -174,6 +177,7 @@ https://blog.csdn.net/qq_36538012/article/details/100641267
 
 vue滑动页面卡顿：https://blog.csdn.net/qq_39897005/article/details/100693443
 vue项目--浏览器出现卡顿及崩溃的原因查找与解决方案：https://www.cnblogs.com/webhmy/p/12162675.html
+报错：Maximum call stack size exceeded  原因：取名用关键字了
 
 如何解决failed to push some refs to git
 解决github里的readme文件没有下载下来的问题
@@ -184,11 +188,12 @@ https://jingyan.baidu.com/article/f3e34a12a25bc8f5ea65354a.html
 echarts 折线图线y轴不以0起步
 
 
+self.interfaceError(JSON.stringify('token=' + self.token) + '-----------' + JSON.stringify(res.data.data))
+
+
 Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
 
 百度地图定位，并获取当前省市区Id：https://blog.csdn.net/u013214705/article/details/54345513
-
-
 
 
 request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
