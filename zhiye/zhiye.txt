@@ -190,6 +190,63 @@ echarts 折线图线y轴不以0起步
 
 self.interfaceError(JSON.stringify('token=' + self.token) + '-----------' + JSON.stringify(res.data.data))
 
+    proxyTable: {
+      '/mti': {
+          // target: process.env.NODE_ENV === 'development' ?  'https://dctest.mideadc.com/mas-api/restful/': 'https://dc.mideadc.com/mas-api/restful/', // 开发环境访问的域名(后台给)
+          target: 'http://localhost:1111/',
+          changeOrigin: true, // 允许跨域(创建本地虚拟服务端，接受了域名，就请求后端服务器)
+          // secure: true, // 如果是https接口，需要配置这个参数
+          ws: true, //如果要代理 websockets，配置这个参数
+          pathRewrite: {// 路径重写
+          '^/mti': '/' // 意思: 开发环境访问的域名 + '这个的名'
+          }
+      }
+    },
+
+
+sessionStorage.setItem('soul', 'b2ca7c92-bbe0-4399-9b40-c36706651e92')
+b2ca7c92-bbe0-4399-9b40-c36706651e92
+线，框，箭头
+事件不灵
+x长
+if('undefined' === typeof result){
+
+<cloud-echart dynamic_width="9.2rem" dynamic_height="6rem" :option_list="option_01"></cloud-echart>
+option_01: {}
+import cloudEchart from '../../components/cloudEchart'
+import drawing from './echart.js'
+this.option_01 = drawing.demo01(this)
+cityId
+
+this.drawing.getDom().style.height = '9rem'
+
+开始准备
+self.
+self.$means.
+this,self
+
+self.$means.tipFormatter(value, engineering, seriesColor, gradients)
+self.$means.tipFormatter(value, engineering, seriesColor, gradients, '亿')
+
+self.$means.colorGradient(seriesColor[3], gradients[3])
+
+legendData
+item,xAxis
+引入
+
+    // token: 'test', // 开发调试时，用客户端获取到的token值，替换此处f0bda392-7c73-49f4-9ec8-7ab7163abbf6',
+    token: 'b114eb98-2ecd-43a3-8093-a90e76c462ae',
+
+      self.drawing.on('click', 'xAxis.category', function (params) {
+        console.log('tuli====',params);
+      })
+triggerEvent: true,
+
+https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/selectBylist
+https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/overdueActualTime
+https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/overdueMortgageTotal
+
+
 
 Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
 
