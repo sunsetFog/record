@@ -1,5 +1,4 @@
-//git用户名.github.io
-git配置:
+git配置:（公司git不用配置的，配置自己所用的github账号就行）
 显示当前的Git配置：git config --list
 设置提交代码时的用户信息：
 git config user.name "githud用户名"
@@ -10,15 +9,15 @@ git使用:
 
 git下载：git clone git链接 
 路径指向项目：cd 项目名
-更新出远程分支：git fetch
+
 查看本地和远程所有分支：git branch -a
-切换分支（会自动更新项目）：git checkout master
+切换分支：git checkout master----------重点：当你发现切换不了时：用git fetch------更新出远程分支
 切换并创建分支：git checkout -b 新分支名
 
 
 提交dev分支：
 查看状态：git status -s
-拉取更新分支：git pull origin 分支名
+拉取更新分支：git pull origin 分支名----------重点（本地更新远程）
 选择所有文件进入暂存区：git add .
 进入版本库：git commit -m '提交说明'
 提交分支：git push origin 分支名
@@ -46,9 +45,7 @@ https://www.cnblogs.com/wei325/p/5278922.html
 E45: 'readonly' option is set (add ! to override)
 https://baijiahao.baidu.com/s?id=1642180606627332320&wfr=spider&for=pc
 
-git status  查看冲突文件
-git ls-files -u   显示未合并文件
-git status -s
+
 
 用git pull origin dev遇到冲突时：
 先保存一份代码
