@@ -1,25 +1,24 @@
 原型:   Sugar开发演示地址：https://star.midea.com/
-账号：da1.chen@midea.com
-密码：sugar12345
+账号：da1.chen@midea.com/sugar12345
 接口文档swagger：http://10.18.69.86:9000/mti/swagger-ui.html#/
 腾讯文档-价格地图：https://docs.qq.com/sheet/DTGtRWGZ0SmF1YXlG?tab=asf8fc
 
 原型-应收账款: http://10.18.68.183:8000/dashboard/b00a4e3cbb77f0d83588e9c2e5303e99
 腾讯文档-应收账款：https://docs.qq.com/sheet/DQ3VVZmp6T2dWRENC?tab=kgaq16
+pc端价格地图：https://www.yuque.com/docs/share/9247bde0-9aa6-4215-9540-38decce63415?#
+测试环境：http://10.18.69.87:8001/
 
 OA系统:
 http://oa.e-lead.cn:9099/OA/login.aspx
-luchanrong/111
+账号：luchanrong/111
 
 易立德邮箱:
 http://mail.e-lead.cn:88/
-luchanrong
-Elead2020
+账号：luchanrong/Elead2020
 
 wifi/git/RDM--账号:
 修改密码：https://aq.mideazy.com
-账号：ex_lucr
-密码：#sun123456
+账号：ex_lucr/#sun123456
 
 RDM: https://itrdm.mideazy.com/login.html
 gitLab: http://10.18.40.88/bi/mti-service
@@ -33,16 +32,14 @@ gitLab: http://10.18.40.88/bi/mti-service
 八月：https://docs.qq.com/sheet/DWnpqZWpmR2R0Q3pY?tab=bb08j2
 九月：https://docs.qq.com/sheet/DWkpIZXRaTE5GeVlt
 十月：https://docs.qq.com/sheet/DWmNHeUlLcmVBQVF5
+十一： https://docs.qq.com/sheet/DWlBUSVhCU2tRUWNa?tab=BB08J2
 
 打卡考勤: http://zyattendance.midea.com
 
 美信云移动平台：https://dctest.mideadc.com/muc-sso/mam/login
-admin@mam / As123456.
+账号：admin@mam / As123456.
 先登录云帮手---APP登录日志---查询hefw1---复制token（有效期24小时）
 部署测试环境：H5模块---启明星---新增版本（zip）---应用关联（地产员工）---安卓与iOS全选
-注意点：
-1.打包返回token: 'test'
-2.该json文件的"build": 346,"version": "3.4.6"
 
 
 
@@ -52,6 +49,8 @@ w3c_echarts教程：https://www.w3cschool.cn/echarts_tutorial/echarts_tutorial-mec5
 
 vue地图(高德地图): https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
 vue地图(百度地图): https://dafrok.github.io/vue-baidu-map/#/zh/index
+js(百度地图)：http://lbsyun.baidu.com/index.php?title=jspopularGL
+js2.0(百度地图):http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html#a0b0
 
 VUE 中引入百度地图(vue-baidu-map):  https://www.cnblogs.com/zqyw/p/11132152.html
 百度地图开放平台: http://lbsyun.baidu.com/  (开发文档---web开发选项)
@@ -90,11 +89,14 @@ vue移动端进入页面获取当前地理位置实现方法: https://blog.csdn.net/YY110621/articl
 vue 获取当前位置经纬度: https://blog.csdn.net/weixin_41625322/article/details/103935030?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
 
 
-价格管理三个页面--项目价格动态分析：
-切换项目点无效
-竞品均价，，暂无
-查看竞品价格，，暂无
-点四个业态切换线图
+贝壳找房：https://fs.fang.ke.com/
+能力地图：
+http://skillmap.e-lead.cn:9099/workload/welcome
+账号：4959/260556
+pc端数据平台：https://star-test.mideazy.com/
+账号：zengxc4/123456
+火绒安全：https://www.huorong.cn/
+
 
 search-tips
 浦发银行
@@ -113,12 +115,6 @@ npm uninstall node-sass
 yarn add node-sass@4.5.3 --dev
 
 
-VUE_APP_VCONSOLE=true
-D:\2020\mti\.env.development
-
-npm run dev
-npm run dev-test
-
 --disable-web-security --user-data-dir=C:\MyChromeDevUserData，–user-data-dir
 chrome浏览器的跨域设置: https://www.cnblogs.com/laden666666/p/5544572.html
 
@@ -126,14 +122,6 @@ vant ui轻量、可靠的移动端 Vue 组件库: https://youzan.github.io/vant/#/zh-CN/
 
 139257-178
 
-
-百度地图：D:\2020\mti\.env
-开发环境：
-D:\2020\mti\.env.development
-D:\2020\mti\.env.development-test
-生产环境：
-D:\2020\mti\.env.production
-D:\2020\mti\.env.production-test
 
 vant的样式怎么修改不了？：https://blog.csdn.net/sslcsq/article/details/105297344
 
@@ -241,6 +229,10 @@ item,xAxis
         console.log('tuli====',params);
       })
 triggerEvent: true,
+2，3，4，6，7，9，10
+83/131/233
+116/116/116
++33/-25/-117
 
 https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/selectBylist
 https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/overdueActualTime
@@ -251,7 +243,7 @@ https://dctest.mideadc.com/mas-api/restful/mti/accountsReceivable/overdueMortgag
 Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
 
 百度地图定位，并获取当前省市区Id：https://blog.csdn.net/u013214705/article/details/54345513
-
+https://github.com/sunsetFog/webpack.git
 
 request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
 har-validator@5.1.5: this 
@@ -261,7 +253,27 @@ npm install chromedriver --chromedriver_cdnurl=http://cdn.npm.taobao.org/dist/ch
 
 CSS 颜色十六进制值：https://www.w3school.com.cn/cssref/css_colorsfull.asp
 http://10.18.68.183:8000/dashboard/b00a4e3cbb77f0d83588e9c2e5303e99
-console.log('pp===', amapManager._map.destroy())
-price-map
-中山美的公馆
+
 https://blog.csdn.net/yuanmengdage/article/details/93384254?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param
+
+
+http://localhost:9090/?tgticket=TGT-18949-fRfvp8dmlv62x9WGEPAKHFnMt6B27EXxtQovieRelot5i3hl45ro5fWznp7b-HqWpbAmvxl7946
+http://10.73.158.67:9090/?tgticket=TGT-18949-fRfvp8dmlv62x9WGEPAKHFnMt6B27EXxtQovieRelot5i3hl45ro5fWznp7b-HqWpbAmvxl7946
+
+谷歌浏览器Get geolocation time out.Get ipLocation failed
+
+如何在pc端的触摸屏幕上对百度地图实现缩放手势
+https://ask.csdn.net/questions/663688
+
+笔记本电脑触摸板是不是有放大缩小页面功能？
+https://zhidao.baidu.com/question/539605130.html
+
+百度地图javascript api支持手势缩放拖拽吗 
+https://zhidao.baidu.com/question/694079655052560724.html
+
+JS 百度地图 换地图主题颜色（API自带）
+https://www.cnblogs.com/nelsonlei/p/11660450.html
+
+http://localhost:9090/?tgticket=TGT-20446-G4yxmHMqHF4a5p5x5D5VCZvz5vmbFUJ7jSbleS5kTomNX-5qbeF-sf1qCZU-CiQEl-omvxl7946
+sun123456
+sun123456

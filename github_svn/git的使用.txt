@@ -79,10 +79,13 @@ git log
 git show  1bb8e0275fce3fddaa4b62511735ae3b35472e82
 
 
-下拉:
+下拉失败:     https://blog.csdn.net/zhangjing1019/article/details/83547361
 error: Your local changes to the following files would be overwritten by merge: 
 Please commit your changes or stash them before you merge
-https://blog.csdn.net/zhangjing1019/article/details/83547361
+1.git stash     //暂存当前正在进行的工作。
+2.git pull   origin master //拉取服务器的代码
+3.git stash pop //合并暂存的代码
+
 
 git stash pop:
 Your branch is up-to-date with 'origin/dev'. Changes not staged for commit:
@@ -92,3 +95,5 @@ https://blog.csdn.net/qq_43925089/article/details/108421383
 提交代码时：GitLab: You are not allowed to push code to protected branches on this project.
 GitLab:不允许将代码推送到此项目的受保护分支。
 公司会设置master成保护分支，要新建dev分支提交
+
+

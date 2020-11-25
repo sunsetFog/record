@@ -9,11 +9,7 @@ elechron跨平台桌面应用框架
 
 
 
-`${value[0].axisValue}
 
-}
-
------------------------
 全局图片路径
 
 
@@ -24,40 +20,16 @@ elechron跨平台桌面应用框架
 }
 
 css：透明，图片文字对齐
-样式规范
-
-
-  props: {
-    date: {
-      type: String,
-      default: function () {
-        return window.defalutDate
-      }
-    },
-    time: {
-      type: String,
-      default: ''
-    },
-    type: {
-      type: String,
-      default: 'date'
-    }
-  },
 
 
 
 
-|- src/  --------------------- 项目源代码
-    |- App.vue
-    |- main.js  -------------- 入口文件
-|- .babelrc  ----------------- babel 配置文件
-|- index.html  --------------- HTML 模板
-|- package.json  ------------- npm 配置文件
-|- webpack.config.js  -------- webpack 配置文件
 
-js字符串拼接 ${}    
-console.log(`a的值是：${a}`)
-这情况下渲染变量：content: `content ${this.zoom}`,  
+
+
+
+
+
 background-image:linear-gradient(#6BE6D6, #C56BE6);
 
 <article class="contain">
@@ -65,3 +37,13 @@ background-image:linear-gradient(#6BE6D6, #C56BE6);
          <li>定义列表</li>
 </menu>
 
+不要直接赋值后台数据，会端双向绑定的联系
+
+
+
+
+
+服务器
+单位测试
+
+:disabled
