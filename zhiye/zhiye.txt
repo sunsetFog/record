@@ -18,7 +18,7 @@ http://mail.e-lead.cn:88/
 
 wifi/git/RDM--ÕËºÅ:
 ĞŞ¸ÄÃÜÂë£ºhttps://aq.mideazy.com
-ÕËºÅ£ºex_lucr/#sun123456
+ÕËºÅ£ºex_lucr/#sun12345678
 
 RDM: https://itrdm.mideazy.com/login.html
 gitLab: http://10.18.40.88/bi/mti-service

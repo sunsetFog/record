@@ -69,10 +69,10 @@ Git小乌龟的安装及使用: https://www.jianshu.com/p/33108325fc87
 error An unexpected error occurred: "https://registry.npm.taobao.org
 taobao镜像不可用：yarn config set registry https://registry.npmjs.org --global
 
-DvaJS:
+redux配置DvaJS:
 https://dvajs.com/
 https://dvajs.com/guide/getting-started.html#%E7%BC%96%E5%86%99-ui-component
-UmiJS:
+路由配置UmiJS:
 https://umijs.org/zh-CN/docs
 常用UI框架Ant-design:
 https://ant-design.gitee.io/components/overview-cn/
@@ -189,11 +189,19 @@ src\pages\BasicData\ProductType\models\index.js
 
 
 
-获取props（model数据）
-const { listData, listLoading, addBtnLoading, updateBtnLoading } = this.props
-获取state数据：
-const { formValues } = this.state
-改变state数据：
-this.setState({ addBtn, updateBtn })
 
 
+
+
+
+
+/home/register/courseRegistration
+
+home/setOut/setOutDetail
+
+选择日期接口
+D:\junlan\junlang-admin-html\src\pages\operationsMgmt\courseSetOut\courseSetOutList\courseSetOutListMod.js
+详情：
+D:\junlan\junlang-admin-html\src\pages\operationsMgmt\courseSetOut\setOutDetail
+中表
+import TaskCol from '../compoments/TaskCol'

@@ -1,0 +1,63 @@
+项目在线文档（内网）
+http://10.18.39.203/pages/viewpage.action?pageId=64782347
+陆澶荣
+
+git账号：
+邮箱：2693281934@qq.com
+账号：luchanrong  密码：#sun12345
+
+
+客户生态开发人员在线日报
+https://docs.qq.com/sheet/DTkxxT3VTdVlCS05F?tab=z04y8v
+12月: https://docs.qq.com/sheet/DYktvRnltVUp3VVR3
+
+
+项目
+http://localhost:8008/
+账号：admin/admin-test
+测试环境：https://admin-junlang-test.mideazy.com/html/#/login?_k=r2mmyk
+
+蓝湖: Axure RP 9 官方下载
+邮箱：2693281934@qq.com
+密码：#sun12345
+
+/admin/tCaddyAutoSchedule/selectTCaddyAutoSchedule
+填参：664         选择球童：452    球童：83
+全选：216  	获取选择球童弹框排班数据：173
+customerInfoDatas[Number(selectCaddyPostion)].caddyEmployNo= info.employeeNo
+
+
+
+|- models -----------------------------  数据中心
+	|- index.js ------------------ 类似vuex
+|- services --------------------------- 数据请求
+	|- index.js ----------------- 接口
+|- config ---------------------------- 
+	|- index.js ---------------- 表格数据
+|- index.js --------------------------- 入口文件
+|- index.less ------------------------ less样式
+
+<div className={styles.userList}>
+className={styles['clound']}
+style={{ marginLeft: '15px' }}
+loading={listLoading}
+onClick={this.handleInsert}          onClick={() => {} }
+{}  {path}
+<Link to="/home"></Link>
+跳转：
+import { Link, hashHistory } from 'dva/router'
+hashHistory.push(`/home/setOut/courseSetOut`)
+hashHistory.push({
+	pathname: '/home/register/addRegister',
+	query: { item: encodeURIComponent(JSON.stringify(itemObj)) }
+})
+
+看云：https://www.kancloud.cn/csnikey/fepro-guide/334583
+Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
+
+let nowTime = new Date();
+          let strTime = nowTime.toLocaleDateString()
+          let dateArr = strTime.split('/').join('-')
+          if (!formData.effectStart) {
+            formData.effectStart = dateArr
+          }

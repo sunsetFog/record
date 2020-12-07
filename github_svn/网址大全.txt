@@ -48,6 +48,8 @@ vant ui (´¿ÒÆ¶¯¶Ë):
 https://vant-contrib.gitee.io/vant/#/zh-CN/
 muse ui: (´¿ÒÆ¶¯¶Ë)
 http://www.muse-ui.org
+BUI: (ÒÆ¶¯¶Ë)
+http://www.easybui.com/docs/?id=controls
 yd ui: (´¿ÒÆ¶¯¶Ë)
 http://www.ydui.org
 

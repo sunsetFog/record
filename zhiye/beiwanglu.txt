@@ -23,7 +23,10 @@ css：透明，图片文字对齐
 
 
 
-
+虚拟dom与dom
+mvvp
+性能
+typeScript
 
 
 
@@ -47,3 +50,6 @@ background-image:linear-gradient(#6BE6D6, #C56BE6);
 单位测试
 
 :disabled
+
+package.json说明
+*找你不到页
