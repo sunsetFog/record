@@ -82,8 +82,8 @@ https://git.yunzmall.com/
 
 
 
-微信公众号:
-https://mp.weixin.qq.com/
+微信公众号: https://mp.weixin.qq.com/
+不用登录，点小程序下载微信小程序开发工具
 1456300078@qq.com
 ABCabc123456
 微信小程序appid：

@@ -12,6 +12,11 @@ https://docs.qq.com/sheet/DTkxxT3VTdVlCS05F?tab=z04y8v
 12月: https://docs.qq.com/sheet/DYktvRnltVUp3VVR3
 
 
+2693281934@qq.com
+#sun123456
+utils\config.js
+配置文件.txt----------详情-修改
+
 项目
 http://localhost:8008/
 账号：admin/admin-test
@@ -55,9 +60,11 @@ hashHistory.push({
 看云：https://www.kancloud.cn/csnikey/fepro-guide/334583
 Lodash是一个一致性、模块化、高性能的 JavaScript 实用工具库。https://www.lodashjs.com/
 
-let nowTime = new Date();
-          let strTime = nowTime.toLocaleDateString()
-          let dateArr = strTime.split('/').join('-')
-          if (!formData.effectStart) {
-            formData.effectStart = dateArr
-          }
+搭建PC端：react+umi+dva+antd
+https://www.jianshu.com/p/6e00b8a49e7c
+
+收银-消费单列表
+
+美的置业LDAP测试环境账号同步平台：http://10.16.24.222:8088/sync/
+
+ES6的新方法, 返回值也是对象中属性名组成的数组  Object.keys(data)

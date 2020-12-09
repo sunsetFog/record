@@ -1,0 +1,23 @@
+微信公众号: https://mp.weixin.qq.com/
+
+常用的ui：
+weui：https://developers.weixin.qq.com/miniprogram/dev/extended/weui/
+Vant Weapp：
+https://vant-contrib.gitee.io/vant-weapp/#/intro
+https://youzan.github.io/vant-weapp/#/col
+美团小程序框架mpvue：http://mpvue.com
+微信UI组件库 iView Weapp：https://weapp.iviewui.com/
+
+调用接口:
+ let { rows, success, pageNo } = await Serv.memberBookingInfo(params)
+
+
+
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:key="{{index}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>
+wx.getStorageSync('logs')
+const util = require('../../utils/util.js')
+block标签渲染会消失，和vue的template一样

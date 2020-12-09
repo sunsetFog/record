@@ -10,14 +10,7 @@ https://jingyan.baidu.com/article/25648fc19d2c809191fd001f.html
 MySql控制台命令
 https://www.cnblogs.com/what-lee/p/8686512.html
 
-微信weui:
-https://weui.io/
-美团小程序框架mpvue
-http://mpvue.com
-组件化开发框架wepy
-https://tencent.github.io/wepy
-微信UI组件库 iView Weapp
-https://weapp.iviewui.com/
+
 
 javascript时间戳和日期字符串相互转换
 https://www.cnblogs.com/yjf512/p/3796229.html
