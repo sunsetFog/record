@@ -1,8 +1,4 @@
-1.查看--资源管理器
-2.F11全屏
-3.查看-拆分编辑器
-4.查看-集成终端
-Ctrl + /：快速注释或取消注释；
+
 
 C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
 //主机设置虚拟域名www.lcr.com
@@ -25,39 +21,26 @@ http://www.php.cn/php-weizijiaocheng-392051.html
 
 
 
-vue文档间隔线用4格
-点右下角的空格---更改视图---选4
-选好范围
-缩进 tab
-缩退 shift + tab
-全选：选好ctr + A
 
-代码对齐
-选好范围,Shift + Alt + F
-
-查找替换
-ctr+F
-
-返回
-ctr+z  和  ctr+y
-
-注释：
-ctr + /
-Shift + Alt + A
-或直接输入/**
-
-保存：
-ctr + s
-
-剪切再粘贴移动文件
-粘贴了文件: 项目左边有刷新图标
-分两部分看：拖文件头右边移
+ 
 
 
 
-浏览器:
-	控制台F12
-git: 上下箭头
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
