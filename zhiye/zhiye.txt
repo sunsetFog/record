@@ -47,9 +47,9 @@ gitLab: http://10.18.40.88/bi/mti-service
 echarts官网: https://echarts.apache.org/examples/en/index.html
 w3c_echarts教程：https://www.w3cschool.cn/echarts_tutorial/echarts_tutorial-mec528xa.html
 
-vue地图(高德地图): https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
-vue地图(百度地图): https://dafrok.github.io/vue-baidu-map/#/zh/index
-js(百度地图)：http://lbsyun.baidu.com/index.php?title=jspopularGL
+vue高德地图: https://elemefe.github.io/vue-amap/#/zh-cn/examples/base/amap
+vue百度地图: https://dafrok.github.io/vue-baidu-map/#/zh/index
+js百度地图：http://lbsyun.baidu.com/index.php?title=jspopularGL
 js2.0(百度地图):http://lbsyun.baidu.com/cms/jsapi/reference/jsapi_reference.html#a0b0
 
 VUE 中引入百度地图(vue-baidu-map):  https://www.cnblogs.com/zqyw/p/11132152.html
@@ -140,7 +140,7 @@ eslint语法报错:
 文件末尾需要换行符，但未找到: Newline required at end of file but not found
 “，”后需要空格: A space is required after ','
 “{”后需要空格: A space is required after '{'
-迭代中的元素应具有“v”-绑定：键'指令: Elements in iteration expect to have 'v-bind:key' directives       （v-for加 :key="index"）
+迭代中的元素应具有“v”-绑定：键'指令: Elements in iteration expect to have 'v-bind:key' directives （v-for加 :key="index"）
 标识符“text_settings”不是驼峰大小写： Identifier 'text_settings' is not in camel case
 函数括号前缺少空格：Missing space before function parentheses
 不允许尾随空格: Trailing spaces not allowed
