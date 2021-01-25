@@ -53,3 +53,5 @@ background-image:linear-gradient(#6BE6D6, #C56BE6);
 
 package.json说明
 *找你不到页
+
+nginx
