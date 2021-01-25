@@ -1,8 +1,21 @@
+wampserver 64位下载     用普通下载
+https://www.onlinedown.net/soft/118187.htm
 
+wampserver配置多个不同路径站点
+https://blog.csdn.net/u014607184/article/details/81840306?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control
+
+C:\wamp\bin\apache\apache2.4.9\conf\httpd.conf
+注释标志“#”删除
+#Include conf/extra/httpd-vhosts
 
 C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
-//主机设置虚拟域名www.lcr.com
+<VirtualHost *:80>
+ DocumentRoot "D:/wamp/www/aaa"(这是你放程序的文件路径)
+ ServerName www.aaa.com   （这是自己定义的域名）
+</VirtualHost>
+
 C:\Windows\System32\drivers\etc\hosts
+127.0.0.1   www.aaa.com   （这是自己定义的域名）
 
 //浏览路径
 http://www.lcr.com/app/wq/install.php
@@ -20,7 +33,14 @@ http://app.com/api.php?format=xml
 http://www.php.cn/php-weizijiaocheng-392051.html
 
 
+鼠标左击--重启
+鼠标右击---切换中文版
 
+www.sky.com
+C:\wamp64\www\news
+浏览：http://www.sky.com
+
+https://blog.csdn.net/weixin_42119967/article/details/112821024
 
  
 
