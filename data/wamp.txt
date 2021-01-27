@@ -1,5 +1,30 @@
-wampserver 64位下载     用普通下载
-https://www.onlinedown.net/soft/118187.htm
+wampserver 64位v3.1.7 官方简体中文版
+https://www.cr173.com/soft/259379.html
+如果启动报msvcr110.dll文件找不到，浏览器下载，放进System32或SysWOW64文件里
+
+
+环境
+apache(啊帕其)服务器
+nginx服务器
+phpstudy             官网下载: https://www.xp.cn/download.html
+启用web服务：https://www.cnblogs.com/nanshine/p/8297979.html
+
+//设置虚拟域名
+http://www.w3school.com.cn/php/php_mysql_connect.asp
+//mysql
+https://dev.mysql.com/
+Aa123456
+http://app.com/api.php?format=xml
+http://www.php.cn/php-weizijiaocheng-392051.html
+
+
+鼠标左击--重启
+鼠标右击---切换中文版
+
+vue打包到apache服务器刷新报错问题处理
+原因：是由于使用vue-router的 history 模式(mode: 'history')
+建议别加
+
 
 wampserver配置多个不同路径站点
 https://blog.csdn.net/u014607184/article/details/81840306?utm_medium=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-OPENSEARCH-1.control
@@ -16,32 +41,6 @@ C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
 
 C:\Windows\System32\drivers\etc\hosts
 127.0.0.1   www.aaa.com   （这是自己定义的域名）
-
-//浏览路径
-http://www.lcr.com/app/wq/install.php
-环境
-apache啊帕其
-nginx。。ng
-wamp
-phpstudy
-//设置虚拟域名
-http://www.w3school.com.cn/php/php_mysql_connect.asp
-//mysql
-https://dev.mysql.com/
-Aa123456
-http://app.com/api.php?format=xml
-http://www.php.cn/php-weizijiaocheng-392051.html
-
-
-鼠标左击--重启
-鼠标右击---切换中文版
-
-www.sky.com
-C:\wamp64\www\news
-浏览：http://www.sky.com
-
-https://blog.csdn.net/weixin_42119967/article/details/112821024
-
  
 
 
