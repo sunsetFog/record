@@ -41,11 +41,25 @@ C:\wamp64\bin\apache\apache2.4.23\conf\extra\httpd-vhosts.conf
 
 C:\Windows\System32\drivers\etc\hosts
 127.0.0.1   www.aaa.com   （这是自己定义的域名）
- 
+
+web 服务器 === 控制面板 --- 程序 --- 启用或关闭window功能 --- Internet Information Services --- web管理工具
+FTP服务器	 ===						                                      --- FTP服务器
+我的电脑 --- 右击属性 --- 管理
+
+下载:
+www.thinkphp.cn/down.html
+luchanrong
+sun123456
+2693281934@qq.com
+
+验证码: 下载安装composer
+
+www.layui.com
 
 
-
-
+http://www.php.ai:8012/admin.php/admin/Account/login
+创建管理员数据表
+http://www.php.ai:8012/admin.php/admin/Test/index
 
 
 
