@@ -1,0 +1,21 @@
+https://blog.csdn.net/hyl999/article/details/97159350
+
+
+
+https://blog.csdn.net/weixin_43606809/article/details/105826692?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-1&spm=1001.2101.3001.4242
+
+
+
+https://blog.csdn.net/weixin_43299180/article/details/114326939
+
+
+
+原因：addRouter(),路由表只存在内存中，$router.options.router 是没有动态增加的
+   *      路由的，因为 vue router 主要是解决静态路由，路由表示构造函数初始化的
+
+
+matched[0].components.default
+
+
+
+https://www.cnblogs.com/woai3c/p/11052975.html

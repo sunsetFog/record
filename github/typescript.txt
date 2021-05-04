@@ -1,0 +1,54 @@
+typescript官网: https://www.tslang.cn/docs/home.html
+
+什么是typescript
+typescript 为 javaScript的超集,支持所有都JavaScript都语法,它很像JavaScript都强类型版本
+typescript 在编译期会去掉类型和特有语法，生成纯粹的JavaScript。
+
+优势：
+
+静态类型检查
+IDE 智能提示
+代码重构
+可读性
+
+Vue2.5+ Typescript 引入全面指南
+https://segmentfault.com/a/1190000011853167
+
+npm install typescript --save-dev
+npm install ts-loader --save-dev
+npm install vue-property-decorator --save
+webpack/css-loader/vue/vue-loader/vue-template-compiler/webpack-cli
+添加 tsconfig.json
+添加 tslint.json
+
+<script lang="ts">
+
+extensions: ['.js', '.vue', '.json',".ts", ".tsx"],
+
+
+
+
+
+
+uni.request({
+    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+    data: {
+        text: 'uni.request'
+    },
+    header: {
+        'custom-header': 'hello', //自定义请求头信息
+	'content-type':'application/json'
+    },
+    success: (res) => {
+        console.log(res.data);
+        this.text = 'request success';
+    }
+});
+
+
+
+
+
+
+
+
