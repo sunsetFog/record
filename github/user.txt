@@ -29,3 +29,35 @@
 
 6666
 9731
+
+
+欧易
+Lu36856
+13725717940
+
+
+
+table border
+去除
+.card-2 thead th:first-child, .card-2 thead th:last-child {
+  width: 50%;
+}
+.card thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+
+thead, tbody, tfoot, tr, td, th{
+border-width: 0;
+}
+
+
+
+参数一:文件所在目录
+参数二: 是否要查询子文件夹
+参数三:要匹配的文件的后缀,是一个正则表达式
+
+
+
+
+
