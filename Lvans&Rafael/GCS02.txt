@@ -1,4 +1,4 @@
-
+﻿
 
 
 https://github.com/sunsetFog/news.git
@@ -49,7 +49,8 @@ https://app.mockplus.com/app/KDH2JxOtQto/specs/design/DsB9nYIT2Wx
 
 http://miniactive.bobovip2.com/#/?name=yaboshoucun&id=42&userId=null
 
-测试环境：http://admin.bobovip2.com/
+测试环境：http://admin.bobovip2.com/    admin1  123456
+线上环境：http://admin.bobovip8.com/   账号：581725217   密码：shi909192   qq8809
 波波社区App下载：http://bobovip2.com/
 
 http://129.226.169.250/back/swagger-ui.html#/
@@ -63,8 +64,7 @@ pc: http://bobovip8.com
 动态活动：https://app.mockplus.com/app/KDH2JxOtQto/specs/design/DsB9nYIT2Wx
 九宫格抽奖：https://app.mockplus.com/s/-gSBrHgFwCR
 
-VUE_APP_BASE_API = 'http://bobovip2.com'
-VUE_APP_BASE_API = 'http://admin.bobovip2.com'
+
 
 
 模糊搜索
@@ -95,5 +95,32 @@ http://gitlab.bobovip8.com/bobo/webadmin.git
 http://gitlab.bobovip8.com/bobo/html.git
 
 
+线上-模板的url地址：http://miniactive.bobovip8.com/#/formwork
+测试-模板的url地址：http://miniactive.bobovip2.com/#/formwork
+上传接口：https://oss.bobovip8.com/bobo/upload
 
-http://miniactive.bobovip8.com/#/formwork?pageCode=1372822300834922496&inviteCode=null&relateType=10&relateId=1372822300834922496&isPc=0&isH5=1
+pc子活动:
+https://lanhuapp.com/url/EBJvc-hzUEe
+
+移动端活动链接：
+http://miniactive.bobovip2.com/#/formwork?pageCode=1372816311683383296&inviteCode=null&relateType=10&relateId=1372816311683383296
+pc活动链接：
+http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372819702329376768&inviteCode=null&relateType=10&relateId=1372819702329376768
+
+
+
+
+
+
+http://miniactive.bobovip2.com/#/formwork?relateId=1372816311683383296&inviteCode=undefined&pageCode=1372816311683383296&relateType=10
+
+http://miniactive.bobovip2.com/#/formwork&relateId=1372816311683383296&pageCode=1372816311683383296&relateType=10&inviteCode=undefined
+
+
+
+
+
+
+
+
+
