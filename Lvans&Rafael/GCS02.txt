@@ -53,8 +53,12 @@ http://miniactive.bobovip2.com/#/?name=yaboshoucun&id=42&userId=null
 
 测试环境：http://admin.bobovip2.com/    admin1  123456
 线上环境：http://admin.bobovip8.com/   账号：581725217   密码：shi909192   qq8809
+<<<<<<< HEAD
 测试-pc论坛：http://bobovip2.com/
 线上-pc论坛: http://bobovip8.com
+=======
+波波社区App下载：http://bobovip2.com/
+>>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 
 http://129.226.169.250/back/swagger-ui.html#/
 https://r8d9jk.axshare.com/
@@ -68,6 +72,7 @@ https://r8d9jk.axshare.com/
 九宫格抽奖：https://app.mockplus.com/s/-gSBrHgFwCR
 
 
+<<<<<<< HEAD
 https://chandao.bobovip8.com/zentao/my/
 Rafael
 Aa12345@
@@ -84,6 +89,8 @@ https://ag.bobovip8.com/management
 581668386      fengzi8898  线上
 
 
+=======
+>>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 
 
 模糊搜索
@@ -126,12 +133,18 @@ http://miniactive.bobovip2.com/#/formwork?pageCode=1372816311683383296&inviteCod
 pc活动链接：
 http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372819702329376768&inviteCode=null&relateType=10&relateId=1372819702329376768
 
+<<<<<<< HEAD
 旧活动：
 http://miniactive.bobovip2.com/#/special?name=yabo&communityId=1372816311683383296&inviteCode=419618&id=1
 
 http://zbhd.lyxz8.com/sys/login?userName=admin&password=111111
 
 http://miniactive.bobovip2.com/#/two?name=jinboshoucun
+=======
+
+
+
+>>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 
 
 http://miniactive.bobovip2.com/#/formwork?relateId=1372816311683383296&inviteCode=undefined&pageCode=1372816311683383296&relateType=10
@@ -140,6 +153,7 @@ http://miniactive.bobovip2.com/#/formwork&relateId=1372816311683383296&pageCode=
 
 
 
+<<<<<<< HEAD
 confluence 账号：
 http://cf.zb335.com/signup.action?token=676b091b7d1f0504
 rafael
@@ -149,3 +163,11 @@ lu123456
 https://chandao.bobovip8.com
 Rafael
 Rafael1234
+=======
+
+
+
+
+
+
+>>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c

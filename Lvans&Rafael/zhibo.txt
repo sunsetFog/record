@@ -2,6 +2,7 @@
 接口文档：
 http://zbhd.lyxz8.com/swagger-ui.html
 
+<<<<<<< HEAD
 https://gitlab.bobovip3.com/ 
 rafael
 rafael123456
@@ -14,6 +15,8 @@ admin 111111
 
 http://zbhd.lyxz8.com/sys/login?userName=admin&password=111111
 
+=======
+>>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 项目运行：
 http://192.168.1.102:8080
 
