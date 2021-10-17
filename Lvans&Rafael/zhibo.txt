@@ -2,6 +2,18 @@
 接口文档：
 http://zbhd.lyxz8.com/swagger-ui.html
 
+https://gitlab.bobovip3.com/ 
+rafael
+rafael123456
+
+演示测试环境：
+129.226.169.250/zbht
+sunny   123456
+
+admin 111111
+
+http://zbhd.lyxz8.com/sys/login?userName=admin&password=111111
+
 项目运行：
 http://192.168.1.102:8080
 
