@@ -19,9 +19,7 @@ https://app.mockplus.com/team/ffkykyjpzq
 2693281934@qq.com
 lu123456
 
-九游和凯发    https://lanhuapp.com/url/4cIA6
-https://lanhuapp.com/url/lGTHo-QeOxV------del
-jinbo和188    https://lanhuapp.com/url/iKMDO
+
 
 百度贴吧:  https://tieba.baidu.com
 波波社区原型：https://r8d9jk.axshare.com
@@ -34,15 +32,13 @@ rafale1199@@@----sun123456
 src\api\domain\test.js
 baseUrl: "http://admin.bobovip2.com/adminApi",
 
-https://mbvcnq.axshare.com/#id=ogjl4h&p=页面_1&g=1
-首页重新做了个，这个看下呢
-密码 987987
-https://r8d9jk.axshare.com/#id=0yej7j&p=社区详情&g=1
+
 
 社区论坛：
 下载波波社区App:
-http://bd.bobovip2.com/#/      13011112222     123456
+http://bd.bobovip2.com/#/
 https://bd.bobovip8.com/
+测试：13011112222     123456
 
 http://share.bobovip2.com/
 活动
@@ -53,14 +49,12 @@ http://miniactive.bobovip2.com/#/?name=yaboshoucun&id=42&userId=null
 
 测试环境：http://admin.bobovip2.com/    admin1  123456
 线上环境：http://admin.bobovip8.com/   账号：581725217   密码：shi909192   qq8809
-<<<<<<< HEAD
 测试-pc论坛：http://bobovip2.com/
-线上-pc论坛: http://bobovip8.com
-=======
-波波社区App下载：http://bobovip2.com/
->>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
+线上-pc论坛: http://bobovip1.com
 
 http://129.226.169.250/back/swagger-ui.html#/
+http://admin.bobovip2.com/adminApi/swagger-ui.html#/
+http://admin.bobovip2.com/adminApi/doc.html#/home
 https://r8d9jk.axshare.com/
 分享页
 测试：http://share.bobovip2.com/
@@ -72,25 +66,25 @@ https://r8d9jk.axshare.com/
 九宫格抽奖：https://app.mockplus.com/s/-gSBrHgFwCR
 
 
-<<<<<<< HEAD
 https://chandao.bobovip8.com/zentao/my/
 Rafael
 Aa12345@
 
 代理
-https://ag.bobovip2.com/management
+http://ag.bobovip2.com/management
 13333333333
 iam007
 581668386      fengzi8898
 13333333333
 111111
-13333333333    123456   测试
+
+测试
+13333333333
+123456
 https://ag.bobovip8.com/management
 581668386      fengzi8898  线上
 
 
-=======
->>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 
 
 模糊搜索
@@ -120,31 +114,37 @@ http://gitlab.bobovip8.com/bobo/webadmin.git
 
 http://gitlab.bobovip8.com/bobo/html.git
 
-
-线上-模板的url地址：http://miniactive.bobovip8.com/#/formwork
-测试-模板的url地址：http://miniactive.bobovip2.com/#/formwork
+线上-App模板的url地址：http://miniactive.bobovip8.com/#/formwork
+测试-App模板的url地址：http://miniactive.bobovip2.com/#/formwork
+线上-PC模板的url地址：http://miniactive.bobovip2.com/#/pcActivity
+测试-PC模板的url地址：http://miniactive.bobovip8.com/#/pcActivity
 上传接口：https://oss.bobovip8.com/bobo/upload
 
-pc子活动:
-https://lanhuapp.com/url/EBJvc-hzUEe
+
+
 
 移动端活动链接：
-http://miniactive.bobovip2.com/#/formwork?pageCode=1372816311683383296&inviteCode=null&relateType=10&relateId=1372816311683383296
+亚博体育：http://miniactive.bobovip2.com/#/formwork?pageCode=1372816311683383296&inviteCode=null&relateType=10&relateId=1372816311683383296
 pc活动链接：
-http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372819702329376768&inviteCode=null&relateType=10&relateId=1372819702329376768
+华体会：http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372819702329376768&inviteCode=null&relateType=10&relateId=1372819702329376768
+线上-华体会：http://miniactive.bobovip8.com/#/pcActivity?pageCode=1372819702329376768&inviteCode=null&relateType=10&relateId=1372819702329376768
+亚博体育：http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372816311683383296&inviteCode=null&relateType=10&relateId=1372816311683383296
 
-<<<<<<< HEAD
+乐鱼体育：http://miniactive.bobovip2.com/#/pcActivity?pageCode=1372817666300968960&inviteCode=null&relateType=10&relateId=1372817666300968960
+
 旧活动：
 http://miniactive.bobovip2.com/#/special?name=yabo&communityId=1372816311683383296&inviteCode=419618&id=1
+
+测试用：http://miniactive.bobovip2.com/#/special
+线上用：http://miniactive.bobovip8.com/#/special
+
+测试用：http://miniactive.bobovip2.com/#/pcActivity
+线上用：http://miniactive.bobovip8.com/#/pcActivity
+
 
 http://zbhd.lyxz8.com/sys/login?userName=admin&password=111111
 
 http://miniactive.bobovip2.com/#/two?name=jinboshoucun
-=======
-
-
-
->>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
 
 
 http://miniactive.bobovip2.com/#/formwork?relateId=1372816311683383296&inviteCode=undefined&pageCode=1372816311683383296&relateType=10
@@ -153,21 +153,91 @@ http://miniactive.bobovip2.com/#/formwork&relateId=1372816311683383296&pageCode=
 
 
 
-<<<<<<< HEAD
 confluence 账号：
 http://cf.zb335.com/signup.action?token=676b091b7d1f0504
 rafael
 lu123456
 
+社区游戏官网：https://botiantang.bobovip8.com/
 
-https://chandao.bobovip8.com
-Rafael
-Rafael1234
-=======
+利来 和记  永乐    凯时    KB
+
+http://miniactive.bobovip2.com/#/special?id=134&userId=null&communityId=1372818379970183168&inviteCode=undefined
+
+最近添加新的体育体育活动，太阳城，银河那些，已添加了
+后台管理系统修改了禅道Bug，添加tab标签的pc广告
+协助解决临时问题
+现在在做11月的活动，环球 天博 博鱼的更新
+
+App的banner活动页
+https://home.bobovip8.com/#/advert?type=1
+
+
+debug使用方法
+https://blog.csdn.net/qq_35392139/article/details/53883399
+
+
+https://92grc4.axshare.com  app
+https://i83a6l.axshare.com   后台
+https://mh4loy.axshare.com/  PC
+
+
+C:\Users\USER\Desktop\sunsetFog\news\static\picture\portrait
+
+
+单文件
+scss
+https://www.jianshu.com/p/84e14ade32b5/
+
+https://www.534kb.com/entry/register/?i_code=6888524
+https://www.kb177.app/?i_code=6888524
+
+
+说明：内容包括对入职以来的工作回顾、总结，对 公司企业文化的理解；阐述自己在工作中的优点及不足，对于不足之处，将如何改进；以及未来的工作规划等等：
+
+postman取token,post请求
+http://bobovip2.com/appApi/login/mobile?phoneCode=86&mobile=13777777777&deviceUuid=23423dsfasdfadsrwerdfadsfads&code=952700
+
+http://miniactive.bobovip2.com/#/turntable?token=1462036243566034944-e67539b92c0fdb387bacc4f5c886f149
+
+PC轮盘抽奖好了，可以测试了，配置PC论坛里记得带token喔
+token会过期，提示未登录时，换个有效的token就好
+H5轮盘抽奖: http://miniactive.bobovip2.com/#/turntable?token=1462346705658707968-7ea4c13e3a2238e6d4b1d03209462596
+PC轮盘抽奖: http://miniactive.bobovip2.com/#/pcTurntable?token=1462346705658707968-7ea4c13e3a2238e6d4b1d03209462596
 
 
 
 
+上传图片
+&&
+
+本周日报：
+1. 后台管理-跑马灯测试bug
+2. 后台管理-帖子广告已完成
+3. 后台管理-帖子推荐和广告推荐
+4. 12月份活动更新：亚博, 牛宝, 乐鱼, 华体会 , BOB, 博鱼, 火狐, 爱游戏
+
+本周日报：
+1.走马灯和帖子广告的拖行排序接口对接
+2.修改测试广告和推荐设置的bug
+3.12月份活动的更新：欧宝，天博，亚美，完美体育，kok，易倍体育
 
 
->>>>>>> 2a6a4d6d49722badea9048fab12711786c6bcd7c
+12月份活动已更新：欧宝，天博，亚美
+
+大佬们，12月份活动已更新：完美体育，kok，易倍体育
+
+
+
+
+https://zf0ekq.axshare.com
+app：    头衔啵币，评论置顶，app新版功能
+
+https://mh4loy.axshare.com
+ pc  ：   啵币头衔，评论置顶功能
+
+https://ar6i8s.axshare.com
+后台 ：头衔啵币，app新版广告推荐
+
+http://chandao.bobovip8.com/zentao/story-view-22.html
+禅道：app，pc端 转盘活动
