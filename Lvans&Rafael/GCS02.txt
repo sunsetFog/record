@@ -86,7 +86,6 @@ https://ag.bobovip8.com/management
 
 
 
-
 模糊搜索
 json编辑界面：
 https://aisuda.github.io/amis-editor-demo
@@ -157,6 +156,12 @@ confluence 账号：
 http://cf.zb335.com/signup.action?token=676b091b7d1f0504
 rafael
 lu123456
+confluence 账号：
+http://cf.bobovip8.com/signup.action?token=420ed0ca8bee4124
+rafael
+2693281934@qq.com
+123456
+http://cf.bobovip8.com/pages/viewpage.action?pageId=1409093
 
 社区游戏官网：https://botiantang.bobovip8.com/
 
@@ -202,14 +207,20 @@ http://miniactive.bobovip2.com/#/turntable?token=1462036243566034944-e67539b92c0
 
 PC轮盘抽奖好了，可以测试了，配置PC论坛里记得带token喔
 token会过期，提示未登录时，换个有效的token就好
-H5轮盘抽奖: http://miniactive.bobovip2.com/#/turntable?token=1462346705658707968-7ea4c13e3a2238e6d4b1d03209462596
-PC轮盘抽奖: http://miniactive.bobovip2.com/#/pcTurntable?token=1462346705658707968-7ea4c13e3a2238e6d4b1d03209462596
+H5轮盘抽奖: http://miniactive.bobovip2.com/#/turntable?token=127314411328245760-38de4bcba8e2bbca605e5aca56537af5
+PC轮盘抽奖: http://miniactive.bobovip2.com/#/pcTurntable?token=127314411328245760-38de4bcba8e2bbca605e5aca56537af5
 
 
 
 
 上传图片
 &&
+0,3,6,9
+2,5,8,11
+
+
+
+
 
 本周日报：
 1. 后台管理-跑马灯测试bug
@@ -222,12 +233,34 @@ PC轮盘抽奖: http://miniactive.bobovip2.com/#/pcTurntable?token=1462346705658
 2.修改测试广告和推荐设置的bug
 3.12月份活动的更新：欧宝，天博，亚美，完美体育，kok，易倍体育
 
+rafael本周日报：
+1.修改后台管理要上线的测试bug
+2.APP和PC新版罗盘抽奖
+3.12月份活动的更新：环球、AOA体育、KB体育
 
-12月份活动已更新：欧宝，天博，亚美
+rafael本周日报：
+1.协助解决问题
+2.PC新版罗盘的未登录逻辑完善
+3.罗盘抽奖对接用户自己的抽奖记录
+4.修改后台管理bug
 
-大佬们，12月份活动已更新：完美体育，kok，易倍体育
+rafael本周日报：
+1.常规广告app和pc添加必选校验
+2.协助解决平台活动问题
+3.后台管理小修改字体对齐bug
+
+2000---1000全部，降下两倍
+实际买了100吨---10吨票---90吨三七分
+
+实际    2000单价*100 = 20万
+上报100吨    1000单价*100吨 = 10万
+上报10吨     2000单价*10吨 = 2万
+
+2000*100
+1000*100
 
 
+export default require(`./${process.env.VUE_APP_BUILD_ENV}`).default
 
 
 https://zf0ekq.axshare.com
@@ -241,3 +274,6 @@ https://ar6i8s.axshare.com
 
 http://chandao.bobovip8.com/zentao/story-view-22.html
 禅道：app，pc端 转盘活动
+
+
+adName

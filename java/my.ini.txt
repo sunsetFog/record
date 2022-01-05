@@ -1,0 +1,33 @@
+[client]
+#端口号
+port = 3306
+#字符编码
+default-character-set=utf8
+
+[mysqld]
+#免安装目录
+basedir=D:\mysql-5.7.19-winx64\
+
+#数据目录
+datadir=D:\mysql-5.7.19-winx64\data\
+
+port = 3306
+
+#最大连接数
+max_connections=200
+
+#编码
+character-set-server=utf8
+
+
+#跳过安全检查，注销后，需要输入正确的用户和密码
+skip-grant-tables
+
+#改这个文件要停mysql，再开mysql，才生效
+
+
+
+
+
+
+
