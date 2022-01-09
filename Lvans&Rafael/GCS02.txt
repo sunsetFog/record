@@ -249,6 +249,12 @@ rafael本周日报：
 2.协助解决平台活动问题
 3.后台管理小修改字体对齐bug
 
+rafael本周日报：
+1.新版活动管理编写
+2.社区福利活动更新
+3.修改PC平台活动页logo
+4.修改后台导航菜单的返回按钮失效问题
+
 2000---1000全部，降下两倍
 实际买了100吨---10吨票---90吨三七分
 
@@ -276,4 +282,37 @@ http://chandao.bobovip8.com/zentao/story-view-22.html
 禅道：app，pc端 转盘活动
 
 
-adName
+拖行排序
+tab加其他
+栏位：活动编码
+编辑
+pc和App二选一
+常规才有编辑器
+
+pc和App二选一
+放大图
+3个活动置灰
+
+客户端：平台活动App，平台活动PC，福利管理App，福利管理PC
+
+
+
+https://www.npmjs.com/package/vueditor
+https://www.vue2editor.com/guide.html#modular-version
+
+Vue UI组件 开发框架 服务端 辅助工具 应用实例 Demo示例
+https://blog.csdn.net/xueyue616/article/details/82253057?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-1-82253057.pc_agg_new_rank&utm_term=Vueditor%E5%AE%9E%E4%BE%8B&spm=1000.2123.3001.4430
+
+
+
+推荐管理
+    社区推荐----下面接着
+    活动管理     url: "/community/activityCenter"
+    福利管理     url: "/community/welfareCenter"
+
+563*1892
+375*1262
+750*2523
+1125*3785
+1500*5046
+
