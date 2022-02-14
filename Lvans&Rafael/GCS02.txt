@@ -19,12 +19,16 @@ https://app.mockplus.com/team/ffkykyjpzq
 2693281934@qq.com
 lu123456
 
-
+figma账户
+Rafale
+2693281934@qq.com
+lu123456
 
 百度贴吧:  https://tieba.baidu.com
 波波社区原型：https://r8d9jk.axshare.com
 知乎
 
+http://gitlab.zb335.com/
 http://gitlab.bobovip8.com
 rafale1199
 rafale1199@@@----sun123456
@@ -211,49 +215,15 @@ H5轮盘抽奖: http://miniactive.bobovip2.com/#/turntable?token=127314411328245
 PC轮盘抽奖: http://miniactive.bobovip2.com/#/pcTurntable?token=127314411328245760-38de4bcba8e2bbca605e5aca56537af5
 
 
-
-
-上传图片
-&&
-0,3,6,9
-2,5,8,11
+http://miniactive.bobovip8.com/#/pcTurntable?token=127314411328245760-38de4bcba8e2bbca605e5aca56537af5
 
 
 
 
 
-本周日报：
-1. 后台管理-跑马灯测试bug
-2. 后台管理-帖子广告已完成
-3. 后台管理-帖子推荐和广告推荐
-4. 12月份活动更新：亚博, 牛宝, 乐鱼, 华体会 , BOB, 博鱼, 火狐, 爱游戏
 
-本周日报：
-1.走马灯和帖子广告的拖行排序接口对接
-2.修改测试广告和推荐设置的bug
-3.12月份活动的更新：欧宝，天博，亚美，完美体育，kok，易倍体育
 
-rafael本周日报：
-1.修改后台管理要上线的测试bug
-2.APP和PC新版罗盘抽奖
-3.12月份活动的更新：环球、AOA体育、KB体育
 
-rafael本周日报：
-1.协助解决问题
-2.PC新版罗盘的未登录逻辑完善
-3.罗盘抽奖对接用户自己的抽奖记录
-4.修改后台管理bug
-
-rafael本周日报：
-1.常规广告app和pc添加必选校验
-2.协助解决平台活动问题
-3.后台管理小修改字体对齐bug
-
-rafael本周日报：
-1.新版活动管理编写
-2.社区福利活动更新
-3.修改PC平台活动页logo
-4.修改后台导航菜单的返回按钮失效问题
 
 2000---1000全部，降下两倍
 实际买了100吨---10吨票---90吨三七分
@@ -282,12 +252,8 @@ http://chandao.bobovip8.com/zentao/story-view-22.html
 禅道：app，pc端 转盘活动
 
 
-拖行排序
-tab加其他
-栏位：活动编码
-编辑
-pc和App二选一
-常规才有编辑器
+
+没写：0，不关对话框
 
 pc和App二选一
 放大图
@@ -309,10 +275,64 @@ https://blog.csdn.net/xueyue616/article/details/82253057?utm_medium=distribute.p
     社区推荐----下面接着
     活动管理     url: "/community/activityCenter"
     福利管理     url: "/community/welfareCenter"
+http://miniactive.bobovip2.com/#/appActivity?id=138957503827415040&activityType=1&communityId=1372809438867488768&inviteCode=857121&userId=1437313607724433408&token=138942528484413440-f7115db8dcf71719b50cf21e6deba1af
 
-563*1892
-375*1262
-750*2523
-1125*3785
-1500*5046
+http://localhost:8081/#/appActivity?id=141155986315546624&communityId=1372818256418570240&activityType=5&inviteCode=&userId=
+res.data.data.customerUrl
 
+H5活动详情：
+http://localhost:8081/#/appActivity?id=140441064568918016&communityId=1372818379970183168&activityType=1&inviteCode=&userId=
+H5福利详情：
+http://localhost:8081/#/appWelfare?communityId=1372818379970183168&inviteCode=&userId=
+PC活动详情：
+http://localhost:8081/#/pcActivityPage?id=141155986315546624&communityId=1372818256418570240&activityType=5&inviteCode=&userId=
+H5波波社区福利：
+http://localhost:8081/#/communityWelfare?id=140355441594077184
+PC福利详情：
+http://localhost:8081/#/pcWelfare?&welfareId=140355441594077184&communityId=1372818379970183168&inviteCode=&userId=
+
+
+
+
+H5活动详情：
+http://miniactive.bobovip2.com/#/appActivity?id=140441064568918016&communityId=1372818379970183168&activityType=1&inviteCode=&userId=
+需要带的参数：活动id,  平台类型id，活动类型，邀请id，userId
+
+H5福利详情：
+http://miniactive.bobovip2.com/#/appWelfare?communityId=1372818379970183168&inviteCode=&userId=
+需要带的参数：平台类型id，邀请id，userId
+
+PC活动详情：
+http://miniactive.bobovip2.com/#/pcActivityPage?id=140441064568918016&communityId=1372818379970183168&activityType=1&inviteCode=&userId=
+需要带的参数：活动id,  平台类型id，活动类型，邀请id，userId
+
+H5波波社区福利：
+http://miniactive.bobovip2.com/#/communityWelfare?id=140771067496108032
+需要带的参数：福利id
+
+PC福利详情：
+http://miniactive.bobovip2.com/#/pcWelfare?&welfareId=140355441594077184&communityId=1372818379970183168&inviteCode=&userId=
+需要带的参数：福利id，平台类型id,  邀请id，userId
+
+
+video-logo
+go-room-btn 进入直播间按钮
+nvideo
+nplayer   ---  new NPlayer
+
+https://nplayer.com/
+https://nplayer.js.org/
+
+vue-video-player
+
+
+http://localhost:8068/back/agentApi/sys/login
+http://192.168.1.102:8081/agentApi/sys/login
+
+测试环境: http://zb335.com/
+19805060001
+user1231
+
+线上环境：https://bsty8.com/
+18510508041 18510508019
+user1231
