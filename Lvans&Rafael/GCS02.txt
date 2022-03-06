@@ -162,10 +162,11 @@ rafael
 lu123456
 confluence 账号：
 http://cf.bobovip8.com/signup.action?token=420ed0ca8bee4124
-rafael
-2693281934@qq.com
-123456
 http://cf.bobovip8.com/pages/viewpage.action?pageId=1409093
+http://cf.bobovip8.com/
+2693281934@qq.com
+rafael
+rafael123
 
 社区游戏官网：https://botiantang.bobovip8.com/
 
@@ -336,3 +337,7 @@ user1231
 线上环境：https://bsty8.com/
 18510508041 18510508019
 user1231
+
+阿里视频：https://help.aliyun.com/document_detail/295417.html
+
+
