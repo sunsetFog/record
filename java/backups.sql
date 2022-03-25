@@ -31,10 +31,12 @@ DROP TABLE IF EXISTS `goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `goods` (
-  `id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `date` date DEFAULT NULL,
+  `imgUrl` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  KEY `id` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +45,7 @@ CREATE TABLE `goods` (
 
 LOCK TABLES `goods` WRITE;
 /*!40000 ALTER TABLE `goods` DISABLE KEYS */;
-INSERT INTO `goods` VALUES (1,'安琪拉','2022-02-14');
+INSERT INTO `goods` VALUES (1,'芒果','2022-02-08','/img/avatorImages/1648105932906enterprise@2x.png'),(2,'荔枝','2022-04-20',NULL),(3,'香蕉','2022-03-24',NULL),(4,'嘎嘎嘎','2022-03-23','88'),(8,'北岸1','2022-03-29','54');
 /*!40000 ALTER TABLE `goods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,10 +85,20 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `id` int(11) DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
-  `address` varchar(255) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '用户名',
+  `password` varchar(100) COLLATE utf8_bin DEFAULT NULL COMMENT '密码',
+  `sex` tinyint(4) DEFAULT NULL COMMENT '性别',
+  `phone_num` char(15) COLLATE utf8_bin DEFAULT NULL COMMENT '手机号码',
+  `email` char(30) COLLATE utf8_bin DEFAULT NULL COMMENT '邮箱',
+  `birth` date DEFAULT NULL COMMENT '生日',
+  `introduction` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '介绍',
+  `location` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '哪里人',
+  `avator` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '头像',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +107,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'安琪拉','北京');
+INSERT INTO `user` VALUES (1,'rafael','123456',0,'17817836866','1456300075@qq.com','2022-03-10','噢耶','广东',NULL,'2022-03-25 22:44:28','2022-03-25 22:46:53');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +120,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-14 15:02:50
+-- Dump completed on 2022-03-26  0:29:13
