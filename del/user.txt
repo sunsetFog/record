@@ -66,64 +66,7 @@ http://admin.bobovip2.com/adminApi/web/activity/data/fetchData?pageCode=TEST&rel
 项目：huodong
 http://localhost:8080/#/formwork
 
-http://miniactive.bobovip8.com/#/formwork?name=yabo
+嘉欣：农历5.17
+覃春婷：新历11.10
 
-http://oss.bobovip8.com/bobo/2021/09/1632986747215265958.jpg
-
-activity_list.banner = [
-                    'http://' + commonObj.oss_host + activityObj.banner.bg,
-                    'http://' + commonObj.oss_host + activityObj.banner.img
-                ]
-                activity_list.logo = 'http://' + commonObj.oss_host + activityObj.logo;
-
-
-
-http://miniactive.bobovip2.com/#/formwork?communityId=社区id&inviteCode=邀请码
-
-http://miniactive.bobovip2.com/#/formwork?communityId=1372820772740923392&inviteCode=10
-
-http://miniactive.bobovip2.com/#/formwork?communityId=1372816311683383296&inviteCode=123
-
-http://miniactive.bobovip2.com/#/formwork?communityId=1372816311683383296&inviteCode=10
-
-
-http://miniactive.bobovip2.com/#/formwork?communityId=1372816311683383296&inviteCode=10
-
-
-https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.19-win64.zip
-
-
-
-
-
-http://admin.bobovip2.com/adminApi/web/activity/data/fetchData?pageCode=1372822300834922496&inviteCode=&relateType=10&relateId=1372822300834922496&isPc=1&isH5=0
-
-
-
-从亚博跳转：http://admin.bobovip2.com/adminApi/web/activity/data/to?communityId=1372816311683383296
-
-http://miniactive.bobovip2.com/#/formwork?communityId=1372816311683383296&pageCode=1372816311683383296&inviteCode=null&relateType=10&relateId=1372816311683383296&isPc=0&isH5=1
-
-
-https://app.mockplus.com/app/LQsbXe-hkt7/specs/design/XLASaKuApnP1
-
-http://admin.bobovip2.com/adminApi/web/activity/template/update
-
-http://miniactive.bobovip8.com/#/formwork
-
-http://miniactive.bobovip2.com/#/one?name=s11
-
-s11可以嵌套社区app了
-https://miniactive.bobovip8.com/#/one?name=s11
-
-99999
-http://miniactive.bobovip8.com/#/formwork?pageCode=1372822300834922496&inviteCode=null&relateType=10&relateId=1372822300834922496&isPc=0&isH5=1
-
-
-fields: "{\"schema\":{\"type\":\"object\",\"required\":[],\"properties\":{\"logo\":{\"title\":\"logo\",\"type\":\"string\",\"ui:widget\":\"UploadWidget\",\"ui:options\":{\"action\":\"http://oss.bobovip2.com/bobo/upload\"}},\"banner\":{\"title\":\"banner\",\"type\":\"string\",\"ui:widget\":\"UploadWidget\",\"ui:options\":{\"action\":\"http://oss.bobovip2.com/bobo/upload\"}}},\"ui:order\":[\"logo\",\"banner\"]},\"uiSchema\":{},\"formFooter\":{},\"formProps\":{\"labelWidth\":\"100px\",\"labelSuffix\":\"：\"}}"
-
-
-templateData: "{\"logo\":\"http://oss.bobovip2.com/bobo/2021/10/1633779279460042181.jpg\",\"banner\":\"http://oss.bobovip2.com/bobo/2021/10/1633779281630770151.jpg\",\"number_1633763316660x0\":9,\"activityList\":[{\"tableImg\":\"/bobo/2021/10/1633763234739464880.png\"}],\"date_number_1633759236433x0\":1632945600000,\"输入框\":\"收到\",\"就是个表格\":[[\"\",\"2列\",\"3列\",\"列\"],[\"\",\"\",\"\",null],[\"\",\"\",\"\",\"\"],[\"\",\"\",\"\",null]],\"Array\":[{},{}]}"
-
-
-http://admin.bobovip2.com/#/activity/formDesign?fields=%7B%22schema%22%3A%7B%22type%22%3A%22object%22,%22required%22%3A%5B%22title%22%5D,%22properties%22%3A%7B%22title%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E6%A0%87%E9%A2%98%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22dataRange%22%3A%7B%22title%22%3A%22Date%E8%8C%83%E5%9B%B4%28%E5%AD%97%E7%AC%A6%E4%B8%B2%29%22,%22type%22%3A%22array%22,%22format%22%3A%22date%22,%22items%22%3A%7B%22type%22%3A%22string%22%7D,%22ui%3Aoptions%22%3A%7B%22startPlaceholder%22%3A%22%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9C%9F%22,%22endPlaceholder%22%3A%22%E7%BB%93%E6%9D%9F%E6%97%A5%E6%9C%9F%22%7D%7D,%22recentPlayers%22%3A%7B%22title%22%3A%22%E6%9C%80%E8%BF%91%E7%8E%A9%E5%AE%B6%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22score%22%3A%7B%22title%22%3A%22%E7%94%A8%E6%88%B7%E8%AF%84%E5%88%86%22,%22type%22%3A%22object%22,%22required%22%3A%5B%5D,%22properties%22%3A%7B%22total%22%3A%7B%22title%22%3A%22%E6%80%BB%E5%88%86%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22disbursementSpeed%22%3A%7B%22title%22%3A%22%E5%87%BA%E6%AC%BE%E9%80%9F%E5%BA%A6%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22comprehensive%22%3A%7B%22title%22%3A%22%E7%BB%BC%E5%90%88%E8%AF%84%E5%88%86%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22activityIndex%22%3A%7B%22title%22%3A%22%E6%B4%BB%E8%B7%83%E6%8C%87%E6%95%B0%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D%7D,%22ui%3Aorder%22%3A%5B%22total%22,%22disbursementSpeed%22,%22comprehensive%22,%22activityIndex%22%5D%7D,%22activeList%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E5%88%97%E8%A1%A8%22,%22type%22%3A%22array%22,%22items%22%3A%7B%22type%22%3A%22object%22,%22required%22%3A%5B%5D,%22properties%22%3A%7B%22typeName%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E7%B1%BB%E5%9E%8B%22,%22type%22%3A%22string%22,%22ui%3Awidget%22%3A%22RadioWidget%22,%22enum%22%3A%5B%22%E9%A6%96%E5%AD%98%22,%22%E5%A4%8D%E5%AD%98%22,%22%E6%B5%81%E6%B0%B4%22,%22%E5%AE%9E%E7%89%A9%22,%22vip%22%5D,%22enumNames%22%3A%5B%22%E9%A6%96%E5%AD%98%22,%22%E5%A4%8D%E5%AD%98%22,%22%E6%B5%81%E6%B0%B4%22,%22%E5%AE%9E%E7%89%A9%22,%22vip%22%5D%7D,%22title%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E6%A0%87%E9%A2%98%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D,%22table%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E5%86%85%E5%AE%B9%22,%22type%22%3A%22table%22,%22ui%3Awidget%22%3A%22TableWidget%22%7D,%22theadBg%22%3A%7B%22title%22%3A%22%E8%A1%A8%E5%A4%B4%E8%83%8C%E6%99%AF%E8%89%B2%22,%22type%22%3A%22string%22,%22format%22%3A%22color%22%7D,%22theadColor%22%3A%7B%22title%22%3A%22%E8%A1%A8%E5%A4%B4%E5%AD%97%E4%BD%93%E9%A2%9C%E8%89%B2%22,%22type%22%3A%22string%22,%22format%22%3A%22color%22%7D,%22rules%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E8%AF%B4%E6%98%8E%22,%22type%22%3A%22array%22,%22items%22%3A%7B%22type%22%3A%22object%22,%22required%22%3A%5B%5D,%22properties%22%3A%7B%22remark%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E8%AF%B4%E6%98%8E%22,%22type%22%3A%22string%22,%22default%22%3A%22%E6%B4%BB%E5%8A%A8%E8%AF%B4%E6%98%8E%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D%7D,%22ui%3Aorder%22%3A%5B%22remark%22%5D%7D,%22uniqueItems%22%3Afalse%7D%7D,%22ui%3Aorder%22%3A%5B%22typeName%22,%22title%22,%22table%22,%22theadBg%22,%22theadColor%22,%22rules%22%5D%7D,%22uniqueItems%22%3Afalse%7D,%22activityRules%22%3A%7B%22title%22%3A%22%E6%B4%BB%E5%8A%A8%E6%80%BB%E8%AF%B4%E6%98%8E%22,%22type%22%3A%22array%22,%22items%22%3A%7B%22type%22%3A%22object%22,%22required%22%3A%5B%5D,%22properties%22%3A%7B%22remark%22%3A%7B%22title%22%3A%22%E6%80%BB%E8%AF%B4%E6%98%8E%22,%22type%22%3A%22string%22,%22ui%3Aoptions%22%3A%7B%22placeholder%22%3A%22%E8%AF%B7%E8%BE%93%E5%85%A5%22%7D%7D%7D,%22ui%3Aorder%22%3A%5B%22remark%22%5D%7D,%22uniqueItems%22%3Afalse%7D%7D,%22ui%3Aorder%22%3A%5B%22title%22,%22dataRange%22,%22recentPlayers%22,%22score%22,%22activeList%22,%22activityRules%22%5D%7D,%22uiSchema%22%3A%7B%7D,%22formFooter%22%3A%7B%7D,%22formProps%22%3A%7B%22labelWidth%22%3A%22100px%22,%22labelSuffix%22%3A%22%EF%BC%9A%22%7D%7D&publishUrl=%2Fweb%2Factivity%2Fdata%2FupdateByTypeAndId%3FrelateType%3D1%26relateId%3D1%26relateId2%3D1
+眼神犀利，言语停顿
