@@ -63,5 +63,13 @@ Cannot resolve plugin org.apache.maven.plugins:maven-resources-plugin:3.1.0
 Terminated with exit code 1
 
 
+登录密码加密
+BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+String passEncoded = encoder.encode(pass);
 
-C:\Users\USER\Desktop\sunsetFog\SpringBoot\img\avatorImages
+
+git reset --hard "9b6fcd5568ce1bd6bd71ba0e65ada6f837340630"
+git reset --hard "e25fd84b4b453b486a2b997f7b81d4f5c462997f"
+
+
+TempUser result = restTemplate.getForObject("http://localhost:8080/cs-admin/rest/getUser?userName=张三&amp;age=18", TempUser.class);
