@@ -1,75 +1,10 @@
 
-id: ''
-parentId: null
-path: '/'
-metaTitle: ''
-metaKey: ''
-import: ''
-
-
-
-
-MySQL 5.7.19详细下载安装配置教程
-
-
-https://www.lidihuo.com/springboot/springboot-intro.html
-
-
-spring.servlet.multipart.max-file-size=5MB
-spring.servlet.multipart.max-request-size=5MB
-
-
-
-https://github.com/Yin-Hongwei/music-website
-
-
-
-
-<!-- 上传下载需要设计到的jar包 -->
-<dependency>
-<groupId>commons-io</groupId>
-<artifactId>commons-io</artifactId>
-<version>2.6</version>
-</dependency>
-<dependency>
-<groupId>commons-fileupload</groupId>
-<artifactId>commons-fileupload</artifactId>
-<version>1.3.3</version>
-</dependency>
-<!--servlet-api导入高版本的-->
-<dependency>
-<groupId>javax.servlet</groupId>
-<artifactId>javax.servlet-api</artifactId>
-<version>4.0.1</version>
-</dependency>
-<!-- 图片处理类 -->
-<dependency>
-<groupId>net.coobird</groupId>
-<artifactId>thumbnailator</artifactId>
-<version>0.4.8</version>
-</dependency>
------------------------------------
-SpringBoot 文件或图片上传与下载
-https://blog.51cto.com/u_15102970/2638663
-
-
-
-
-ERROR StatusLogger Log4j2 could not find a logging implementation. Please add log4j-core to the classpath. Using SimpleLogger to log to the console.
-错误状态记录器Log4j2找不到日志记录实现。请将log4j core添加到类路径。使用SimpleLogger登录控制台
-
-
-Cannot resolve plugin org.apache.maven.plugins:maven-resources-plugin:3.1.0
-Terminated with exit code 1
-
-
-登录密码加密
+1.登录密码加密
 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 String passEncoded = encoder.encode(pass);
 
+2.图片一张上传多次
 
-git reset --hard "9b6fcd5568ce1bd6bd71ba0e65ada6f837340630"
-git reset --hard "e25fd84b4b453b486a2b997f7b81d4f5c462997f"
+3.日期查询条件
 
-
-TempUser result = restTemplate.getForObject("http://localhost:8080/cs-admin/rest/getUser?userName=张三&amp;age=18", TempUser.class);
+4.想查寻一条，结果n条
