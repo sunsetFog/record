@@ -5,6 +5,9 @@ String passEncoded = encoder.encode(pass);
 
 2.图片一张上传多次
 
-3.日期查询条件
+
 
 4.想查寻一条，结果n条
+
+删除，商品添加
+
