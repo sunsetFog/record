@@ -11,3 +11,23 @@ String passEncoded = encoder.encode(pass);
 
 删除，商品添加
 
+mysql-8.0.30-winx64
+cd /D D:\mysql-8.0.30-winx64\bin
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root123456';
+
+11--枚举
+12--异常处理
+13--数组字符串
+14--集合
+15--泛型
+16--坦克
+17--线程
+18--坦克
+19--IO
+20--坦克
+21--net
+23--JDBC
+25--JDBC
+27--正则表达式
+28--棋盘
