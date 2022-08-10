@@ -60,7 +60,7 @@ SELECT * FROM salgrade;
 SELECT * FROM dept;
 SELECT * FROM emp;
 
-# 演示group by + having
+# 演示group by分组 + having过滤
 GROUP by用于对查询的结果分组统计, (示意图)
 -- having子句用于限制分组显示结果.
 -- ?如何显示每个部门的平均工资和最高工资
@@ -95,6 +95,10 @@ SELECT AVG(sal) AS avg_sal, deptno
 		
 		
 
+-- 解决MySQL5.7版本之后使用GROUP BY语句时报错
+-- https://blog.csdn.net/weixin_41948075/article/details/123656114     最后重启
+SELECT @@global.sql_mode
+SET @@global.sql_mode ='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'
 
 
 

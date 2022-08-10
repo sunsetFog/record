@@ -3,6 +3,7 @@
 -- USER()	查询用户
 -- 可以查看登录到mysql的有哪些用户，以及登录的IP
 SELECT USER() FROM DUAL; -- 用户@IP地址
+
 -- DATABASE()	查询当前使用数据库名称
 SELECT DATABASE();
 

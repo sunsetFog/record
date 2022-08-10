@@ -1,7 +1,8 @@
 -- 演示字符串相关函数的使用  ， 使用emp表来演示
 -- CHARSET(str)	返回字串字符集
 SELECT CHARSET(ename) FROM emp;
--- CONCAT (string2  [,... ])	连接字串, 将多个列拼接成一列
+
+-- CONCAT (string2  [,... ])	连接字符串, 将多个列拼接成一列
 SELECT CONCAT(ename, ' 工作是 ', job) FROM emp;
 
 -- INSTR (string ,substring )	返回substring在string中出现的位置,没有返回0
@@ -12,13 +13,13 @@ SELECT INSTR('hanshunping', 'ping') FROM DUAL;
 SELECT UCASE(ename) FROM emp;
 
 -- LCASE (string2 )	转换成小写
-
 SELECT LCASE(ename) FROM emp;
+
 -- LEFT (string2 ,length )	从string2中的左边起取length个字符
 -- RIGHT (string2 ,length )	从string2中的右边起取length个字符
 SELECT LEFT(ename, 2) FROM emp;
 
--- LENGTH (string )	string长度[按照字节]
+-- LENGTH (string )	字符串长度[按照字节]
 SELECT LENGTH(ename) FROM emp;
 -- REPLACE (str ,search_str ,replace_str ) 	
 -- 在str中用replace_str替换search_str
@@ -27,7 +28,8 @@ SELECT ename, REPLACE(job,'MANAGER', '经理')  FROM emp;
 
 -- STRCMP (string1 ,string2 )	逐字符比较两字串大小
 SELECT STRCMP('hsp', 'hsp') FROM DUAL;
--- SUBSTRING (str , position  [,length ])	
+
+-- SUBSTRING (str , position  [,length ]) 截取字符串	
 -- 从str的position开始【从1开始计算】,取length个字符
 -- 从ename 列的第一个位置开始取出2个字符
 SELECT SUBSTRING(ename, 1, 2) FROM emp;

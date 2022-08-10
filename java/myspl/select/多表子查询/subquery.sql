@@ -24,19 +24,20 @@ SELECT *
 	1. 查询到10号部门有哪些工作
 	2. 把上面查询的结果当做子查询使用
 */
-select distinct job 
-	from emp 
-	where deptno = 10;
+SELECT DISTINCT job 
+	FROM emp 
+	WHERE deptno = 10;
 	
 --  下面语句完整
+# 不等于写法：<>   !=
 
-select ename, job, sal, deptno
-	from emp
-	where job in (
+SELECT ename, job, sal, deptno
+	FROM emp
+	WHERE job IN (
 		SELECT DISTINCT job 
 		FROM emp 
 		WHERE deptno = 10
-	) and deptno <> 10 
+	) AND deptno <> 10 
 	
 
 	

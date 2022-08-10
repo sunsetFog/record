@@ -13,6 +13,7 @@ SELECT ename, sal FROM emp
 SELECT ename, sal FROM emp
 	WHERE ename LIKE '__O%'
 
+# 知识点：is null 判断是否为空
 -- ■ 如何显示没有上级的雇员的情况
 SELECT * FROM emp
 	WHERE mgr IS NULL;

@@ -1,5 +1,6 @@
 -- all 和 any的使用
 
+# 知识点：all  比所有都高  相当于  max()比最高的高
 -- 请思考:显示工资比部门30的所有员工的工资高的员工的姓名、工资和部门号
 
 SELECT ename, sal, deptno
@@ -18,11 +19,12 @@ SELECT ename, sal, deptno
 			WHERE deptno = 30
 		) 
 
+# 知识点：any  比所有其中一个高  相当于    min()比最低的高
 -- 请思考:如何显示工资比部门30的其中一个员工的工资高的员工的姓名、工资和部门号
 
 SELECT ename, sal, deptno
 	FROM emp
-	WHERE sal > any(
+	WHERE sal > ANY(
 		SELECT sal 
 			FROM emp
 			WHERE deptno = 30
@@ -31,7 +33,7 @@ SELECT ename, sal, deptno
  SELECT ename, sal, deptno
 	FROM emp
 	WHERE sal > (
-		SELECT min(sal) 
+		SELECT MIN(sal) 
 			FROM emp
 			WHERE deptno = 30
 		)

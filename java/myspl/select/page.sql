@@ -1,4 +1,7 @@
 -- 分页查询
+
+# 语句顺序：where、group by、having、order by、limit
+
 -- 按雇员的id号升序取出， 每页显示3条记录，请分别显示 第1页，第2页，第3页
 
 -- 第1页
@@ -13,7 +16,7 @@ SELECT * FROM emp
 SELECT * FROM emp 
 	ORDER BY empno 
 	LIMIT 6, 3;
--- 推导一个公式 
+-- 推导一个公式    缺陷：还得查询总行数，再计算总页数
 SELECT * FROM emp
 	ORDER BY empno 
 	LIMIT 每页显示记录数 * (第几页-1) , 每页显示记录数

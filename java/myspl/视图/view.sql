@@ -1,4 +1,5 @@
 -- 视图的使用
+# 视图即是映射表，虚拟的表，基表和视图表互相影响
 -- 创建一个视图emp_view01，只能查询emp表的(empno、ename, job 和 deptno ) 信息
 
 -- 创建视图
@@ -46,6 +47,7 @@ DESC emp_view01
 CREATE VIEW emp_view02
 	AS
 	SELECT empno, ename FROM emp_view01
+	
 	
 SELECT * FROM emp_view02
 

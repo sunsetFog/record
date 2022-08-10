@@ -18,13 +18,23 @@ INSERT INTO student(id,NAME,chinese,english,math) VALUES(8,'韩信',45,65,99);
 
 
 -- 查询表中所有学生的信息。
+# *所有字段
 SELECT * FROM student;
+-- 默认 表名.列名
+SELECT student.name, student.chinese FROM student;
+-- 表 表别名    所有字段: 表.*
+SELECT biao.* FROM student biao;
+
 -- 查询表中所有学生的姓名和对应的英语成绩。
 SELECT `name`,english FROM student;
+
+
 -- 过滤表中重复数据 distinct 。
 SELECT DISTINCT english FROM student;
+
 -- 要查询的记录，每个字段都相同，才会去重
 SELECT DISTINCT `name`, english FROM student;
+
 
 
 

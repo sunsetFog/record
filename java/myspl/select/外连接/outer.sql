@@ -44,18 +44,18 @@ SELECT * FROM exam;
 
 -- 使用左连接
 -- （显示所有人的成绩，如果没有成绩，也要显示该人的姓名和id号,成绩显示为空）
-
+-- 只显示条件成立的，引出外连接
 SELECT `name`, stu.id, grade
 	FROM stu, exam
 	WHERE stu.id = exam.id;
 	
--- 改成左外连接
+-- 改成左外连接   左表完全显示  合并  条件成立的行
 SELECT `name`, stu.id, grade
 	FROM stu LEFT JOIN exam
 	ON stu.id = exam.id;
 	
 	
--- 使用右外连接（显示所有成绩，如果没有名字匹配，显示空)
+-- 使用右外连接（显示所有成绩，如果没有名字匹配，显示空)      右表完全显示  合并  条件成立的行
 -- 即：右边的表(exam) 和左表没有匹配的记录，也会把右表的记录显示出来
 SELECT `name`, stu.id, grade
 	FROM stu RIGHT JOIN exam

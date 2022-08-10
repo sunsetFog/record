@@ -1,9 +1,13 @@
 # 演示流程控制语句
 
+# 知识点：if(条件，true返回，false返回)
 # IF(expr1,expr2,expr3)	如果expr1为True ,则返回 expr2 否则返回 expr3
 SELECT IF(TRUE, '北京', '上海') FROM DUAL;
+
+# 知识点：ifnull(不是null返回，是null返回)
 # IFNULL(expr1,expr2)	如果expr1不为空NULL,则返回expr1,否则返回expr2
 SELECT IFNULL( NULL, '韩顺平教育') FROM DUAL;
+
 # SELECT CASE WHEN expr1 THEN expr2 WHEN expr3 THEN expr4 ELSE expr5 END; [类似多重分支.]
 # 如果expr1 为TRUE,则返回expr2,如果expr2 为t, 返回 expr4, 否则返回 expr5
 

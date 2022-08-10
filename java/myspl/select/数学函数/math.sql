@@ -4,8 +4,10 @@ SELECT * FROM DUAL;
 
 -- ABS(num)	绝对值
 SELECT ABS(-10) FROM DUAL;
+
 -- BIN (decimal_number )十进制转二进制
 SELECT BIN(10) FROM DUAL;
+
 -- CEILING (number2 )	向上取整, 得到比num2 大的最小整数
 SELECT CEILING(-1.1) FROM DUAL;
 
@@ -25,6 +27,7 @@ SELECT FORMAT(78.125458,2) FROM DUAL;
 
 -- LEAST (number , number2  [,..])	求最小值
 SELECT LEAST(0,1, -10, 4) FROM DUAL;
+
 -- MOD (numerator ,denominator )	求余
 SELECT MOD(10, 3) FROM DUAL;
 

@@ -8,7 +8,7 @@
 -- job	字符型
 -- Salary	小数型
 -- resume	文本型
--- 最后character set 字符集 collate 排序规则 engine 存储引擎
+-- 最后character set 字符集 collate 排序规则/校对规则 engine 存储引擎
 CREATE TABLE `staff` (
 	id INT,
 	`name` VARCHAR(32),
