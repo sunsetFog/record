@@ -33,3 +33,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'root123456';
 25--JDBC
 27--正则表达式
 28--棋盘
+
+java -jar ./core-0.0.1-SNAPSHOT.jar
+http://39.108.174.145:8062/sky/season/list
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
