@@ -37,3 +37,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'root123456';
 java -jar ./core-0.0.1-SNAPSHOT.jar
 http://39.108.174.145:8062/sky/season/list
 firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
+redis-benchmark -h 127.0.0.1 -p 6369 -c 100 -n 100000
+
+redis-server /home/redis-6.0.6/redis.conf
