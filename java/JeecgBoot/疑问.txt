@@ -1,0 +1,4 @@
+HttpServletRequest req
+QueryGenerator.initQueryWrapper(user, req.getParameterMap());
+//部门ID
+        String departId = req.getParameter("departId");
