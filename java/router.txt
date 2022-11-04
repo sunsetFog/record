@@ -75,6 +75,14 @@ container_name: localhost
 MYSQL_ROOT_PASSWORD: root
 MYSQL_ROOT_PASSWORD: root123456
 
-container_name: jeecg-boot-mysql
-container_name: jeecg-boot-redis
-container_name: jeecg-boot-system
+C:\Users\USER\Desktop\sunsetFog\66666\jeecgboot-vue3\src\views\demo\jeecg\JUploadDemo.vue
+
+demo/jeecg/JUploadDemo
+\jeecgboot-vue3\src\components\jeecg\comment\useComment.ts
+/jeecg/index
+
+http://localhost:3100/comp/third/context-menu
+
+C:\Users\USER\Desktop\sunsetFog\66666\jeecgboot-vue3\src\views\demo\jeecg\index.vue
+
+comp/third/bingo
