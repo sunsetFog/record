@@ -1,0 +1,23 @@
+apache maven安装教程 https://blog.csdn.net/chou_kawaii/article/details/118485951
+
+下载maven安装包   官方下载地址：http://maven.apache.org/download.cgi
+apache-maven-3.8.6-bin.zip     解压D盘     D:\apache-maven-3.8.6
+
+配置Maven环境变量
+变量名：M2_HOME
+ 变量值：D:\tool\apache-maven-3.3.3
+找到path环境变量，添加   ;%M2_HOME%\bin;
+
+打开dos窗口运行mvn -v 
+
+创建文件夹(仓库位置)  D:\Maven\repo
+
+修改D:\apache-maven-3.8.6\conf\settings.xml
+<settings里加入
+<localRepository>D:\Maven\repo</localRepository>
+
+复制 D:\apache-maven-3.8.6\conf\settings.xml  到 D:\Maven\settings.xml
+
+
+控制台输入: mvn help:system
+D:\Maven\repo下面会出现很多文件，这些文件就是maven从中央仓库下载到本地仓库的文件
