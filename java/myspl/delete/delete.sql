@@ -15,5 +15,6 @@ DELETE FROM `staff` WHERE id IN(1,2);
 
 SELECT * FROM staff
 
--- 要删除这个表
+-- 要删除这个表，判断表存在就删除
 DROP TABLE staff;
+DROP TABLE IF EXISTS staff;

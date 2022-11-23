@@ -23,6 +23,8 @@ SHOW CREATE DATABASE `hsp_db01`
 #删除数据库指令
 DROP DATABASE hsp_db01
 
+#选择使用的数据库
+USE hsp_db01
 
 
 
