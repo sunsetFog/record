@@ -5,7 +5,6 @@
 # mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n > d:\\文件名.sql
 mysqldump -u root -p -B db_news > d:\\backups.sql
 
-mysqldump -u root -p -B ecshop > d:\\ecshop.sql
 
 
 #恢复数据库(注意：进入Mysql命令行再执行)    bin目录 》管理终端

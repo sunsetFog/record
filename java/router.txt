@@ -85,7 +85,8 @@ http://localhost:3100/comp/third/context-menu
 
 C:\Users\USER\Desktop\sunsetFog\66666\jeecgboot-vue3\src\views\demo\jeecg\index.vue
 
-java -jar ./core-0.0.1-SNAPSHOT.jar
+java -jar ./news-system-1.0-SNAPSHOT.jar
+java -jar ./MyBatisPlus-1.0-SNAPSHOT.jar
 
 http://localhost:8080/jeecg-boot/sys/common/static/logs\20221126\userImportExcelErrorLog20221126015429105.txt
 fileName: "userImportExcelErrorLog20221126015429105.txt"
@@ -93,3 +94,32 @@ fileUrl: "/sys/common/static/logs\\20221126\\userImportExcelErrorLog202211260154
 msg: "总上传行数：4，已导入行数：0，错误行数：4"
 
 file:/opt/upFiles
+BirdsApplication
+
+application.yaml
+
+
+server:
+  port: 7003
+
+
+# eureka（读：尤里卡）服务器配置   启动后访问：http://localhost:7001/   自我保护机制：访问界面的红色警告是客户端掉线，每30秒监控到
+#eureka:
+##  实例化
+#  instance:
+##    实例名称 实现集群映射3个eureka-server，C:\Windows\System32\drivers\etc\Hosts
+##    127.0.0.1   localhost
+##    127.0.0.1   eureka7001.com
+##    127.0.0.1   eureka7002.com
+#    hostname: localhost
+##    hostname: eureka7001.com
+##    hostname: eureka7002.com
+#  client:
+##    表示是否注册自己到eureka注册中心
+#    register-with-eureka: false
+##    自己是否为注册中心
+#    fetch-registry: false
+##    监控页面
+#    service-url:
+##      集群，连接另外eureka-server写法：http://localhost:7003/eureka/, http://localhost:7004/eureka/
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
