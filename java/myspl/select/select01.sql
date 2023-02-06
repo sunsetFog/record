@@ -35,6 +35,9 @@ SELECT DISTINCT english FROM student;
 -- 要查询的记录，每个字段都相同，才会去重
 SELECT DISTINCT `name`, english FROM student;
 
+-- 查看MySQL 版本
+SELECT VERSION();
+
 
 
 

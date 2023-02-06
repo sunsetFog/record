@@ -123,3 +123,6 @@ server:
 #    service-url:
 ##      集群，连接另外eureka-server写法：http://localhost:7003/eureka/, http://localhost:7004/eureka/
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+utilities
+practical

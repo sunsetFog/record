@@ -26,6 +26,14 @@ CREATE TABLE `account`(
 SELECT @@tx_isolation
 -- 查看系统当前隔离级别
 SELECT @@global.tx_isolation
+
+-- |     隔离级别     | 脏读 | 不可重复读 | 幻读 |
+-- | :--------------: | :--: | :--------: | :--: |
+-- | READ-UNCOMMITTED |  √   |     √      |  √   |
+-- |  READ-COMMITTED  |  ×   |     √      |  √   |
+-- | REPEATABLE-READ  |  ×   |     ×      |  √   |
+-- |   SERIALIZABLE   |  ×   |     ×      |  ×   |
+
 -- 设置当前会话隔离级别
 SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 -- 设置系统当前隔离级别
