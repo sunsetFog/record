@@ -41,3 +41,18 @@ Vue中computed和watch的区别?
 2.watch支持异步
 
 action如何异步操作？
+
+
+vue组件更新机制
+indexDB
+网页卡性能优化
+slot插槽
+切换皮肤
+
+vh vw
+
+鹿泉区金熊汽车销售部
+
+rafael_lu
+ABC123456
+2693281934@qq.com
