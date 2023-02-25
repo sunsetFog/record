@@ -109,3 +109,7 @@ D:\bingo\shuju\…Ëº∆Õº\my-react\src\redux\reduces\home.js
 
 git config --global http.postBuffer 2813163520 
 2813163520 
+
+/nice/lifeCycle
+rafael123456
+/app/docs
