@@ -7,6 +7,7 @@
 省/市/县联动：import AreaSelector from 'components/Business/AreaSelector'
 import FormLayout from 'components/Basic/FormLayout'
 
+2693281934@qq.com
 
 您好，非常高兴的通知您，公司已经决定录用您为本公司职员，现需麻烦您填写一份信息表！此资料仅用于员工出现紧急情况时联系亲属，证件地址和现住地址要求是真实的，电话号码需正常使用，空号，无法接通，关机的，一律不符合要求,公司承诺会严格管理员工个人信息   
  
