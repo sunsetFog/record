@@ -56,3 +56,7 @@ vh vw
 rafael_lu
 ABC123456
 2693281934@qq.com
+
+git config --global user.email "2693281934@qq.com"
+git config --global user.name "sunsetFog"
+
