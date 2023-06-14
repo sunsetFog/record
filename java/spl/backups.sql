@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.30, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: db_news
 -- ------------------------------------------------------
--- Server version	8.0.30
+-- Server version	5.7.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -19,7 +19,7 @@
 -- Current Database: `db_news`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db_news` /*!40100 DEFAULT CHARACTER SET latin1 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `db_news` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
 USE `db_news`;
 
@@ -29,18 +29,18 @@ USE `db_news`;
 
 DROP TABLE IF EXISTS `cms_help`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_help` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
-  `show_status` int DEFAULT NULL,
+  `show_status` int(11) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `read_count` int DEFAULT NULL,
+  `read_count` int(11) DEFAULT NULL,
   `content` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='帮助表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,16 +58,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_help_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_help_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL COMMENT '分类图标',
-  `help_count` int DEFAULT NULL COMMENT '专题数量',
-  `show_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `help_count` int(11) DEFAULT NULL COMMENT '专题数量',
+  `show_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='帮助分类表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='帮助分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,17 +85,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_member_report`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_member_report` (
-  `id` bigint DEFAULT NULL,
-  `report_type` int DEFAULT NULL COMMENT '举报类型：0->商品评价；1->话题内容；2->用户评论',
+  `id` bigint(20) DEFAULT NULL,
+  `report_type` int(11) DEFAULT NULL COMMENT '举报类型：0->商品评价；1->话题内容；2->用户评论',
   `report_member_name` varchar(100) DEFAULT NULL COMMENT '举报人',
   `create_time` datetime DEFAULT NULL,
   `report_object` varchar(100) DEFAULT NULL,
-  `report_status` int DEFAULT NULL COMMENT '举报状态：0->未处理；1->已处理',
-  `handle_status` int DEFAULT NULL COMMENT '处理结果：0->无效；1->有效；2->恶意',
+  `report_status` int(11) DEFAULT NULL COMMENT '举报状态：0->未处理；1->已处理',
+  `handle_status` int(11) DEFAULT NULL COMMENT '处理结果：0->无效；1->有效；2->恶意',
   `note` varchar(200) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='用户举报表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户举报表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,16 +113,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_prefrence_area`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_prefrence_area` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `sub_title` varchar(255) DEFAULT NULL,
   `pic` varbinary(500) DEFAULT NULL COMMENT '展示图片',
-  `sort` int DEFAULT NULL,
-  `show_status` int DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
+  `show_status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='优选专区';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='优选专区';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -141,13 +141,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_prefrence_area_product_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_prefrence_area_product_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `prefrence_area_id` bigint DEFAULT NULL,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `prefrence_area_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3 COMMENT='优选专区和产品关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='优选专区和产品关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,26 +166,26 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_subject` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) DEFAULT NULL,
   `title` varchar(100) DEFAULT NULL,
   `pic` varchar(500) DEFAULT NULL COMMENT '专题主图',
-  `product_count` int DEFAULT NULL COMMENT '关联产品数量',
-  `recommend_status` int DEFAULT NULL,
+  `product_count` int(11) DEFAULT NULL COMMENT '关联产品数量',
+  `recommend_status` int(11) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `collect_count` int DEFAULT NULL,
-  `read_count` int DEFAULT NULL,
-  `comment_count` int DEFAULT NULL,
+  `collect_count` int(11) DEFAULT NULL,
+  `read_count` int(11) DEFAULT NULL,
+  `comment_count` int(11) DEFAULT NULL,
   `album_pics` varchar(1000) DEFAULT NULL COMMENT '画册图片用逗号分割',
   `description` varchar(1000) DEFAULT NULL,
-  `show_status` int DEFAULT NULL COMMENT '显示状态：0->不显示；1->显示',
+  `show_status` int(11) DEFAULT NULL COMMENT '显示状态：0->不显示；1->显示',
   `content` text,
-  `forward_count` int DEFAULT NULL COMMENT '转发数',
+  `forward_count` int(11) DEFAULT NULL COMMENT '转发数',
   `category_name` varchar(200) DEFAULT NULL COMMENT '专题分类名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='专题表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='专题表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,16 +204,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_subject_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_subject_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL COMMENT '分类图标',
-  `subject_count` int DEFAULT NULL COMMENT '专题数量',
-  `show_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `subject_count` int(11) DEFAULT NULL COMMENT '专题数量',
+  `show_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='专题分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='专题分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,17 +232,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_subject_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_subject_comment` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `subject_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject_id` bigint(20) DEFAULT NULL,
   `member_nick_name` varchar(255) DEFAULT NULL,
   `member_icon` varchar(255) DEFAULT NULL,
   `content` varchar(1000) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `show_status` int DEFAULT NULL,
+  `show_status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='专题评论表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='专题评论表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -260,13 +260,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_subject_product_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_subject_product_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `subject_id` bigint DEFAULT NULL,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3 COMMENT='专题商品关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='专题商品关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -285,22 +285,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_topic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_topic` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `attend_count` int DEFAULT NULL COMMENT '参与人数',
-  `attention_count` int DEFAULT NULL COMMENT '关注人数',
-  `read_count` int DEFAULT NULL,
+  `attend_count` int(11) DEFAULT NULL COMMENT '参与人数',
+  `attention_count` int(11) DEFAULT NULL COMMENT '关注人数',
+  `read_count` int(11) DEFAULT NULL,
   `award_name` varchar(100) DEFAULT NULL COMMENT '奖品名称',
   `attend_type` varchar(100) DEFAULT NULL COMMENT '参与方式',
   `content` text COMMENT '话题内容',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='话题表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='话题表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -318,16 +318,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_topic_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_topic_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL COMMENT '分类图标',
-  `subject_count` int DEFAULT NULL COMMENT '专题数量',
-  `show_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `subject_count` int(11) DEFAULT NULL COMMENT '专题数量',
+  `show_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='话题分类表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='话题分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -345,17 +345,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `cms_topic_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cms_topic_comment` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `member_nick_name` varchar(255) DEFAULT NULL,
-  `topic_id` bigint DEFAULT NULL,
+  `topic_id` bigint(20) DEFAULT NULL,
   `member_icon` varchar(255) DEFAULT NULL,
   `content` varchar(1000) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `show_status` int DEFAULT NULL,
+  `show_status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='专题评论表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='专题评论表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -373,20 +373,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `goods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `goods` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
-  `img_url` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `img_url` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `version` int DEFAULT '1' COMMENT '乐观锁',
-  `deleted` int DEFAULT '0' COMMENT '逻辑删除',
+  `version` int(11) DEFAULT '1' COMMENT '乐观锁',
+  `deleted` int(11) DEFAULT '0' COMMENT '逻辑删除',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_name` (`name`),
   KEY `tong_url` (`img_url`),
   KEY `tong_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=169 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,13 +405,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_cart_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_cart_item` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
-  `product_sku_id` bigint DEFAULT NULL,
-  `member_id` bigint DEFAULT NULL,
-  `quantity` int DEFAULT NULL COMMENT '购买数量',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
+  `product_sku_id` bigint(20) DEFAULT NULL,
+  `member_id` bigint(20) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL COMMENT '购买数量',
   `price` decimal(10,2) DEFAULT NULL COMMENT '添加到购物车的价格',
   `product_pic` varchar(1000) DEFAULT NULL COMMENT '商品主图',
   `product_name` varchar(500) DEFAULT NULL COMMENT '商品名称',
@@ -420,13 +420,13 @@ CREATE TABLE `oms_cart_item` (
   `member_nickname` varchar(500) DEFAULT NULL COMMENT '会员昵称',
   `create_date` datetime DEFAULT NULL COMMENT '创建时间',
   `modify_date` datetime DEFAULT NULL COMMENT '修改时间',
-  `delete_status` int DEFAULT '0' COMMENT '是否删除',
-  `product_category_id` bigint DEFAULT NULL COMMENT '商品分类',
+  `delete_status` int(11) DEFAULT '0' COMMENT '是否删除',
+  `product_category_id` bigint(20) DEFAULT NULL COMMENT '商品分类',
   `product_brand` varchar(200) DEFAULT NULL,
   `product_sn` varchar(200) DEFAULT NULL,
   `product_attr` varchar(500) DEFAULT NULL COMMENT '商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 COMMENT='购物车表';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='购物车表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -445,12 +445,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_company_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_company_address` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `address_name` varchar(200) DEFAULT NULL COMMENT '地址名称',
-  `send_status` int DEFAULT NULL COMMENT '默认发货地址：0->否；1->是',
-  `receive_status` int DEFAULT NULL COMMENT '是否默认收货地址：0->否；1->是',
+  `send_status` int(11) DEFAULT NULL COMMENT '默认发货地址：0->否；1->是',
+  `receive_status` int(11) DEFAULT NULL COMMENT '是否默认收货地址：0->否；1->是',
   `name` varchar(64) DEFAULT NULL COMMENT '收发货人姓名',
   `phone` varchar(64) DEFAULT NULL COMMENT '收货人电话',
   `province` varchar(64) DEFAULT NULL COMMENT '省/直辖市',
@@ -458,7 +458,7 @@ CREATE TABLE `oms_company_address` (
   `region` varchar(64) DEFAULT NULL COMMENT '区',
   `detail_address` varchar(200) DEFAULT NULL COMMENT '详细地址',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='公司收发货地址表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='公司收发货地址表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -477,11 +477,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order` (
-  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '订单id',
-  `member_id` bigint NOT NULL,
-  `coupon_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '订单id',
+  `member_id` bigint(20) NOT NULL,
+  `coupon_id` bigint(20) DEFAULT NULL,
   `order_sn` varchar(64) DEFAULT NULL COMMENT '订单编号',
   `create_time` datetime DEFAULT NULL COMMENT '提交时间',
   `member_username` varchar(64) DEFAULT NULL COMMENT '用户帐号',
@@ -492,17 +492,17 @@ CREATE TABLE `oms_order` (
   `integration_amount` decimal(10,2) DEFAULT NULL COMMENT '积分抵扣金额',
   `coupon_amount` decimal(10,2) DEFAULT NULL COMMENT '优惠券抵扣金额',
   `discount_amount` decimal(10,2) DEFAULT NULL COMMENT '管理员后台调整订单使用的折扣金额',
-  `pay_type` int DEFAULT NULL COMMENT '支付方式：0->未支付；1->支付宝；2->微信',
-  `source_type` int DEFAULT NULL COMMENT '订单来源：0->PC订单；1->app订单',
-  `status` int DEFAULT NULL COMMENT '订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单',
-  `order_type` int DEFAULT NULL COMMENT '订单类型：0->正常订单；1->秒杀订单',
+  `pay_type` int(11) DEFAULT NULL COMMENT '支付方式：0->未支付；1->支付宝；2->微信',
+  `source_type` int(11) DEFAULT NULL COMMENT '订单来源：0->PC订单；1->app订单',
+  `status` int(11) DEFAULT NULL COMMENT '订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单',
+  `order_type` int(11) DEFAULT NULL COMMENT '订单类型：0->正常订单；1->秒杀订单',
   `delivery_company` varchar(64) DEFAULT NULL COMMENT '物流公司(配送方式)',
   `delivery_sn` varchar(64) DEFAULT NULL COMMENT '物流单号',
-  `auto_confirm_day` int DEFAULT NULL COMMENT '自动确认时间（天）',
-  `integration` int DEFAULT NULL COMMENT '可以获得的积分',
-  `growth` int DEFAULT NULL COMMENT '可以活动的成长值',
+  `auto_confirm_day` int(11) DEFAULT NULL COMMENT '自动确认时间（天）',
+  `integration` int(11) DEFAULT NULL COMMENT '可以获得的积分',
+  `growth` int(11) DEFAULT NULL COMMENT '可以活动的成长值',
   `promotion_info` varchar(100) DEFAULT NULL COMMENT '活动信息',
-  `bill_type` int DEFAULT NULL COMMENT '发票类型：0->不开发票；1->电子发票；2->纸质发票',
+  `bill_type` int(11) DEFAULT NULL COMMENT '发票类型：0->不开发票；1->电子发票；2->纸质发票',
   `bill_header` varchar(200) DEFAULT NULL COMMENT '发票抬头',
   `bill_content` varchar(200) DEFAULT NULL COMMENT '发票内容',
   `bill_receiver_phone` varchar(32) DEFAULT NULL COMMENT '收票人电话',
@@ -515,16 +515,16 @@ CREATE TABLE `oms_order` (
   `receiver_region` varchar(32) DEFAULT NULL COMMENT '区',
   `receiver_detail_address` varchar(200) DEFAULT NULL COMMENT '详细地址',
   `note` varchar(500) DEFAULT NULL COMMENT '订单备注',
-  `confirm_status` int DEFAULT NULL COMMENT '确认收货状态：0->未确认；1->已确认',
-  `delete_status` int NOT NULL DEFAULT '0' COMMENT '删除状态：0->未删除；1->已删除',
-  `use_integration` int DEFAULT NULL COMMENT '下单时使用的积分',
+  `confirm_status` int(11) DEFAULT NULL COMMENT '确认收货状态：0->未确认；1->已确认',
+  `delete_status` int(11) NOT NULL DEFAULT '0' COMMENT '删除状态：0->未删除；1->已删除',
+  `use_integration` int(11) DEFAULT NULL COMMENT '下单时使用的积分',
   `payment_time` datetime DEFAULT NULL COMMENT '支付时间',
   `delivery_time` datetime DEFAULT NULL COMMENT '发货时间',
   `receive_time` datetime DEFAULT NULL COMMENT '确认收货时间',
   `comment_time` datetime DEFAULT NULL COMMENT '评价时间',
   `modify_time` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb3 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='订单表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -543,31 +543,31 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order_item`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order_item` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `order_id` bigint DEFAULT NULL COMMENT '订单id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) DEFAULT NULL COMMENT '订单id',
   `order_sn` varchar(64) DEFAULT NULL COMMENT '订单编号',
-  `product_id` bigint DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
   `product_pic` varchar(500) DEFAULT NULL,
   `product_name` varchar(200) DEFAULT NULL,
   `product_brand` varchar(200) DEFAULT NULL,
   `product_sn` varchar(64) DEFAULT NULL,
   `product_price` decimal(10,2) DEFAULT NULL COMMENT '销售价格',
-  `product_quantity` int DEFAULT NULL COMMENT '购买数量',
-  `product_sku_id` bigint DEFAULT NULL COMMENT '商品sku编号',
+  `product_quantity` int(11) DEFAULT NULL COMMENT '购买数量',
+  `product_sku_id` bigint(20) DEFAULT NULL COMMENT '商品sku编号',
   `product_sku_code` varchar(50) DEFAULT NULL COMMENT '商品sku条码',
-  `product_category_id` bigint DEFAULT NULL COMMENT '商品分类id',
+  `product_category_id` bigint(20) DEFAULT NULL COMMENT '商品分类id',
   `promotion_name` varchar(200) DEFAULT NULL COMMENT '商品促销名称',
   `promotion_amount` decimal(10,2) DEFAULT NULL COMMENT '商品促销分解金额',
   `coupon_amount` decimal(10,2) DEFAULT NULL COMMENT '优惠券优惠分解金额',
   `integration_amount` decimal(10,2) DEFAULT NULL COMMENT '积分优惠分解金额',
   `real_amount` decimal(10,2) DEFAULT NULL COMMENT '该商品经过优惠后的分解金额',
-  `gift_integration` int DEFAULT '0',
-  `gift_growth` int DEFAULT '0',
+  `gift_integration` int(11) DEFAULT '0',
+  `gift_growth` int(11) DEFAULT '0',
   `product_attr` varchar(500) DEFAULT NULL COMMENT '商品销售属性:[{"key":"颜色","value":"颜色"},{"key":"容量","value":"4G"}]',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb3 COMMENT='订单中所包含的商品';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COMMENT='订单中所包含的商品';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -586,16 +586,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order_operate_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order_operate_history` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `order_id` bigint DEFAULT NULL COMMENT '订单id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) DEFAULT NULL COMMENT '订单id',
   `operate_man` varchar(100) DEFAULT NULL COMMENT '操作人：用户；系统；后台管理员',
   `create_time` datetime DEFAULT NULL COMMENT '操作时间',
-  `order_status` int DEFAULT NULL COMMENT '订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单',
+  `order_status` int(11) DEFAULT NULL COMMENT '订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单',
   `note` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb3 COMMENT='订单操作历史记录';
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COMMENT='订单操作历史记录';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -614,25 +614,25 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order_return_apply`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order_return_apply` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `order_id` bigint DEFAULT NULL COMMENT '订单id',
-  `company_address_id` bigint DEFAULT NULL COMMENT '收货地址表id',
-  `product_id` bigint DEFAULT NULL COMMENT '退货商品id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `order_id` bigint(20) DEFAULT NULL COMMENT '订单id',
+  `company_address_id` bigint(20) DEFAULT NULL COMMENT '收货地址表id',
+  `product_id` bigint(20) DEFAULT NULL COMMENT '退货商品id',
   `order_sn` varchar(64) DEFAULT NULL COMMENT '订单编号',
   `create_time` datetime DEFAULT NULL COMMENT '申请时间',
   `member_username` varchar(64) DEFAULT NULL COMMENT '会员用户名',
   `return_amount` decimal(10,2) DEFAULT NULL COMMENT '退款金额',
   `return_name` varchar(100) DEFAULT NULL COMMENT '退货人姓名',
   `return_phone` varchar(100) DEFAULT NULL COMMENT '退货人电话',
-  `status` int DEFAULT NULL COMMENT '申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝',
+  `status` int(11) DEFAULT NULL COMMENT '申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝',
   `handle_time` datetime DEFAULT NULL COMMENT '处理时间',
   `product_pic` varchar(500) DEFAULT NULL COMMENT '商品图片',
   `product_name` varchar(200) DEFAULT NULL COMMENT '商品名称',
   `product_brand` varchar(200) DEFAULT NULL COMMENT '商品品牌',
   `product_attr` varchar(500) DEFAULT NULL COMMENT '商品销售属性：颜色：红色；尺码：xl;',
-  `product_count` int DEFAULT NULL COMMENT '退货数量',
+  `product_count` int(11) DEFAULT NULL COMMENT '退货数量',
   `product_price` decimal(10,2) DEFAULT NULL COMMENT '商品单价',
   `product_real_price` decimal(10,2) DEFAULT NULL COMMENT '商品实际支付单价',
   `reason` varchar(200) DEFAULT NULL COMMENT '原因',
@@ -644,7 +644,7 @@ CREATE TABLE `oms_order_return_apply` (
   `receive_time` datetime DEFAULT NULL COMMENT '收货时间',
   `receive_note` varchar(500) DEFAULT NULL COMMENT '收货备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COMMENT='订单退货申请';
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='订单退货申请';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -663,15 +663,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order_return_reason`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order_return_reason` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL COMMENT '退货类型',
-  `sort` int DEFAULT NULL,
-  `status` int DEFAULT NULL COMMENT '状态：0->不启用；1->启用',
+  `sort` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL COMMENT '状态：0->不启用；1->启用',
   `create_time` datetime DEFAULT NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COMMENT='退货原因表';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='退货原因表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -690,16 +690,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `oms_order_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oms_order_setting` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `flash_order_overtime` int DEFAULT NULL COMMENT '秒杀订单超时关闭时间(分)',
-  `normal_order_overtime` int DEFAULT NULL COMMENT '正常订单超时时间(分)',
-  `confirm_overtime` int DEFAULT NULL COMMENT '发货后自动确认收货时间（天）',
-  `finish_overtime` int DEFAULT NULL COMMENT '自动完成交易时间，不能申请售后（天）',
-  `comment_overtime` int DEFAULT NULL COMMENT '订单完成后自动好评时间（天）',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `flash_order_overtime` int(11) DEFAULT NULL COMMENT '秒杀订单超时关闭时间(分)',
+  `normal_order_overtime` int(11) DEFAULT NULL COMMENT '正常订单超时时间(分)',
+  `confirm_overtime` int(11) DEFAULT NULL COMMENT '发货后自动确认收货时间（天）',
+  `finish_overtime` int(11) DEFAULT NULL COMMENT '自动完成交易时间，不能申请售后（天）',
+  `comment_overtime` int(11) DEFAULT NULL COMMENT '订单完成后自动好评时间（天）',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='订单设置表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='订单设置表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -718,15 +718,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `operation2222`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `operation2222` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `operation_code` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
-  `operation_name` varchar(150) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `operation_code` varchar(150) COLLATE utf8_bin DEFAULT NULL,
+  `operation_name` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   `disabled` tinyint(1) DEFAULT '0' COMMENT '禁用true,隐藏false',
   `hidden` tinyint(1) DEFAULT '0' COMMENT '隐藏true,禁用false',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -745,16 +745,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_album`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_album` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
   `cover_pic` varchar(1000) DEFAULT NULL,
-  `pic_count` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `pic_count` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='相册表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='相册表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -772,13 +772,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_album_pic`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_album_pic` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `album_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `album_id` bigint(20) DEFAULT NULL,
   `pic` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='画册图片表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='画册图片表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -796,21 +796,21 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_brand` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
   `first_letter` varchar(8) DEFAULT NULL COMMENT '首字母',
-  `sort` int DEFAULT NULL,
-  `factory_status` int DEFAULT NULL COMMENT '是否为品牌制造商：0->不是；1->是',
-  `show_status` int DEFAULT NULL,
-  `product_count` int DEFAULT NULL COMMENT '产品数量',
-  `product_comment_count` int DEFAULT NULL COMMENT '产品评论数量',
+  `sort` int(11) DEFAULT NULL,
+  `factory_status` int(11) DEFAULT NULL COMMENT '是否为品牌制造商：0->不是；1->是',
+  `show_status` int(11) DEFAULT NULL,
+  `product_count` int(11) DEFAULT NULL COMMENT '产品数量',
+  `product_comment_count` int(11) DEFAULT NULL COMMENT '产品评论数量',
   `logo` varchar(255) DEFAULT NULL COMMENT '品牌logo',
   `big_pic` varchar(255) DEFAULT NULL COMMENT '专区大图',
   `brand_story` text COMMENT '品牌故事',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb3 COMMENT='品牌表';
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8 COMMENT='品牌表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -829,25 +829,25 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_comment` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `member_nick_name` varchar(255) DEFAULT NULL,
   `product_name` varchar(255) DEFAULT NULL,
-  `star` int DEFAULT NULL COMMENT '评价星数：0->5',
+  `star` int(11) DEFAULT NULL COMMENT '评价星数：0->5',
   `member_ip` varchar(64) DEFAULT NULL COMMENT '评价的ip',
   `create_time` datetime DEFAULT NULL,
-  `show_status` int DEFAULT NULL,
+  `show_status` int(11) DEFAULT NULL,
   `product_attribute` varchar(255) DEFAULT NULL COMMENT '购买时的商品属性',
-  `collect_couont` int DEFAULT NULL,
-  `read_count` int DEFAULT NULL,
+  `collect_couont` int(11) DEFAULT NULL,
+  `read_count` int(11) DEFAULT NULL,
   `content` text,
   `pics` varchar(1000) DEFAULT NULL COMMENT '上传图片地址，以逗号隔开',
   `member_icon` varchar(255) DEFAULT NULL COMMENT '评论用户头像',
-  `replay_count` int DEFAULT NULL,
+  `replay_count` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='商品评价表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品评价表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -865,17 +865,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_comment_replay`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_comment_replay` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `comment_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `comment_id` bigint(20) DEFAULT NULL,
   `member_nick_name` varchar(255) DEFAULT NULL,
   `member_icon` varchar(255) DEFAULT NULL,
   `content` varchar(1000) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `type` int DEFAULT NULL COMMENT '评论人员类型；0->会员；1->管理员',
+  `type` int(11) DEFAULT NULL COMMENT '评论人员类型；0->会员；1->管理员',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='产品评价回复表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品评价回复表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -893,18 +893,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_feight_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_feight_template` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
-  `charge_type` int DEFAULT NULL COMMENT '计费类型:0->按重量；1->按件数',
+  `charge_type` int(11) DEFAULT NULL COMMENT '计费类型:0->按重量；1->按件数',
   `first_weight` decimal(10,2) DEFAULT NULL COMMENT '首重kg',
   `first_fee` decimal(10,2) DEFAULT NULL COMMENT '首费（元）',
   `continue_weight` decimal(10,2) DEFAULT NULL,
   `continme_fee` decimal(10,2) DEFAULT NULL,
   `dest` varchar(255) DEFAULT NULL COMMENT '目的地（省、市）',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='运费模版';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='运费模版';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -922,15 +922,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_member_price`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_member_price` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
-  `member_level_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
+  `member_level_id` bigint(20) DEFAULT NULL,
   `member_price` decimal(10,2) DEFAULT NULL COMMENT '会员价格',
   `member_level_name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=267 DEFAULT CHARSET=utf8mb3 COMMENT='商品会员价格表';
+) ENGINE=InnoDB AUTO_INCREMENT=267 DEFAULT CHARSET=utf8 COMMENT='商品会员价格表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -949,36 +949,36 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `brand_id` bigint DEFAULT NULL,
-  `product_category_id` bigint DEFAULT NULL,
-  `feight_template_id` bigint DEFAULT NULL,
-  `product_attribute_category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `brand_id` bigint(20) DEFAULT NULL,
+  `product_category_id` bigint(20) DEFAULT NULL,
+  `feight_template_id` bigint(20) DEFAULT NULL,
+  `product_attribute_category_id` bigint(20) DEFAULT NULL,
   `name` varchar(64) NOT NULL,
   `pic` varchar(255) DEFAULT NULL,
   `product_sn` varchar(64) NOT NULL COMMENT '货号',
-  `delete_status` int DEFAULT NULL COMMENT '删除状态：0->未删除；1->已删除',
-  `publish_status` int DEFAULT NULL COMMENT '上架状态：0->下架；1->上架',
-  `new_status` int DEFAULT NULL COMMENT '新品状态:0->不是新品；1->新品',
-  `recommand_status` int DEFAULT NULL COMMENT '推荐状态；0->不推荐；1->推荐',
-  `verify_status` int DEFAULT NULL COMMENT '审核状态：0->未审核；1->审核通过',
-  `sort` int DEFAULT NULL COMMENT '排序',
-  `sale` int DEFAULT NULL COMMENT '销量',
+  `delete_status` int(11) DEFAULT NULL COMMENT '删除状态：0->未删除；1->已删除',
+  `publish_status` int(11) DEFAULT NULL COMMENT '上架状态：0->下架；1->上架',
+  `new_status` int(11) DEFAULT NULL COMMENT '新品状态:0->不是新品；1->新品',
+  `recommand_status` int(11) DEFAULT NULL COMMENT '推荐状态；0->不推荐；1->推荐',
+  `verify_status` int(11) DEFAULT NULL COMMENT '审核状态：0->未审核；1->审核通过',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
+  `sale` int(11) DEFAULT NULL COMMENT '销量',
   `price` decimal(10,2) DEFAULT NULL,
   `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '促销价格',
-  `gift_growth` int DEFAULT '0' COMMENT '赠送的成长值',
-  `gift_point` int DEFAULT '0' COMMENT '赠送的积分',
-  `use_point_limit` int DEFAULT NULL COMMENT '限制使用的积分数',
+  `gift_growth` int(11) DEFAULT '0' COMMENT '赠送的成长值',
+  `gift_point` int(11) DEFAULT '0' COMMENT '赠送的积分',
+  `use_point_limit` int(11) DEFAULT NULL COMMENT '限制使用的积分数',
   `sub_title` varchar(255) DEFAULT NULL COMMENT '副标题',
   `description` text COMMENT '商品描述',
   `original_price` decimal(10,2) DEFAULT NULL COMMENT '市场价',
-  `stock` int DEFAULT NULL COMMENT '库存',
-  `low_stock` int DEFAULT NULL COMMENT '库存预警值',
+  `stock` int(11) DEFAULT NULL COMMENT '库存',
+  `low_stock` int(11) DEFAULT NULL COMMENT '库存预警值',
   `unit` varchar(16) DEFAULT NULL COMMENT '单位',
   `weight` decimal(10,2) DEFAULT NULL COMMENT '商品重量，默认为克',
-  `preview_status` int DEFAULT NULL COMMENT '是否为预告商品：0->不是；1->是',
+  `preview_status` int(11) DEFAULT NULL COMMENT '是否为预告商品：0->不是；1->是',
   `service_ids` varchar(64) DEFAULT NULL COMMENT '以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮',
   `keywords` varchar(255) DEFAULT NULL,
   `note` varchar(255) DEFAULT NULL,
@@ -989,12 +989,12 @@ CREATE TABLE `pms_product` (
   `detail_mobile_html` text COMMENT '移动端网页详情',
   `promotion_start_time` datetime DEFAULT NULL COMMENT '促销开始时间',
   `promotion_end_time` datetime DEFAULT NULL COMMENT '促销结束时间',
-  `promotion_per_limit` int DEFAULT NULL COMMENT '活动限购数量',
-  `promotion_type` int DEFAULT NULL COMMENT '促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购',
+  `promotion_per_limit` int(11) DEFAULT NULL COMMENT '活动限购数量',
+  `promotion_type` int(11) DEFAULT NULL COMMENT '促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购',
   `brand_name` varchar(255) DEFAULT NULL COMMENT '品牌名称',
   `product_category_name` varchar(255) DEFAULT NULL COMMENT '商品分类名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3 COMMENT='商品信息';
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COMMENT='商品信息';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1013,22 +1013,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_attribute`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_attribute` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_attribute_category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_attribute_category_id` bigint(20) DEFAULT NULL,
   `name` varchar(64) DEFAULT NULL,
-  `select_type` int DEFAULT NULL COMMENT '属性选择类型：0->唯一；1->单选；2->多选',
-  `input_type` int DEFAULT NULL COMMENT '属性录入方式：0->手工录入；1->从列表中选取',
+  `select_type` int(11) DEFAULT NULL COMMENT '属性选择类型：0->唯一；1->单选；2->多选',
+  `input_type` int(11) DEFAULT NULL COMMENT '属性录入方式：0->手工录入；1->从列表中选取',
   `input_list` varchar(255) DEFAULT NULL COMMENT '可选值列表，以逗号隔开',
-  `sort` int DEFAULT NULL COMMENT '排序字段：最高的可以单独上传图片',
-  `filter_type` int DEFAULT NULL COMMENT '分类筛选样式：1->普通；1->颜色',
-  `search_type` int DEFAULT NULL COMMENT '检索类型；0->不需要进行检索；1->关键字检索；2->范围检索',
-  `related_status` int DEFAULT NULL COMMENT '相同属性产品是否关联；0->不关联；1->关联',
-  `hand_add_status` int DEFAULT NULL COMMENT '是否支持手动新增；0->不支持；1->支持',
-  `type` int DEFAULT NULL COMMENT '属性的类型；0->规格；1->参数',
+  `sort` int(11) DEFAULT NULL COMMENT '排序字段：最高的可以单独上传图片',
+  `filter_type` int(11) DEFAULT NULL COMMENT '分类筛选样式：1->普通；1->颜色',
+  `search_type` int(11) DEFAULT NULL COMMENT '检索类型；0->不需要进行检索；1->关键字检索；2->范围检索',
+  `related_status` int(11) DEFAULT NULL COMMENT '相同属性产品是否关联；0->不关联；1->关联',
+  `hand_add_status` int(11) DEFAULT NULL COMMENT '是否支持手动新增；0->不支持；1->支持',
+  `type` int(11) DEFAULT NULL COMMENT '属性的类型；0->规格；1->参数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3 COMMENT='商品属性参数表';
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='商品属性参数表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1047,14 +1047,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_attribute_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_attribute_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) DEFAULT NULL,
-  `attribute_count` int DEFAULT '0' COMMENT '属性数量',
-  `param_count` int DEFAULT '0' COMMENT '参数数量',
+  `attribute_count` int(11) DEFAULT '0' COMMENT '属性数量',
+  `param_count` int(11) DEFAULT '0' COMMENT '参数数量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COMMENT='产品属性分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='产品属性分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1073,14 +1073,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_attribute_value`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_attribute_value` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
-  `product_attribute_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
+  `product_attribute_id` bigint(20) DEFAULT NULL,
   `value` varchar(64) DEFAULT NULL COMMENT '手动添加规格或参数的值，参数单值，规格有多个时以逗号隔开',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8mb3 COMMENT='存储产品参数信息的表';
+) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8 COMMENT='存储产品参数信息的表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1099,22 +1099,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `parent_id` bigint DEFAULT NULL COMMENT '上机分类的编号：0表示一级分类',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `parent_id` bigint(20) DEFAULT NULL COMMENT '上机分类的编号：0表示一级分类',
   `name` varchar(64) DEFAULT NULL,
-  `level` int DEFAULT NULL COMMENT '分类级别：0->1级；1->2级',
-  `product_count` int DEFAULT NULL,
+  `level` int(11) DEFAULT NULL COMMENT '分类级别：0->1级；1->2级',
+  `product_count` int(11) DEFAULT NULL,
   `product_unit` varchar(64) DEFAULT NULL,
-  `nav_status` int DEFAULT NULL COMMENT '是否显示在导航栏：0->不显示；1->显示',
-  `show_status` int DEFAULT NULL COMMENT '显示状态：0->不显示；1->显示',
-  `sort` int DEFAULT NULL,
+  `nav_status` int(11) DEFAULT NULL COMMENT '是否显示在导航栏：0->不显示；1->显示',
+  `show_status` int(11) DEFAULT NULL COMMENT '显示状态：0->不显示；1->显示',
+  `sort` int(11) DEFAULT NULL,
   `icon` varchar(255) DEFAULT NULL COMMENT '图标',
   `keywords` varchar(255) DEFAULT NULL,
   `description` text COMMENT '描述',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3 COMMENT='产品分类';
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COMMENT='产品分类';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1133,13 +1133,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_category_attribute_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_category_attribute_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_category_id` bigint DEFAULT NULL,
-  `product_attribute_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_category_id` bigint(20) DEFAULT NULL,
+  `product_attribute_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb3 COMMENT='产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='产品的分类和属性的关系表，用于设置分类筛选条件（只支持一级分类）';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1158,14 +1158,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_full_reduction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_full_reduction` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `full_price` decimal(10,2) DEFAULT NULL,
   `reduce_price` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb3 COMMENT='产品满减表(只针对同商品)';
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8 COMMENT='产品满减表(只针对同商品)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1184,15 +1184,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_ladder`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_ladder` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
-  `count` int DEFAULT NULL COMMENT '满足的商品数量',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
+  `count` int(11) DEFAULT NULL COMMENT '满足的商品数量',
   `discount` decimal(10,2) DEFAULT NULL COMMENT '折扣',
   `price` decimal(10,2) DEFAULT NULL COMMENT '折后价格',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8mb3 COMMENT='产品阶梯价格表(只针对同商品)';
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COMMENT='产品阶梯价格表(只针对同商品)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1211,22 +1211,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_operate_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_operate_log` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `price_old` decimal(10,2) DEFAULT NULL,
   `price_new` decimal(10,2) DEFAULT NULL,
   `sale_price_old` decimal(10,2) DEFAULT NULL,
   `sale_price_new` decimal(10,2) DEFAULT NULL,
-  `gift_point_old` int DEFAULT NULL COMMENT '赠送的积分',
-  `gift_point_new` int DEFAULT NULL,
-  `use_point_limit_old` int DEFAULT NULL,
-  `use_point_limit_new` int DEFAULT NULL,
+  `gift_point_old` int(11) DEFAULT NULL COMMENT '赠送的积分',
+  `gift_point_new` int(11) DEFAULT NULL,
+  `use_point_limit_old` int(11) DEFAULT NULL,
+  `use_point_limit_new` int(11) DEFAULT NULL,
   `operate_man` varchar(64) DEFAULT NULL COMMENT '操作人',
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1244,16 +1244,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_product_vertify_record`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_product_vertify_record` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `vertify_man` varchar(64) DEFAULT NULL COMMENT '审核人',
-  `status` int DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
   `detail` varchar(255) DEFAULT NULL COMMENT '反馈详情',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COMMENT='商品审核记录';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='商品审核记录';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1272,21 +1272,21 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `pms_sku_stock`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pms_sku_stock` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `sku_code` varchar(64) NOT NULL COMMENT 'sku编码',
   `price` decimal(10,2) DEFAULT NULL,
-  `stock` int DEFAULT '0' COMMENT '库存',
-  `low_stock` int DEFAULT NULL COMMENT '预警库存',
+  `stock` int(11) DEFAULT '0' COMMENT '库存',
+  `low_stock` int(11) DEFAULT NULL COMMENT '预警库存',
   `pic` varchar(255) DEFAULT NULL COMMENT '展示图片',
-  `sale` int DEFAULT NULL COMMENT '销量',
+  `sale` int(11) DEFAULT NULL COMMENT '销量',
   `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '单品促销价格',
-  `lock_stock` int DEFAULT '0' COMMENT '锁定库存',
+  `lock_stock` int(11) DEFAULT '0' COMMENT '锁定库存',
   `sp_data` varchar(500) DEFAULT NULL COMMENT '商品销售属性，json格式',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8mb3 COMMENT='sku的库存';
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8 COMMENT='sku的库存';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1305,14 +1305,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `role2222`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role2222` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `role_name` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `create_time` timestamp NULL DEFAULT NULL,
   `update_time` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1331,13 +1331,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `role_to_operation2222`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `role_to_operation2222` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `role_id` int DEFAULT NULL,
-  `operation_id` int DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `operation_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1356,28 +1356,28 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_coupon`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_coupon` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `type` int DEFAULT NULL COMMENT '优惠券类型；0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `type` int(11) DEFAULT NULL COMMENT '优惠券类型；0->全场赠券；1->会员赠券；2->购物赠券；3->注册赠券',
   `name` varchar(100) DEFAULT NULL,
-  `platform` int DEFAULT NULL COMMENT '使用平台：0->全部；1->移动；2->PC',
-  `count` int DEFAULT NULL COMMENT '数量',
+  `platform` int(11) DEFAULT NULL COMMENT '使用平台：0->全部；1->移动；2->PC',
+  `count` int(11) DEFAULT NULL COMMENT '数量',
   `amount` decimal(10,2) DEFAULT NULL COMMENT '金额',
-  `per_limit` int DEFAULT NULL COMMENT '每人限领张数',
+  `per_limit` int(11) DEFAULT NULL COMMENT '每人限领张数',
   `min_point` decimal(10,2) DEFAULT NULL COMMENT '使用门槛；0表示无门槛',
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `use_type` int DEFAULT NULL COMMENT '使用类型：0->全场通用；1->指定分类；2->指定商品',
+  `use_type` int(11) DEFAULT NULL COMMENT '使用类型：0->全场通用；1->指定分类；2->指定商品',
   `note` varchar(200) DEFAULT NULL COMMENT '备注',
-  `publish_count` int DEFAULT NULL COMMENT '发行数量',
-  `use_count` int DEFAULT NULL COMMENT '已使用数量',
-  `receive_count` int DEFAULT NULL COMMENT '领取数量',
+  `publish_count` int(11) DEFAULT NULL COMMENT '发行数量',
+  `use_count` int(11) DEFAULT NULL COMMENT '已使用数量',
+  `receive_count` int(11) DEFAULT NULL COMMENT '领取数量',
   `enable_time` datetime DEFAULT NULL COMMENT '可以领取的日期',
   `code` varchar(64) DEFAULT NULL COMMENT '优惠码',
-  `member_level` int DEFAULT NULL COMMENT '可领取的会员类型：0->无限时',
+  `member_level` int(11) DEFAULT NULL COMMENT '可领取的会员类型：0->无限时',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COMMENT='优惠券表';
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='优惠券表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1396,23 +1396,23 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_coupon_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_coupon_history` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `coupon_id` bigint DEFAULT NULL,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `coupon_id` bigint(20) DEFAULT NULL,
+  `member_id` bigint(20) DEFAULT NULL,
   `coupon_code` varchar(64) DEFAULT NULL,
   `member_nickname` varchar(64) DEFAULT NULL COMMENT '领取人昵称',
-  `get_type` int DEFAULT NULL COMMENT '获取类型：0->后台赠送；1->主动获取',
+  `get_type` int(11) DEFAULT NULL COMMENT '获取类型：0->后台赠送；1->主动获取',
   `create_time` datetime DEFAULT NULL,
-  `use_status` int DEFAULT NULL COMMENT '使用状态：0->未使用；1->已使用；2->已过期',
+  `use_status` int(11) DEFAULT NULL COMMENT '使用状态：0->未使用；1->已使用；2->已过期',
   `use_time` datetime DEFAULT NULL COMMENT '使用时间',
-  `order_id` bigint DEFAULT NULL COMMENT '订单编号',
+  `order_id` bigint(20) DEFAULT NULL COMMENT '订单编号',
   `order_sn` varchar(100) DEFAULT NULL COMMENT '订单号码',
   PRIMARY KEY (`id`),
   KEY `idx_member_id` (`member_id`) USING BTREE,
   KEY `idx_coupon_id` (`coupon_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3 COMMENT='优惠券使用、领取历史表';
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='优惠券使用、领取历史表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1431,15 +1431,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_coupon_product_category_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_coupon_product_category_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `coupon_id` bigint DEFAULT NULL,
-  `product_category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `coupon_id` bigint(20) DEFAULT NULL,
+  `product_category_id` bigint(20) DEFAULT NULL,
   `product_category_name` varchar(200) DEFAULT NULL COMMENT '产品分类名称',
   `parent_category_name` varchar(200) DEFAULT NULL COMMENT '父分类名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='优惠券和产品分类关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='优惠券和产品分类关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1458,15 +1458,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_coupon_product_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_coupon_product_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `coupon_id` bigint DEFAULT NULL,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `coupon_id` bigint(20) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
   `product_name` varchar(500) DEFAULT NULL COMMENT '商品名称',
   `product_sn` varchar(200) DEFAULT NULL COMMENT '商品编码',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COMMENT='优惠券和产品的关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='优惠券和产品的关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1485,16 +1485,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_flash_promotion`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_flash_promotion` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
   `start_date` date DEFAULT NULL COMMENT '开始日期',
   `end_date` date DEFAULT NULL COMMENT '结束日期',
-  `status` int DEFAULT NULL COMMENT '上下线状态',
+  `status` int(11) DEFAULT NULL COMMENT '上下线状态',
   `create_time` datetime DEFAULT NULL COMMENT '秒杀时间段名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb3 COMMENT='限时购表';
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='限时购表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1513,17 +1513,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_flash_promotion_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_flash_promotion_log` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `member_id` int DEFAULT NULL,
-  `product_id` bigint DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) DEFAULT NULL,
+  `product_id` bigint(20) DEFAULT NULL,
   `member_phone` varchar(64) DEFAULT NULL,
   `product_name` varchar(100) DEFAULT NULL,
   `subscribe_time` datetime DEFAULT NULL COMMENT '会员订阅时间',
   `send_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='限时购通知记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='限时购通知记录';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1541,18 +1541,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_flash_promotion_product_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_flash_promotion_product_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '编号',
-  `flash_promotion_id` bigint DEFAULT NULL,
-  `flash_promotion_session_id` bigint DEFAULT NULL COMMENT '编号',
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `flash_promotion_id` bigint(20) DEFAULT NULL,
+  `flash_promotion_session_id` bigint(20) DEFAULT NULL COMMENT '编号',
+  `product_id` bigint(20) DEFAULT NULL,
   `flash_promotion_price` decimal(10,2) DEFAULT NULL COMMENT '限时购价格',
-  `flash_promotion_count` int DEFAULT NULL COMMENT '限时购数量',
-  `flash_promotion_limit` int DEFAULT NULL COMMENT '每人限购数量',
-  `sort` int DEFAULT NULL COMMENT '排序',
+  `flash_promotion_count` int(11) DEFAULT NULL COMMENT '限时购数量',
+  `flash_promotion_limit` int(11) DEFAULT NULL COMMENT '每人限购数量',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 COMMENT='商品限时购与商品关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='商品限时购与商品关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1571,16 +1571,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_flash_promotion_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_flash_promotion_session` (
-  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
   `name` varchar(200) DEFAULT NULL COMMENT '场次名称',
   `start_time` time DEFAULT NULL COMMENT '每日开始时间',
   `end_time` time DEFAULT NULL COMMENT '每日结束时间',
-  `status` int DEFAULT NULL COMMENT '启用状态：0->不启用；1->启用',
+  `status` int(11) DEFAULT NULL COMMENT '启用状态：0->不启用；1->启用',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COMMENT='限时购场次表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='限时购场次表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1599,22 +1599,22 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_home_advertise`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_home_advertise` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `type` int DEFAULT NULL COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
+  `type` int(11) DEFAULT NULL COMMENT '轮播位置：0->PC首页轮播；1->app首页轮播',
   `pic` varchar(500) DEFAULT NULL,
   `start_time` datetime DEFAULT NULL,
   `end_time` datetime DEFAULT NULL,
-  `status` int DEFAULT NULL COMMENT '上下线状态：0->下线；1->上线',
-  `click_count` int DEFAULT NULL COMMENT '点击数',
-  `order_count` int DEFAULT NULL COMMENT '下单数',
+  `status` int(11) DEFAULT NULL COMMENT '上下线状态：0->下线；1->上线',
+  `click_count` int(11) DEFAULT NULL COMMENT '点击数',
+  `order_count` int(11) DEFAULT NULL COMMENT '下单数',
   `url` varchar(500) DEFAULT NULL COMMENT '链接地址',
   `note` varchar(500) DEFAULT NULL COMMENT '备注',
-  `sort` int DEFAULT '0' COMMENT '排序',
+  `sort` int(11) DEFAULT '0' COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COMMENT='首页轮播广告表';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='首页轮播广告表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1633,15 +1633,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_home_brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_home_brand` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `brand_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `brand_id` bigint(20) DEFAULT NULL,
   `brand_name` varchar(64) DEFAULT NULL,
-  `recommend_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `recommend_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb3 COMMENT='首页推荐品牌表';
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COMMENT='首页推荐品牌表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1660,15 +1660,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_home_new_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_home_new_product` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `product_name` varchar(64) DEFAULT NULL,
-  `recommend_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `recommend_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb3 COMMENT='新鲜好物表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='新鲜好物表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1687,15 +1687,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_home_recommend_product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_home_recommend_product` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `product_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
   `product_name` varchar(64) DEFAULT NULL,
-  `recommend_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `recommend_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='人气推荐商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='人气推荐商品表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1714,15 +1714,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sms_home_recommend_subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sms_home_recommend_subject` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `subject_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `subject_id` bigint(20) DEFAULT NULL,
   `subject_name` varchar(64) DEFAULT NULL,
-  `recommend_status` int DEFAULT NULL,
-  `sort` int DEFAULT NULL,
+  `recommend_status` int(11) DEFAULT NULL,
+  `sort` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3 COMMENT='首页推荐专题表';
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='首页推荐专题表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1741,30 +1741,30 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `sys_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `sys_log` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `log_type` int DEFAULT NULL COMMENT '日志类型（1登录日志，2操作日志）',
-  `log_content` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '日志内容',
-  `operate_type` int DEFAULT NULL COMMENT '操作类型',
-  `userid` varchar(32) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '操作用户账号',
-  `username` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '操作用户名称',
-  `ip` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT 'IP',
-  `method` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '请求java方法',
-  `request_url` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '请求路径',
-  `request_param` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci COMMENT '请求参数',
-  `request_type` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '请求类型',
-  `cost_time` bigint DEFAULT NULL COMMENT '耗时',
-  `create_by` varchar(32) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '创建人',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `log_type` int(11) DEFAULT NULL COMMENT '日志类型（1登录日志，2操作日志）',
+  `log_content` varchar(1000) DEFAULT NULL COMMENT '日志内容',
+  `operate_type` int(11) DEFAULT NULL COMMENT '操作类型',
+  `userid` varchar(32) DEFAULT NULL COMMENT '操作用户账号',
+  `username` varchar(100) DEFAULT NULL COMMENT '操作用户名称',
+  `ip` varchar(100) DEFAULT NULL COMMENT 'IP',
+  `method` varchar(500) DEFAULT NULL COMMENT '请求java方法',
+  `request_url` varchar(255) DEFAULT NULL COMMENT '请求路径',
+  `request_param` longtext COMMENT '请求参数',
+  `request_type` varchar(10) DEFAULT NULL COMMENT '请求类型',
+  `cost_time` bigint(20) DEFAULT NULL COMMENT '耗时',
+  `create_by` varchar(32) DEFAULT NULL COMMENT '创建人',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `update_by` varchar(32) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '更新人',
+  `update_by` varchar(32) DEFAULT NULL COMMENT '更新人',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `idx_sl_userid` (`userid`) USING BTREE,
   KEY `idx_sl_log_type` (`log_type`) USING BTREE,
   KEY `idx_sl_operate_type` (`operate_type`) USING BTREE,
   KEY `idx_sl_create_time` (`create_time`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC COMMENT='系统日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='系统日志表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1773,7 +1773,7 @@ CREATE TABLE `sys_log` (
 
 LOCK TABLES `sys_log` WRITE;
 /*!40000 ALTER TABLE `sys_log` DISABLE KEYS */;
-INSERT INTO `sys_log` VALUES (1,1,'用户名: rafael,登录成功！',NULL,NULL,'rafael','0:0:0:0:0:0:0:1',NULL,NULL,NULL,NULL,NULL,NULL,'2022-12-16 12:16:34',NULL,NULL),(2,2,'登录成功666,登录成功',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671297840960,\"id\":\"A1A2EDB9E238308F358B5E8458A856B5\",\"lastAccessedTime\":1671297840960,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1910,NULL,'2022-12-17 17:24:04',NULL,NULL),(3,2,'登录成功666,登录成功',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671300127269,\"id\":\"326BB4E6BA72E87A7B99230094A785F1\",\"lastAccessedTime\":1671300127269,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1866,NULL,'2022-12-17 18:02:10',NULL,NULL),(4,2,'登录成功666',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671302617398,\"id\":\"351B8B58CE99BC0E6F63997AE39B301E\",\"lastAccessedTime\":1671302617398,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1583,NULL,'2022-12-17 18:43:40',NULL,NULL),(5,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671360010870,\"id\":\"233BFEDCA96E972F72CA299BC56AA357\",\"lastAccessedTime\":1671360010870,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,2281,NULL,'2022-12-18 10:40:15',NULL,NULL),(6,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671452609160,\"id\":\"85F165BC1713CCEA91872871756A1723\",\"lastAccessedTime\":1671452609160,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1604,NULL,'2022-12-19 12:23:32',NULL,NULL),(7,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671469970099,\"id\":\"7D77EE6E5CEB6CEF286967EE62DFD0B1\",\"lastAccessedTime\":1671469970099,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,90,NULL,'2022-12-19 17:12:50',NULL,NULL),(8,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671960144216,\"id\":\"63BE3D486AE6A4925B830AA6677C84A7\",\"lastAccessedTime\":1671960144216,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,58,NULL,'2022-12-25 09:22:24',NULL,NULL),(9,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672056095498,\"id\":\"A189B22D082AC58EB733EED92FF8D358\",\"lastAccessedTime\":1672056095498,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,776,NULL,'2022-12-26 12:01:37',NULL,NULL),(10,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672056897038,\"id\":\"7A4D74F79B388A019F815DC694C7E365\",\"lastAccessedTime\":1672056897038,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,643,NULL,'2022-12-26 12:14:59',NULL,NULL),(11,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672057787483,\"id\":\"77A7707DFA37D6B365D3163977C027EE\",\"lastAccessedTime\":1672057787483,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,646,NULL,'2022-12-26 12:29:49',NULL,NULL),(12,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1675848230061,\"id\":\"93C7F22EC3676D9B35D0489575849B50\",\"lastAccessedTime\":1675848230061,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,956,NULL,'2023-02-08 09:23:52',NULL,NULL),(13,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676087390972,\"id\":\"DB1619EA0E17BA2D1D9955CC89DD569F\",\"lastAccessedTime\":1676087390972,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,36,NULL,'2023-02-11 03:49:51',NULL,NULL),(14,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676189985711,\"id\":\"C2FBDA1AB2D94B3848CB4F52020F4B71\",\"lastAccessedTime\":1676189985711,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,201,NULL,'2023-02-12 08:19:46',NULL,NULL),(15,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676366428314,\"id\":\"67419644DB51ADF9215A3ED19A742F9F\",\"lastAccessedTime\":1676366428314,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,101,NULL,'2023-02-14 09:20:28',NULL,NULL),(16,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676366427198,\"id\":\"37A4AF7BFAE009A3308BC41147F271C4\",\"lastAccessedTime\":1676366427198,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1156,NULL,'2023-02-14 09:20:28',NULL,NULL),(17,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676368889193,\"id\":\"73CCE5FD0C7941CD6BCCD136A646AE7C\",\"lastAccessedTime\":1676368889193,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,37,NULL,'2023-02-14 10:01:29',NULL,NULL),(18,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676564107205,\"id\":\"A8BFCD8320D1640B843FE942BA016C26\",\"lastAccessedTime\":1676564107205,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,953,NULL,'2023-02-16 16:15:09',NULL,NULL),(19,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676599110121,\"id\":\"5205792CA6C7E310CD736F47010A6DFA\",\"lastAccessedTime\":1676599110121,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,161,NULL,'2023-02-17 01:58:30',NULL,NULL),(20,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676602182449,\"id\":\"251864B162A7779F867D55DFF669D068\",\"lastAccessedTime\":1676602182449,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,23,NULL,'2023-02-17 02:49:42',NULL,NULL),(21,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676602201255,\"id\":\"107393F1DE445A91AED708F10B28D35A\",\"lastAccessedTime\":1676602201255,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,17,NULL,'2023-02-17 02:50:01',NULL,NULL);
+INSERT INTO `sys_log` VALUES (1,1,'用户名: rafael,登录成功！',NULL,NULL,'rafael','0:0:0:0:0:0:0:1',NULL,NULL,NULL,NULL,NULL,NULL,'2022-12-16 12:16:34',NULL,NULL),(2,2,'登录成功666,登录成功',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671297840960,\"id\":\"A1A2EDB9E238308F358B5E8458A856B5\",\"lastAccessedTime\":1671297840960,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1910,NULL,'2022-12-17 17:24:04',NULL,NULL),(3,2,'登录成功666,登录成功',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671300127269,\"id\":\"326BB4E6BA72E87A7B99230094A785F1\",\"lastAccessedTime\":1671300127269,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1866,NULL,'2022-12-17 18:02:10',NULL,NULL),(4,2,'登录成功666',1,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.news.UserController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671302617398,\"id\":\"351B8B58CE99BC0E6F63997AE39B301E\",\"lastAccessedTime\":1671302617398,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1583,NULL,'2022-12-17 18:43:40',NULL,NULL),(5,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671360010870,\"id\":\"233BFEDCA96E972F72CA299BC56AA357\",\"lastAccessedTime\":1671360010870,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,2281,NULL,'2022-12-18 10:40:15',NULL,NULL),(6,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671452609160,\"id\":\"85F165BC1713CCEA91872871756A1723\",\"lastAccessedTime\":1671452609160,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1604,NULL,'2022-12-19 12:23:32',NULL,NULL),(7,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671469970099,\"id\":\"7D77EE6E5CEB6CEF286967EE62DFD0B1\",\"lastAccessedTime\":1671469970099,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,90,NULL,'2022-12-19 17:12:50',NULL,NULL),(8,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1671960144216,\"id\":\"63BE3D486AE6A4925B830AA6677C84A7\",\"lastAccessedTime\":1671960144216,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,58,NULL,'2022-12-25 09:22:24',NULL,NULL),(9,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672056095498,\"id\":\"A189B22D082AC58EB733EED92FF8D358\",\"lastAccessedTime\":1672056095498,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,776,NULL,'2022-12-26 12:01:37',NULL,NULL),(10,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672056897038,\"id\":\"7A4D74F79B388A019F815DC694C7E365\",\"lastAccessedTime\":1672056897038,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,643,NULL,'2022-12-26 12:14:59',NULL,NULL),(11,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1672057787483,\"id\":\"77A7707DFA37D6B365D3163977C027EE\",\"lastAccessedTime\":1672057787483,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,646,NULL,'2022-12-26 12:29:49',NULL,NULL),(12,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1675848230061,\"id\":\"93C7F22EC3676D9B35D0489575849B50\",\"lastAccessedTime\":1675848230061,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,956,NULL,'2023-02-08 09:23:52',NULL,NULL),(13,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676087390972,\"id\":\"DB1619EA0E17BA2D1D9955CC89DD569F\",\"lastAccessedTime\":1676087390972,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,36,NULL,'2023-02-11 03:49:51',NULL,NULL),(14,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676189985711,\"id\":\"C2FBDA1AB2D94B3848CB4F52020F4B71\",\"lastAccessedTime\":1676189985711,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,201,NULL,'2023-02-12 08:19:46',NULL,NULL),(15,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676366428314,\"id\":\"67419644DB51ADF9215A3ED19A742F9F\",\"lastAccessedTime\":1676366428314,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,101,NULL,'2023-02-14 09:20:28',NULL,NULL),(16,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676366427198,\"id\":\"37A4AF7BFAE009A3308BC41147F271C4\",\"lastAccessedTime\":1676366427198,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,1156,NULL,'2023-02-14 09:20:28',NULL,NULL),(17,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676368889193,\"id\":\"73CCE5FD0C7941CD6BCCD136A646AE7C\",\"lastAccessedTime\":1676368889193,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,37,NULL,'2023-02-14 10:01:29',NULL,NULL),(18,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676564107205,\"id\":\"A8BFCD8320D1640B843FE942BA016C26\",\"lastAccessedTime\":1676564107205,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,953,NULL,'2023-02-16 16:15:09',NULL,NULL),(19,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676599110121,\"id\":\"5205792CA6C7E310CD736F47010A6DFA\",\"lastAccessedTime\":1676599110121,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,161,NULL,'2023-02-17 01:58:30',NULL,NULL),(20,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676602182449,\"id\":\"251864B162A7779F867D55DFF669D068\",\"lastAccessedTime\":1676602182449,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,23,NULL,'2023-02-17 02:49:42',NULL,NULL),(21,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1676602201255,\"id\":\"107393F1DE445A91AED708F10B28D35A\",\"lastAccessedTime\":1676602201255,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,17,NULL,'2023-02-17 02:50:01',NULL,NULL),(22,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1682080443965,\"id\":\"2797CECCCA484B4C7D8AEEDFF9F2D49E\",\"lastAccessedTime\":1682080443965,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,535,NULL,'2023-04-21 12:34:05',NULL,NULL),(23,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1682150775917,\"id\":\"AA0896ED177E6A6836BC3CF52F8F1003\",\"lastAccessedTime\":1682150775917,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,277,NULL,'2023-04-22 08:06:16',NULL,NULL),(24,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1682404057512,\"id\":\"81F321DDDBEB5CAE5906D4F95DACAD81\",\"lastAccessedTime\":1682404057512,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,283,NULL,'2023-04-25 06:27:38',NULL,NULL),(25,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1682840900290,\"id\":\"06817B4A0F0D7527FEC3681B2E0AFA1F\",\"lastAccessedTime\":1682840900290,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,259,NULL,'2023-04-30 07:48:21',NULL,NULL),(26,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1684064213585,\"id\":\"D7E169BA964AC65AA5B3CEDF90978028\",\"lastAccessedTime\":1684064213585,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,332,NULL,'2023-05-14 11:36:54',NULL,NULL),(27,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686048222034,\"id\":\"8FC874597EA901AE868689047CF07D4B\",\"lastAccessedTime\":1686048222034,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,343,NULL,'2023-06-06 10:43:43',NULL,NULL),(28,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686050951949,\"id\":\"22A8ECDDB1EA900083CAFE419E8F29DE\",\"lastAccessedTime\":1686050951949,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,13,NULL,'2023-06-06 11:29:12',NULL,NULL),(29,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686058760179,\"id\":\"DC5CFD5CF31F36E212FEB24C4C238A66\",\"lastAccessedTime\":1686058760179,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,15,NULL,'2023-06-06 13:39:20',NULL,NULL),(30,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686375334982,\"id\":\"AFAE941539AF539B5D45963C1A7F7B1D\",\"lastAccessedTime\":1686375334982,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,320,NULL,'2023-06-10 05:35:35',NULL,NULL),(31,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686389962490,\"id\":\"4C6B462E0FA780316CB825785F5ABAF1\",\"lastAccessedTime\":1686389962490,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,301,NULL,'2023-06-10 09:39:23',NULL,NULL),(32,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686472857136,\"id\":\"E79308DE60C237ECDD3BEDAA6100254E\",\"lastAccessedTime\":1686472857136,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,324,NULL,'2023-06-11 08:40:58',NULL,NULL),(33,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686559913223,\"id\":\"B796566582E4F10CA1DA9F439063401B\",\"lastAccessedTime\":1686559913223,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,365,NULL,'2023-06-12 08:51:54',NULL,NULL),(34,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686649882392,\"id\":\"007172C3D8909B77A297620592789F6A\",\"lastAccessedTime\":1686649882392,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,411,NULL,'2023-06-13 09:51:23',NULL,NULL),(35,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686654356143,\"id\":\"54C98C1431AEE9826A5FDFFA4ADA8DE6\",\"lastAccessedTime\":1686654356143,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,14,NULL,'2023-06-13 11:05:56',NULL,NULL),(36,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686654986467,\"id\":\"BAE9A21903D7A960C82F9A0E2C055CA1\",\"lastAccessedTime\":1686654986467,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,13,NULL,'2023-06-13 11:16:26',NULL,NULL),(37,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686661407399,\"id\":\"A4FE0989AF1D91D1E110B682C620F5F2\",\"lastAccessedTime\":1686661407399,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,16,NULL,'2023-06-13 13:03:27',NULL,NULL),(38,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686720265188,\"id\":\"702BB752695D4D583B7B3555BAC00A35\",\"lastAccessedTime\":1686720265188,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,206,NULL,'2023-06-14 05:24:25',NULL,NULL),(39,1,'登录成功666',NULL,NULL,'rafael','0:0:0:0:0:0:0:1','com.stars.controller.shoppingMall.LoginController.userLogin()',NULL,'[null,{\"attributeNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"],\"creationTime\":1686720285746,\"id\":\"68DC6EF05F93172ACCE26041558435C4\",\"lastAccessedTime\":1686720285746,\"maxInactiveInterval\":1800,\"new\":true,\"servletContext\":{\"attributeNames\":[\"javax.servlet.context.tempdir\",\"org.apache.catalina.resources\",\"org.springframework.web.context.WebApplicationContext.ROOT\",\"org.springframework.web.context.support.ServletContextScope\",\"org.apache.tomcat.InstanceManager\",\"org.apache.catalina.jsp_classpath\",\"javax.websocket.server.ServerContainer\",\"org.apache.tomcat.JarScanner\",\"org.springframework.web.servlet.FrameworkServlet.CONTEXT.dispatcherServlet\"],\"contextPath\":\"/sky\",\"defaultSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"effectiveMajorVersion\":3,\"effectiveMinorVersion\":0,\"effectiveSessionTrackingModes\":[\"COOKIE\",\"URL\"],\"initParameterNames\":[],\"majorVersion\":4,\"minorVersion\":0,\"serverInfo\":\"Apache Tomcat/9.0.17\",\"servletContextName\":\"application\",\"servletNames\":[],\"servletRegistrations\":{\"default\":{\"className\":\"org.apache.catalina.servlets.DefaultServlet\",\"initParameters\":{\"listings\":\"false\",\"debug\":\"0\"},\"mappings\":[],\"name\":\"default\"},\"dispatcherServlet\":{\"className\":\"org.springframework.web.servlet.DispatcherServlet\",\"initParameters\":{},\"mappings\":[\"/\"],\"name\":\"dispatcherServlet\"},\"statViewServlet\":{\"className\":\"com.alibaba.druid.support.http.StatViewServlet\",\"initParameters\":{\"allow\":\"\",\"loginUsername\":\"admin\",\"loginPassword\":\"123456\"},\"mappings\":[\"/druid/*\"],\"name\":\"statViewServlet\"}},\"servlets\":[],\"sessionCookieConfig\":{\"httpOnly\":false,\"maxAge\":-1,\"secure\":false},\"sessionTimeout\":30,\"virtualServerName\":\"Tomcat/localhost\"},\"sessionContext\":{\"ids\":[]},\"valueNames\":[\"org.apache.shiro.subject.support.DefaultSubjectContext_AUTHENTICATED_SESSION_KEY\",\"org.apache.shiro.web.session.HttpServletSession.HOST_SESSION_KEY\",\"org.apache.shiro.subject.support.DefaultSubjectContext_PRINCIPALS_SESSION_KEY\",\"username\"]}]',NULL,11,NULL,'2023-06-14 05:24:46',NULL,NULL);
 /*!40000 ALTER TABLE `sys_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1783,9 +1783,9 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_admin` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `username` varchar(64) DEFAULT NULL,
   `password` varchar(64) DEFAULT NULL,
   `icon` varchar(500) DEFAULT NULL COMMENT '头像',
@@ -1794,9 +1794,9 @@ CREATE TABLE `ums_admin` (
   `note` varchar(500) DEFAULT NULL COMMENT '备注信息',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
-  `status` int DEFAULT '1' COMMENT '帐号启用状态：0->禁用；1->启用',
+  `status` int(11) DEFAULT '1' COMMENT '帐号启用状态：0->禁用；1->启用',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='后台用户表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1815,16 +1815,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_admin_login_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_admin_login_log` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `admin_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `admin_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `ip` varchar(64) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `user_agent` varchar(100) DEFAULT NULL COMMENT '浏览器登录类型',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户登录日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8 COMMENT='后台用户登录日志表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1843,14 +1843,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_admin_permission_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_admin_permission_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `admin_id` bigint DEFAULT NULL,
-  `permission_id` bigint DEFAULT NULL,
-  `type` int DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `admin_id` bigint(20) DEFAULT NULL,
+  `permission_id` bigint(20) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='后台用户和权限关系表(除角色中定义的权限以外的加减权限)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='后台用户和权限关系表(除角色中定义的权限以外的加减权限)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1868,13 +1868,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_admin_role_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_admin_role_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `admin_id` bigint DEFAULT NULL,
-  `role_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `admin_id` bigint(20) DEFAULT NULL,
+  `role_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户和角色关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COMMENT='后台用户和角色关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1893,18 +1893,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_growth_change_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_growth_change_history` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `change_type` int DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
-  `change_count` int DEFAULT NULL COMMENT '积分改变数量',
+  `change_type` int(11) DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
+  `change_count` int(11) DEFAULT NULL COMMENT '积分改变数量',
   `operate_man` varchar(100) DEFAULT NULL COMMENT '操作人员',
   `operate_note` varchar(200) DEFAULT NULL COMMENT '操作备注',
-  `source_type` int DEFAULT NULL COMMENT '积分来源：0->购物；1->管理员修改',
+  `source_type` int(11) DEFAULT NULL COMMENT '积分来源：0->购物；1->管理员修改',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='成长值变化历史记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='成长值变化历史记录表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1923,18 +1923,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_integration_change_history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_integration_change_history` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
-  `change_type` int DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
-  `change_count` int DEFAULT NULL COMMENT '积分改变数量',
+  `change_type` int(11) DEFAULT NULL COMMENT '改变类型：0->增加；1->减少',
+  `change_count` int(11) DEFAULT NULL COMMENT '积分改变数量',
   `operate_man` varchar(100) DEFAULT NULL COMMENT '操作人员',
   `operate_note` varchar(200) DEFAULT NULL COMMENT '操作备注',
-  `source_type` int DEFAULT NULL COMMENT '积分来源：0->购物；1->管理员修改',
+  `source_type` int(11) DEFAULT NULL COMMENT '积分来源：0->购物；1->管理员修改',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='积分变化历史记录表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='积分变化历史记录表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1952,15 +1952,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_integration_consume_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_integration_consume_setting` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `deduction_per_amount` int DEFAULT NULL COMMENT '每一元需要抵扣的积分数量',
-  `max_percent_per_order` int DEFAULT NULL COMMENT '每笔订单最高抵用百分比',
-  `use_unit` int DEFAULT NULL COMMENT '每次使用积分最小单位100',
-  `coupon_status` int DEFAULT NULL COMMENT '是否可以和优惠券同用；0->不可以；1->可以',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `deduction_per_amount` int(11) DEFAULT NULL COMMENT '每一元需要抵扣的积分数量',
+  `max_percent_per_order` int(11) DEFAULT NULL COMMENT '每笔订单最高抵用百分比',
+  `use_unit` int(11) DEFAULT NULL COMMENT '每次使用积分最小单位100',
+  `coupon_status` int(11) DEFAULT NULL COMMENT '是否可以和优惠券同用；0->不可以；1->可以',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COMMENT='积分消费设置';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='积分消费设置';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1979,31 +1979,31 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_level_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_level_id` bigint(20) DEFAULT NULL,
   `username` varchar(64) DEFAULT NULL COMMENT '用户名',
   `password` varchar(64) DEFAULT NULL COMMENT '密码',
   `nickname` varchar(64) DEFAULT NULL COMMENT '昵称',
   `phone` varchar(64) DEFAULT NULL COMMENT '手机号码',
-  `status` int DEFAULT NULL COMMENT '帐号启用状态:0->禁用；1->启用',
+  `status` int(11) DEFAULT NULL COMMENT '帐号启用状态:0->禁用；1->启用',
   `create_time` datetime DEFAULT NULL COMMENT '注册时间',
   `icon` varchar(500) DEFAULT NULL COMMENT '头像',
-  `gender` int DEFAULT NULL COMMENT '性别：0->未知；1->男；2->女',
+  `gender` int(11) DEFAULT NULL COMMENT '性别：0->未知；1->男；2->女',
   `birthday` date DEFAULT NULL COMMENT '生日',
   `city` varchar(64) DEFAULT NULL COMMENT '所做城市',
   `job` varchar(100) DEFAULT NULL COMMENT '职业',
   `personalized_signature` varchar(200) DEFAULT NULL COMMENT '个性签名',
-  `source_type` int DEFAULT NULL COMMENT '用户来源',
-  `integration` int DEFAULT NULL COMMENT '积分',
-  `growth` int DEFAULT NULL COMMENT '成长值',
-  `luckey_count` int DEFAULT NULL COMMENT '剩余抽奖次数',
-  `history_integration` int DEFAULT NULL COMMENT '历史积分数量',
+  `source_type` int(11) DEFAULT NULL COMMENT '用户来源',
+  `integration` int(11) DEFAULT NULL COMMENT '积分',
+  `growth` int(11) DEFAULT NULL COMMENT '成长值',
+  `luckey_count` int(11) DEFAULT NULL COMMENT '剩余抽奖次数',
+  `history_integration` int(11) DEFAULT NULL COMMENT '历史积分数量',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_username` (`username`),
   UNIQUE KEY `idx_phone` (`phone`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3 COMMENT='会员表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='会员表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2022,23 +2022,23 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_level`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_level` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `growth_point` int DEFAULT NULL,
-  `default_status` int DEFAULT NULL COMMENT '是否为默认等级：0->不是；1->是',
+  `growth_point` int(11) DEFAULT NULL,
+  `default_status` int(11) DEFAULT NULL COMMENT '是否为默认等级：0->不是；1->是',
   `free_freight_point` decimal(10,2) DEFAULT NULL COMMENT '免运费标准',
-  `comment_growth_point` int DEFAULT NULL COMMENT '每次评价获取的成长值',
-  `priviledge_free_freight` int DEFAULT NULL COMMENT '是否有免邮特权',
-  `priviledge_sign_in` int DEFAULT NULL COMMENT '是否有签到特权',
-  `priviledge_comment` int DEFAULT NULL COMMENT '是否有评论获奖励特权',
-  `priviledge_promotion` int DEFAULT NULL COMMENT '是否有专享活动特权',
-  `priviledge_member_price` int DEFAULT NULL COMMENT '是否有会员价格特权',
-  `priviledge_birthday` int DEFAULT NULL COMMENT '是否有生日特权',
+  `comment_growth_point` int(11) DEFAULT NULL COMMENT '每次评价获取的成长值',
+  `priviledge_free_freight` int(11) DEFAULT NULL COMMENT '是否有免邮特权',
+  `priviledge_sign_in` int(11) DEFAULT NULL COMMENT '是否有签到特权',
+  `priviledge_comment` int(11) DEFAULT NULL COMMENT '是否有评论获奖励特权',
+  `priviledge_promotion` int(11) DEFAULT NULL COMMENT '是否有专享活动特权',
+  `priviledge_member_price` int(11) DEFAULT NULL COMMENT '是否有会员价格特权',
+  `priviledge_birthday` int(11) DEFAULT NULL COMMENT '是否有生日特权',
   `note` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='会员等级表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='会员等级表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2057,17 +2057,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_login_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_login_log` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
   `create_time` datetime DEFAULT NULL,
   `ip` varchar(64) DEFAULT NULL,
   `city` varchar(64) DEFAULT NULL,
-  `login_type` int DEFAULT NULL COMMENT '登录类型：0->PC；1->android;2->ios;3->小程序',
+  `login_type` int(11) DEFAULT NULL COMMENT '登录类型：0->PC；1->android;2->ios;3->小程序',
   `province` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='会员登录记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员登录记录';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2085,13 +2085,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_member_tag_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_member_tag_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
-  `tag_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
+  `tag_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='用户和标签关系表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户和标签关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2109,13 +2109,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_product_category_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_product_category_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
-  `product_category_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
+  `product_category_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='会员与产品分类关系表（用户喜欢的分类）';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员与产品分类关系表（用户喜欢的分类）';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2133,20 +2133,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_receive_address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_receive_address` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL COMMENT '收货人名称',
   `phone_number` varchar(64) DEFAULT NULL,
-  `default_status` int DEFAULT NULL COMMENT '是否为默认',
+  `default_status` int(11) DEFAULT NULL COMMENT '是否为默认',
   `post_code` varchar(100) DEFAULT NULL COMMENT '邮政编码',
   `province` varchar(100) DEFAULT NULL COMMENT '省份/直辖市',
   `city` varchar(100) DEFAULT NULL COMMENT '城市',
   `region` varchar(100) DEFAULT NULL COMMENT '区',
   `detail_address` varchar(128) DEFAULT NULL COMMENT '详细地址(街道)',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COMMENT='会员收货地址表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='会员收货地址表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2165,17 +2165,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_rule_setting`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_rule_setting` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `continue_sign_day` int DEFAULT NULL COMMENT '连续签到天数',
-  `continue_sign_point` int DEFAULT NULL COMMENT '连续签到赠送数量',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `continue_sign_day` int(11) DEFAULT NULL COMMENT '连续签到天数',
+  `continue_sign_point` int(11) DEFAULT NULL COMMENT '连续签到赠送数量',
   `consume_per_point` decimal(10,2) DEFAULT NULL COMMENT '每消费多少元获取1个点',
   `low_order_amount` decimal(10,2) DEFAULT NULL COMMENT '最低获取点数的订单金额',
-  `max_point_per_order` int DEFAULT NULL COMMENT '每笔订单最高获取点数',
-  `type` int DEFAULT NULL COMMENT '类型：0->积分规则；1->成长值规则',
+  `max_point_per_order` int(11) DEFAULT NULL COMMENT '每笔订单最高获取点数',
+  `type` int(11) DEFAULT NULL COMMENT '类型：0->积分规则；1->成长值规则',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='会员积分成长规则表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员积分成长规则表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2193,26 +2193,26 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_statistics_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_statistics_info` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `member_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `member_id` bigint(20) DEFAULT NULL,
   `consume_amount` decimal(10,2) DEFAULT NULL COMMENT '累计消费金额',
-  `order_count` int DEFAULT NULL COMMENT '订单数量',
-  `coupon_count` int DEFAULT NULL COMMENT '优惠券数量',
-  `comment_count` int DEFAULT NULL COMMENT '评价数',
-  `return_order_count` int DEFAULT NULL COMMENT '退货数量',
-  `login_count` int DEFAULT NULL COMMENT '登录次数',
-  `attend_count` int DEFAULT NULL COMMENT '关注数量',
-  `fans_count` int DEFAULT NULL COMMENT '粉丝数量',
-  `collect_product_count` int DEFAULT NULL,
-  `collect_subject_count` int DEFAULT NULL,
-  `collect_topic_count` int DEFAULT NULL,
-  `collect_comment_count` int DEFAULT NULL,
-  `invite_friend_count` int DEFAULT NULL,
+  `order_count` int(11) DEFAULT NULL COMMENT '订单数量',
+  `coupon_count` int(11) DEFAULT NULL COMMENT '优惠券数量',
+  `comment_count` int(11) DEFAULT NULL COMMENT '评价数',
+  `return_order_count` int(11) DEFAULT NULL COMMENT '退货数量',
+  `login_count` int(11) DEFAULT NULL COMMENT '登录次数',
+  `attend_count` int(11) DEFAULT NULL COMMENT '关注数量',
+  `fans_count` int(11) DEFAULT NULL COMMENT '粉丝数量',
+  `collect_product_count` int(11) DEFAULT NULL,
+  `collect_subject_count` int(11) DEFAULT NULL,
+  `collect_topic_count` int(11) DEFAULT NULL,
+  `collect_comment_count` int(11) DEFAULT NULL,
+  `invite_friend_count` int(11) DEFAULT NULL,
   `recent_order_time` datetime DEFAULT NULL COMMENT '最后一次下订单时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='会员统计信息';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员统计信息';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2230,14 +2230,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_tag`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_tag` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `finish_order_count` int DEFAULT NULL COMMENT '自动打标签完成订单数量',
+  `finish_order_count` int(11) DEFAULT NULL COMMENT '自动打标签完成订单数量',
   `finish_order_amount` decimal(10,2) DEFAULT NULL COMMENT '自动打标签完成订单金额',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='用户标签表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户标签表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2255,15 +2255,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_member_task`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_member_task` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
-  `growth` int DEFAULT NULL COMMENT '赠送成长值',
-  `intergration` int DEFAULT NULL COMMENT '赠送积分',
-  `type` int DEFAULT NULL COMMENT '任务类型：0->新手任务；1->日常任务',
+  `growth` int(11) DEFAULT NULL COMMENT '赠送成长值',
+  `intergration` int(11) DEFAULT NULL COMMENT '赠送积分',
+  `type` int(11) DEFAULT NULL COMMENT '任务类型：0->新手任务；1->日常任务',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='会员任务表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='会员任务表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2281,26 +2281,26 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_menu` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `menu_parent_id` bigint DEFAULT '-1' COMMENT '父级ID',
-  `router_parent_id` int DEFAULT '-1' COMMENT '路由父级id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `menu_parent_id` bigint(20) DEFAULT '-1' COMMENT '父级ID',
+  `router_parent_id` int(11) DEFAULT '-1' COMMENT '路由父级id',
   `title` varchar(100) DEFAULT NULL COMMENT '菜单名称',
   `perms` varchar(255) DEFAULT NULL COMMENT '按钮编码',
-  `menu_level` int DEFAULT '0' COMMENT '菜单级数',
-  `router_level` int DEFAULT '0' COMMENT '路由级数',
+  `menu_level` int(11) DEFAULT '0' COMMENT '菜单级数',
+  `router_level` int(11) DEFAULT '0' COMMENT '路由级数',
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
   `icon` varchar(200) DEFAULT NULL COMMENT '图标',
   `hidden` tinyint(1) DEFAULT '0' COMMENT '菜单按钮隐藏,路由还需要',
   `disabled` tinyint(1) DEFAULT '0' COMMENT '按钮禁用',
-  `sort` int DEFAULT NULL COMMENT '排序',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
   `path` varchar(255) DEFAULT NULL COMMENT '组件路径',
   `cache` tinyint(1) DEFAULT '0' COMMENT '是否缓存',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `subject` varchar(255) DEFAULT 'crm' COMMENT '主题项目',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=236 DEFAULT CHARSET=utf8mb3 COMMENT='后台菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=239 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2309,7 +2309,7 @@ CREATE TABLE `ums_menu` (
 
 LOCK TABLES `ums_menu` WRITE;
 /*!40000 ALTER TABLE `ums_menu` DISABLE KEYS */;
-INSERT INTO `ums_menu` VALUES (1,0,-1,'商品',NULL,0,0,'pms','product',0,0,9,'',0,'2020-02-02 14:50:36','crm'),(2,-1,0,'主页',NULL,0,0,'home','home',0,0,0,'/home/index',0,NULL,'crm'),(7,0,-1,'订单',NULL,0,0,'oms','order',0,0,8,'',0,'2020-02-02 16:54:07','crm'),(12,0,-1,'营销',NULL,0,0,'sms','sms',0,0,0,NULL,0,'2020-02-04 16:18:00','crm'),(21,0,-1,'权限',NULL,0,0,'ums','ums',0,0,0,NULL,0,'2020-02-07 16:29:13','crm'),(32,0,-1,'季节知识',NULL,0,0,'season','',0,0,10,NULL,0,'2022-07-28 09:50:39','crm'),(33,32,2,'综合表格',NULL,1,1,'','',0,0,0,'/home/season/tableEditor/crmTable',0,'2022-07-28 13:59:26','crm'),(34,32,2,'table说明',NULL,1,1,'','',0,0,0,'/home/season/tableEditor/explainTable',0,'2022-07-28 14:23:01','crm'),(35,32,2,'多语言翻译',NULL,1,1,'','',0,0,0,'/home/season/multilingual/index',0,'2022-07-28 14:27:42','crm'),(36,32,2,'活动管理',NULL,1,1,'','',0,0,0,'/home/season/activityCenter/activityCenter',0,'2022-07-28 14:30:46','crm'),(37,32,2,'勾选分页',NULL,1,1,'','',0,0,0,'/home/season/popover-selection-page/index',0,'2022-07-28 14:32:10','crm'),(38,32,2,'商品demo',NULL,1,1,'','',0,0,0,'/home/season/example/index',0,'2022-07-28 14:33:33','crm'),(39,0,2,'首页',NULL,0,1,'','',0,0,11,'/home/world/world',0,'2022-07-28 14:34:47','crm'),(40,1,2,'商品列表',NULL,1,1,'','',0,0,0,'/home/shopUnit/product/index',0,'2022-07-28 14:35:41','crm'),(41,1,2,'商品分类',NULL,1,1,'','',0,0,0,'/home/shopUnit/productCate/index',0,'2022-07-28 14:36:19','crm'),(42,1,2,'商品类型',NULL,1,1,'','',0,0,0,'/home/shopUnit/productAttr/index',0,'2022-07-28 14:37:04','crm'),(43,-1,2,'商品属性与参数',NULL,0,1,'','',0,0,0,'/home/shopUnit/productAttr/productAttrList/index',0,'2022-07-28 14:37:50','crm'),(44,1,2,'品牌管理',NULL,1,1,'','',0,0,0,'/home/shopUnit/brand/index',0,'2022-07-28 14:38:56','crm'),(45,7,2,'订单列表',NULL,1,1,'','',0,0,0,'/home/orderUnit/orderList/index',0,'2022-07-28 14:39:32','crm'),(46,-1,2,'订单详情',NULL,0,1,'','',0,0,0,'/home/orderUnit/orderList/orderDetail/index',0,'2022-07-28 14:39:58','crm'),(47,7,2,'订单设置',NULL,1,1,'','',0,0,0,'/home/orderUnit/orderSetting/index',0,'2022-07-28 14:40:28','crm'),(48,7,2,'退货申请',NULL,1,1,'','',0,0,0,'/home/orderUnit/returnApply/index',0,'2022-07-28 14:41:02','crm'),(49,-1,2,'退货详情',NULL,0,1,'','',0,0,0,'/home/orderUnit/returnApply/applyDetail',0,'2022-07-28 14:42:02','crm'),(50,7,2,'退货原因',NULL,1,1,'','',0,0,0,'/home/orderUnit/returnReason/index',0,'2022-07-28 14:42:35','crm'),(51,12,2,'限时购列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/flash/index',0,'2022-07-28 14:43:19','crm'),(52,-1,2,'秒杀时间段2',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashSession',0,'2022-07-28 14:45:01','crm'),(53,-1,2,'限时购和商品',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashProductRelation/index',0,'2022-07-28 14:45:27','crm'),(54,-1,2,'秒杀时间段1',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashSession/index',0,'2022-07-28 14:46:43','crm'),(55,12,2,'优惠券列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/coupon/index',0,'2022-07-28 14:47:15','crm'),(56,-1,2,'领取详情',NULL,0,1,'','',0,0,0,'/home/marketingUnit/coupon/couponHistory',0,'2022-07-28 14:47:41','crm'),(57,12,2,'品牌推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/brand/index',0,'2022-07-28 14:48:15','crm'),(58,12,2,'新品推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/fresh/index',0,'2022-07-28 14:48:42','crm'),(59,12,2,'人气推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/hot/index',0,'2022-07-28 14:49:18','crm'),(60,12,2,'专题推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/subject/index',0,'2022-07-28 14:49:53','crm'),(61,12,2,'广告列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/advertise/index',0,'2022-07-28 14:50:26','crm'),(62,21,2,'用户列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/customer/index',0,'2022-07-28 14:51:04','crm'),(63,21,2,'角色列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/role/index',0,'2022-07-28 14:51:40','crm'),(64,21,2,'菜单&路由',NULL,1,1,'','',0,0,0,'/home/jurisdiction/menu/index',0,'2022-07-28 14:52:01','crm'),(65,-1,2,'分配菜单',NULL,0,1,'','',0,0,0,'/home/jurisdiction/role/assignMenu',0,'2022-07-28 14:52:33','crm'),(66,-1,2,'分配资源',NULL,0,1,'','',0,0,0,'/home/jurisdiction/role/allocateResources',0,'2022-07-28 14:53:07','crm'),(67,21,2,'资源列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/resource/index',0,'2022-07-28 14:53:33','crm'),(68,-1,2,'资源分类',NULL,0,1,'','',0,0,0,'/home/jurisdiction/resource/resourceCategory/index',0,'2022-07-28 14:54:00','crm'),(72,-1,0,'无权限访问该页',NULL,0,0,'','',0,0,0,'/401',0,'2022-07-29 16:24:09','explore'),(73,-1,0,'主页',NULL,0,0,'','',0,0,0,'/home/index',0,'2022-07-29 19:33:50','explore'),(74,-1,0,'pc自适应',NULL,0,0,'','',0,0,0,'/adaption/index',0,'2022-07-29 19:35:25','explore'),(75,-1,0,'水波',NULL,0,0,'','',0,0,0,'/home/managementCenter/effect/wave',0,'2022-07-29 19:35:53','explore'),(76,-1,0,'线路检测',NULL,0,0,'','',0,0,0,'/login/line',0,'2022-07-29 19:37:38','explore'),(77,-1,0,'注册',NULL,0,0,'','',0,0,0,'/register/index',0,'2022-07-29 19:38:47','explore'),(78,-1,0,'游戏页',NULL,0,0,'','',0,0,0,'/game/index',0,'2022-07-29 19:39:10','explore'),(79,-1,0,'加载中',NULL,0,0,'','',0,0,0,'/neutralGear/index',0,'2022-07-29 19:39:43','explore'),(80,-1,0,'下载中心',NULL,0,0,'','',0,0,0,'/download/index',0,'2022-07-29 19:40:52','explore'),(81,-1,0,'发票识别',NULL,0,0,'','',0,0,0,'/home/managementCenter/effect/attachmentUpload',0,'2022-07-29 19:41:32','explore'),(82,-1,0,'浏览器新开窗口',NULL,0,0,'','',0,0,0,'/home/managementCenter/effect/openTab',0,'2022-07-29 19:41:57','explore'),(83,-1,0,'价格地图',NULL,0,0,'','',0,0,0,'/priceManage/index',0,'2022-07-29 19:42:37','explore'),(84,-1,0,'活动素材',NULL,0,0,'','',0,0,0,'/vueForm/index',0,'2022-07-29 19:43:37','explore'),(85,-1,0,'活动素材',NULL,0,0,'','',0,0,0,'/vueForm/index2',0,'2022-07-29 19:44:18','explore'),(86,-1,0,'Schema生成器',NULL,0,0,'','',0,0,0,'/vueForm/formSchemaDesign/Editor',0,'2022-07-29 19:44:50','explore'),(87,-1,0,'活动编辑器',NULL,0,0,'','',0,0,0,'/vueForm/activityEditor/Editor',0,'2022-07-29 19:45:15','explore'),(88,-1,0,'打印编辑器',NULL,0,0,'','',0,0,0,'/printEditor/index',0,'2022-07-29 19:45:39','explore'),(89,-1,73,'首页',NULL,0,1,'','',0,0,0,'/home/homeIndex/index',0,'2022-07-29 19:46:50','explore'),(90,-1,73,'福气',NULL,0,1,'','',0,0,0,'/home/lottery/index',0,'2022-07-29 19:47:58','explore'),(91,-1,73,'真人',NULL,0,1,'','',0,0,0,'/home/realPerson/index',0,'2022-07-29 19:48:23','explore'),(92,-1,73,'体育',NULL,0,1,'','',0,0,0,'/home/sports/index',0,'2022-07-29 19:49:24','explore'),(93,-1,73,'电玩',NULL,0,1,'','',0,0,0,'/home/videoGame/index',0,'2022-07-29 19:49:53','explore'),(94,-1,73,'代理',NULL,0,1,'','',0,0,0,'/home/agentSystem/index',0,'2022-07-29 19:50:21','explore'),(95,-1,73,'管理中心',NULL,0,1,'','',0,0,0,'/home/managementCenter/index',0,'2022-07-29 19:52:00','explore'),(96,0,-1,'标签样式',NULL,0,0,'tagStyle','',0,0,0,'',0,'2022-07-29 20:09:49','explore'),(97,0,-1,'javaScript',NULL,0,0,'javaScript','',0,0,0,'',0,'2022-07-29 20:10:58','explore'),(98,0,-1,'vue知识点',NULL,0,0,'knowledge','',0,0,0,'',0,'2022-07-29 20:11:26','explore'),(99,0,-1,'vue功能集',NULL,0,0,'effect','',0,0,0,'',0,'2022-07-29 20:11:55','explore'),(100,0,-1,'vue插件',NULL,0,0,'plugin','',0,0,0,'',0,'2022-07-29 20:12:17','explore'),(101,0,-1,'项目报表',NULL,0,0,'reportForm','',0,0,0,'',0,'2022-07-29 20:12:41','explore'),(102,0,-1,'动画',NULL,0,0,'animation','',0,0,0,'',0,'2022-07-29 20:13:04','explore'),(103,0,-1,'拓展知识',NULL,0,0,'expand','',0,0,0,'',0,'2022-07-29 20:13:36','explore'),(104,0,-1,'面试要谈',NULL,0,0,'talk','',0,0,0,'',0,'2022-07-29 20:14:03','explore'),(105,0,95,'设置',NULL,0,2,'','',0,0,1,'/home/managementCenter/crux',0,'2022-07-29 20:16:32','explore'),(106,96,95,'样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/css',0,'2022-07-29 21:19:07','explore'),(107,96,95,'标签',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/tags',0,'2022-07-29 21:20:37','explore'),(108,96,95,'flex弹性布局',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/flex',0,'2022-07-29 21:21:33','explore'),(109,96,95,'样式例子',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/cssDemo',0,'2022-07-29 21:22:22','explore'),(110,96,95,'完整table',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/table',0,'2022-07-29 21:22:57','explore'),(111,96,95,'样式例子2',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/cssDemo2',0,'2022-07-29 21:23:38','explore'),(112,96,95,'锚点',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/anchorPoint',0,'2022-07-29 21:24:14','explore'),(113,97,95,'字符串',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isString',0,'2022-07-29 21:25:26','explore'),(114,97,95,'对象',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isObject',0,'2022-07-29 21:26:06','explore'),(115,97,95,'数组',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isArray',0,'2022-07-29 21:27:01','explore'),(116,97,95,'必学1',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn1',0,'2022-07-29 21:27:28','explore'),(117,97,95,'必学2',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn2',0,'2022-07-29 21:27:57','explore'),(118,97,95,'必学3',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn3',0,'2022-07-29 21:28:19','explore'),(119,97,95,'异步顺序',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/asynchronous',0,'2022-07-29 21:28:42','explore'),(120,97,95,'es6',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/es6',0,'2022-07-29 21:29:10','explore'),(121,97,95,'js例子',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/jsDemo',0,'2022-07-29 21:29:37','explore'),(122,97,95,'赋值-浅拷贝-深拷贝',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/research',0,'2022-07-29 21:30:17','explore'),(123,97,95,'url_base64_blob',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/url_base64_blob',0,'2022-07-29 21:30:47','explore'),(124,97,95,'时间日期',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isDate',0,'2022-07-29 21:31:22','explore'),(125,97,95,'类',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isClass',0,'2022-07-29 21:32:05','explore'),(126,97,95,'事件',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/incident',0,'2022-07-29 21:32:33','explore'),(127,97,95,'函数',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/means',0,'2022-07-29 21:33:04','explore'),(128,98,95,'vue指令',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/v_tag',0,'2022-07-29 21:33:54','explore'),(129,98,95,'vue修饰符',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/modifier',0,'2022-07-29 21:34:29','explore'),(130,98,95,'生命周期',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/lifeCycle',0,'2022-07-29 21:34:57','explore'),(131,98,95,'vuex',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vuex',0,'2022-07-29 21:35:42','explore'),(132,98,95,'路由传参',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/router',0,'2022-07-29 21:36:11','explore'),(133,98,95,'动态样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/class',0,'2022-07-29 21:36:48','explore'),(134,98,95,'导出与导入',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/exportImport/index',0,'2022-07-29 21:37:16','explore'),(135,98,95,'子父通讯',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/parent/index',0,'2022-07-29 21:37:48','explore'),(136,98,95,'全局方法',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/public',0,'2022-07-29 21:38:11','explore'),(137,98,95,'watch监听',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/watch',0,'2022-07-29 21:38:40','explore'),(138,98,95,'computed',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/computed',0,'2022-07-29 21:39:08','explore'),(139,98,95,'filters过滤器',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/filters',0,'2022-07-29 21:39:35','explore'),(140,98,95,'transition动画',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/transition',0,'2022-07-29 21:40:03','explore'),(141,98,95,'refs操作Dom',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/refs',0,'2022-07-29 21:40:33','explore'),(142,98,95,'mock模拟接口',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/mock',0,'2022-07-29 21:41:01','explore'),(143,98,95,'浏览器缓存',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/cache',0,'2022-07-29 21:41:25','explore'),(144,98,95,'axios配置',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/axios',0,'2022-07-29 21:41:50','explore'),(145,98,95,'图片相对路径',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/relativePath',0,'2022-07-29 21:42:24','explore'),(146,98,95,'mixins混合',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vueMixin',0,'2022-07-29 21:42:52','explore'),(147,98,95,'render动态渲染',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vueExtend/index',0,'2022-07-29 21:43:27','explore'),(148,98,95,'less预处理样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/isLess',0,'2022-07-29 21:43:57','explore'),(149,98,95,'scss预处理样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/isSassScss',0,'2022-07-29 21:44:22','explore'),(150,99,95,'下载',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/download',0,'2022-07-29 21:44:58','explore'),(151,99,95,'字段变量',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/field',0,'2022-07-29 21:46:12','explore'),(152,99,95,'返回顶部',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/backToTop',0,'2022-07-29 21:46:38','explore'),(153,99,95,'分页封装',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/pagination',0,'2022-07-29 21:47:08','explore'),(154,99,95,'上传图片',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/upload/index',0,'2022-07-29 21:47:39','explore'),(155,99,95,'懒加载',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/lazy',0,'2022-07-29 21:48:03','explore'),(156,99,95,'视频',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/video',0,'2022-07-29 21:48:29','explore'),(157,99,95,'浏览器监听',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/listener',0,'2022-07-29 21:49:01','explore'),(158,99,95,'websocket',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/websocket',0,'2022-07-29 21:49:25','explore'),(159,99,95,'开新窗口',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/windowTab',0,'2022-07-29 21:49:50','explore'),(160,99,95,'音频',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/isAudio',0,'2022-07-29 21:50:18','explore'),(161,99,95,'表单校验',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/inputeCheck',0,'2022-07-29 21:50:46','explore'),(162,100,95,'copy复制',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/copy',0,'2022-07-29 21:51:17','explore'),(163,100,95,'二维码',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/vueqr',0,'2022-07-29 21:51:46','explore'),(164,100,95,'富文本编辑器',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/editor',0,'2022-07-29 21:52:11','explore'),(165,100,95,'分步引导',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/guide/index',0,'2022-07-29 21:54:12','explore'),(166,100,95,'全屏',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/screenfull',0,'2022-07-29 21:54:38','explore'),(167,100,95,'图片预览',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/previewPictures',0,'2022-07-29 21:55:02','explore'),(168,100,95,'svg',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/svgIcons',0,'2022-07-29 21:55:41','explore'),(169,100,95,'font-awesome',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/awesomeIcons',0,'2022-07-29 21:56:06','explore'),(170,101,95,'echart图表',NULL,1,2,'','',0,0,0,'/home/managementCenter/reportForm/barLine',0,'2022-07-29 21:56:44','explore'),(171,102,95,'悬浮图片',NULL,1,2,'','',0,0,0,'/home/managementCenter/animation/suspension',0,'2022-07-29 21:57:53','explore'),(172,103,95,'canvas',NULL,1,2,'','',0,0,0,'/home/managementCenter/expand/canvas',0,'2022-07-29 21:58:29','explore'),(173,103,95,'base64解密',NULL,1,2,'','',0,0,0,'/home/managementCenter/expand/base64',0,'2022-07-29 21:59:00','explore'),(174,104,95,'面试要点1',NULL,1,2,'','',0,0,0,'/home/managementCenter/talk/talk1',0,'2022-07-29 21:59:33','explore'),(175,-1,0,'首页',NULL,0,0,'','',0,0,0,'/home',0,'2022-07-31 18:21:12','reportForms'),(176,-1,0,'价格地图',NULL,0,0,'','',0,0,0,'/priceManage/priceManage',0,'2022-07-31 18:23:09','reportForms'),(177,-1,0,'价格详情',NULL,0,0,'','',0,0,0,'/priceManage/PriceAnalysis',0,'2022-07-31 18:23:53','reportForms'),(178,-1,0,'应收账款',NULL,0,0,'','',0,0,0,'/receivable/AR',0,'2022-08-01 06:36:12','reportForms'),(179,-1,0,'抽奖活动',NULL,0,0,'','',0,0,0,'/luckDraw/index',0,'2022-08-01 06:36:50','reportForms'),(180,-1,0,'抽奖活动2',NULL,0,0,'','',0,0,0,'/luckDraw/index2',0,'2022-08-01 06:37:18','reportForms'),(181,-1,0,'下拉刷新',NULL,0,0,'','',0,0,0,'/loadmore/index',0,'2022-08-01 06:37:50','reportForms'),(182,-1,0,'隐私政策',NULL,0,0,'','',0,0,0,'/privacy/index',0,'2022-08-01 06:38:16','reportForms'),(183,-1,0,'搜索页',NULL,0,0,'','',0,0,0,'/searchFor/index',0,'2022-08-01 06:38:47','reportForms'),(184,-1,0,'裁切头像',NULL,0,0,'','',0,0,0,'/customAvatar/index',0,'2022-08-01 06:39:11','reportForms'),(185,-1,0,'直播间',NULL,0,0,'','',0,0,0,'/liveBroadcast/index',0,'2022-08-01 06:48:35','reportForms'),(186,-1,0,'注册',NULL,0,0,'','',0,0,0,'/registerUnit/index',0,'2022-08-01 06:49:14','reportForms'),(187,-1,0,'忘记密码',NULL,0,0,'','',0,0,0,'/forgetPasswordUnit/index',0,'2022-08-01 06:49:44','reportForms'),(188,-1,0,'主页',NULL,0,0,'','',0,0,0,'/essentialsUnit/index',0,'2022-08-01 06:50:36','reportForms'),(189,-1,188,'首页',NULL,0,1,'','',0,0,0,'/essentialsUnit/homePage/index',0,'2022-08-01 06:51:09','reportForms'),(190,-1,188,'分类',NULL,0,1,'','',0,0,0,'/essentialsUnit/classify/index',0,'2022-08-01 06:52:34','reportForms'),(191,-1,188,'专题',NULL,0,1,'','',0,0,0,'/essentialsUnit/special/index',0,'2022-08-01 06:53:39','reportForms'),(192,-1,188,'我的',NULL,0,1,'','',0,0,0,'/essentialsUnit/customer/index',0,'2022-08-01 06:54:13','reportForms'),(193,-1,0,'个人中心',NULL,0,0,'','',0,0,0,'/personalCenterUnit/index',0,'2022-08-01 06:55:00','reportForms'),(194,-1,0,'个人信息',NULL,0,0,'','',0,0,0,'/personalCenterUnit/personalInfo/index',0,'2022-08-01 06:55:50','reportForms'),(195,-1,0,'修改密码',NULL,0,0,'','',0,0,0,'/personalCenterUnit/changePassword/index',0,'2022-08-01 06:56:21','reportForms'),(196,-1,0,'修改手机',NULL,0,0,'','',0,0,0,'/personalCenterUnit/changePhone/index',0,'2022-08-01 06:56:49','reportForms'),(197,-1,0,'会员中心',NULL,0,0,'','',0,0,0,'/personalCenterUnit/memberCenter/index',0,'2022-08-01 06:57:18','reportForms'),(198,-1,0,'我的积分',NULL,0,0,'','',0,0,0,'/integralUnit/index',0,'2022-08-01 06:57:44','reportForms'),(199,-1,0,'我的优惠券',NULL,0,0,'','',0,0,0,'/couponUnit/index',0,'2022-08-01 06:58:11','reportForms'),(200,-1,0,'优惠券详情',NULL,0,0,'','',0,0,0,'/couponUnit/couponDetails/index',0,'2022-08-01 06:59:10','reportForms'),(201,-1,0,'关注',NULL,0,0,'','',0,0,0,'/followUnit/index',0,'2022-08-01 06:59:37','reportForms'),(202,-1,0,'关注详情',NULL,0,0,'','',0,0,0,'/followUnit/followDetails/index',0,'2022-08-01 07:00:04','reportForms'),(203,-1,0,'订单',NULL,0,0,'','',0,0,0,'/orderUnit/index',0,'2022-08-01 07:02:16','reportForms'),(204,-1,0,'支付订单',NULL,0,0,'','',0,0,0,'/orderUnit/payOrder/index',0,'2022-08-01 07:02:49','reportForms'),(205,-1,0,'支付成功',NULL,0,0,'','',0,0,0,'/orderUnit/paySuccess/index',0,'2022-08-01 07:03:17','reportForms'),(206,-1,0,'订单跟踪',NULL,0,0,'','',0,0,0,'/orderUnit/logistics/index',0,'2022-08-01 07:04:34','reportForms'),(207,-1,0,'购物车',NULL,0,0,'','',0,0,0,'/orderUnit/shoppingCart/index',0,'2022-08-01 07:05:00','reportForms'),(208,-1,0,'填写订单',NULL,0,0,'','',0,0,0,'/orderUnit/fillOrder/index',0,'2022-08-01 07:05:34','reportForms'),(209,-1,0,'地址管理',NULL,0,0,'','',0,0,0,'/orderUnit/address/index',0,'2022-08-01 07:06:06','reportForms'),(210,-1,0,'新增收货人',NULL,0,0,'','',0,0,0,'/orderUnit/address/addressEdit/index',0,'2022-08-01 07:06:43','reportForms'),(211,-1,0,'发布评价',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/addEvaluate/index',0,'2022-08-01 07:07:16','reportForms'),(212,-1,0,'评价详情',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/evaluateDetails/index',0,'2022-08-01 07:08:25','reportForms'),(213,-1,0,'我的评价',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/evaluateList/index',0,'2022-08-01 07:09:03','reportForms'),(214,-1,0,'退换售后',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/afterSalesList/index',0,'2022-08-01 07:09:40','reportForms'),(215,-1,0,'申请退货',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/applyReturn/index',0,'2022-08-01 07:10:11','reportForms'),(216,-1,0,'记录详情',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/applyReturnDetails/index',0,'2022-08-01 07:10:40','reportForms'),(217,-1,0,'我的收藏',NULL,0,0,'','',0,0,0,'/collectionUnit/index',0,'2022-08-01 07:11:15','reportForms'),(218,-1,0,'商品信息',NULL,0,0,'','',0,0,0,'/productDetails/index',0,'2022-08-01 07:12:00','reportForms'),(219,-1,0,'专题详情',NULL,0,0,'','',0,0,0,'/subjectDetails/index',0,'2022-08-01 07:12:27','reportForms'),(220,-1,0,'参与话题',NULL,0,0,'','',0,0,0,'/topicDetails/index',0,'2022-08-01 07:13:25','reportForms'),(221,-1,0,'我的足迹',NULL,0,0,'','',0,0,0,'/footprintUnit/index',0,'2022-08-01 07:14:12','reportForms'),(222,-1,0,'服务中心',NULL,0,0,'','',0,0,0,'/serviceCenter/index',0,'2022-08-01 07:14:38','reportForms'),(223,-1,0,'问题详情',NULL,0,0,'','',0,0,0,'/serviceCenter/problem/index',0,'2022-08-01 07:15:05','reportForms'),(224,-1,0,'系统设置',NULL,0,0,'','',0,0,0,'/systemSettings/index',0,'2022-08-01 07:15:54','reportForms'),(225,-1,0,'意见反馈',NULL,0,0,'','',0,0,0,'/systemSettings/feedback/index',0,'2022-08-01 07:16:22','reportForms'),(226,-1,0,'关于我们',NULL,0,0,'','',0,0,0,'/systemSettings/aboutUs/index',0,'2022-08-01 07:16:51','reportForms'),(227,-1,0,'版本说明',NULL,0,0,'','',0,0,0,'/systemSettings/versionDescription/index',0,'2022-08-01 07:17:35','reportForms'),(228,-1,0,'消息中心',NULL,0,0,'','',0,0,0,'/messageCenter/index',0,'2022-08-01 07:18:08','reportForms'),(229,-1,0,'搜索',NULL,0,0,'','',0,0,0,'/searchUnit/index',0,'2022-08-01 07:18:37','reportForms'),(230,-1,0,'搜索商品',NULL,0,0,'','',0,0,0,'/searchUnit/searchProducts/index',0,'2022-08-01 07:19:04','reportForms'),(234,62,62,'新增用户','user:add',-1,2,'','',0,1,0,'',0,'2022-11-05 13:43:10','crm'),(235,62,62,'编辑用户','user:edit',-1,2,'','',0,0,0,'',0,'2022-11-05 14:16:59','crm');
+INSERT INTO `ums_menu` VALUES (1,0,-1,'商品',NULL,0,0,'pms','product',0,0,9,'',0,'2020-02-02 14:50:36','crm'),(2,-1,0,'主页',NULL,0,0,'home','home',0,0,0,'/home/index',0,NULL,'crm'),(7,0,-1,'订单',NULL,0,0,'oms','order',0,0,8,'',0,'2020-02-02 16:54:07','crm'),(12,0,-1,'营销',NULL,0,0,'sms','sms',0,0,0,NULL,0,'2020-02-04 16:18:00','crm'),(21,0,-1,'权限',NULL,0,0,'ums','ums',0,0,0,NULL,0,'2020-02-07 16:29:13','crm'),(32,0,-1,'季节知识',NULL,0,0,'season','',0,0,10,NULL,0,'2022-07-28 09:50:39','crm'),(33,32,2,'综合表格',NULL,1,1,'','',0,0,0,'/home/season/tableEditor/crmTable',0,'2022-07-28 13:59:26','crm'),(34,32,2,'table说明',NULL,1,1,'','',0,0,0,'/home/season/tableEditor/explainTable',0,'2022-07-28 14:23:01','crm'),(35,32,2,'多语言翻译',NULL,1,1,'','',0,0,0,'/home/season/multilingual/index',0,'2022-07-28 14:27:42','crm'),(36,32,2,'活动管理',NULL,1,1,'','',0,0,0,'/home/season/activityCenter/activityCenter',0,'2022-07-28 14:30:46','crm'),(37,32,2,'勾选分页',NULL,1,1,'','',0,0,0,'/home/season/popover-selection-page/index',0,'2022-07-28 14:32:10','crm'),(38,32,2,'商品demo',NULL,1,1,'','',0,0,0,'/home/season/example/index',0,'2022-07-28 14:33:33','crm'),(39,0,2,'首页',NULL,0,1,'','',0,0,11,'/home/world/world',0,'2022-07-28 14:34:47','crm'),(40,1,2,'商品列表',NULL,1,1,'','',0,0,0,'/home/shopUnit/product/index',0,'2022-07-28 14:35:41','crm'),(41,1,2,'商品分类',NULL,1,1,'','',0,0,0,'/home/shopUnit/productCate/index',0,'2022-07-28 14:36:19','crm'),(42,1,2,'商品类型',NULL,1,1,'','',0,0,0,'/home/shopUnit/productAttr/index',0,'2022-07-28 14:37:04','crm'),(43,-1,2,'商品属性与参数',NULL,0,1,'','',0,0,0,'/home/shopUnit/productAttr/productAttrList/index',0,'2022-07-28 14:37:50','crm'),(44,1,2,'品牌管理',NULL,1,1,'','',0,0,0,'/home/shopUnit/brand/index',0,'2022-07-28 14:38:56','crm'),(45,7,2,'订单列表',NULL,1,1,'','',0,0,0,'/home/orderUnit/orderList/index',0,'2022-07-28 14:39:32','crm'),(46,-1,2,'订单详情',NULL,0,1,'','',0,0,0,'/home/orderUnit/orderList/orderDetail/index',0,'2022-07-28 14:39:58','crm'),(47,7,2,'订单设置',NULL,1,1,'','',0,0,0,'/home/orderUnit/orderSetting/index',0,'2022-07-28 14:40:28','crm'),(48,7,2,'退货申请',NULL,1,1,'','',0,0,0,'/home/orderUnit/returnApply/index',0,'2022-07-28 14:41:02','crm'),(49,-1,2,'退货详情',NULL,0,1,'','',0,0,0,'/home/orderUnit/returnApply/applyDetail',0,'2022-07-28 14:42:02','crm'),(50,7,2,'退货原因',NULL,1,1,'','',0,0,0,'/home/orderUnit/returnReason/index',0,'2022-07-28 14:42:35','crm'),(51,12,2,'限时购列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/flash/index',0,'2022-07-28 14:43:19','crm'),(52,-1,2,'秒杀时间段2',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashSession',0,'2022-07-28 14:45:01','crm'),(53,-1,2,'限时购和商品',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashProductRelation/index',0,'2022-07-28 14:45:27','crm'),(54,-1,2,'秒杀时间段1',NULL,0,1,'','',0,0,0,'/home/marketingUnit/flash/flashSession/index',0,'2022-07-28 14:46:43','crm'),(55,12,2,'优惠券列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/coupon/index',0,'2022-07-28 14:47:15','crm'),(56,-1,2,'领取详情',NULL,0,1,'','',0,0,0,'/home/marketingUnit/coupon/couponHistory',0,'2022-07-28 14:47:41','crm'),(57,12,2,'品牌推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/brand/index',0,'2022-07-28 14:48:15','crm'),(58,12,2,'新品推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/fresh/index',0,'2022-07-28 14:48:42','crm'),(59,12,2,'人气推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/hot/index',0,'2022-07-28 14:49:18','crm'),(60,12,2,'专题推荐',NULL,1,1,'','',0,0,0,'/home/marketingUnit/subject/index',0,'2022-07-28 14:49:53','crm'),(61,12,2,'广告列表',NULL,1,1,'','',0,0,0,'/home/marketingUnit/advertise/index',0,'2022-07-28 14:50:26','crm'),(62,21,2,'用户列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/customer/index',0,'2022-07-28 14:51:04','crm'),(63,21,2,'角色列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/role/index',0,'2022-07-28 14:51:40','crm'),(64,21,2,'菜单&路由',NULL,1,1,'','',0,0,0,'/home/jurisdiction/menu/index',0,'2022-07-28 14:52:01','crm'),(65,-1,2,'分配菜单',NULL,0,1,'','',0,0,0,'/home/jurisdiction/role/assignMenu',0,'2022-07-28 14:52:33','crm'),(66,-1,2,'分配资源',NULL,0,1,'','',0,0,0,'/home/jurisdiction/role/allocateResources',0,'2022-07-28 14:53:07','crm'),(67,21,2,'资源列表',NULL,1,1,'','',0,0,0,'/home/jurisdiction/resource/index',0,'2022-07-28 14:53:33','crm'),(68,-1,2,'资源分类',NULL,0,1,'','',0,0,0,'/home/jurisdiction/resource/resourceCategory/index',0,'2022-07-28 14:54:00','crm'),(72,-1,0,'无权限访问该页',NULL,0,0,'','',0,0,0,'/401',0,'2022-07-29 16:24:09','explore'),(73,-1,0,'主页',NULL,0,0,'','',0,0,0,'/home/index',0,'2022-07-29 19:33:50','explore'),(74,101,0,'pc自适应',NULL,1,0,'','',0,0,0,'/adaption/index',0,'2022-07-29 19:35:25','explore'),(75,101,0,'水波',NULL,1,0,'','',0,0,0,'/home/managementCenter/effect/wave',0,'2022-07-29 19:35:53','explore'),(76,-1,0,'线路检测',NULL,0,0,'','',0,0,0,'/login/line',0,'2022-07-29 19:37:38','explore'),(77,-1,0,'注册',NULL,0,0,'','',0,0,0,'/register/index',0,'2022-07-29 19:38:47','explore'),(78,-1,0,'游戏页',NULL,0,0,'','',0,0,0,'/game/index',0,'2022-07-29 19:39:10','explore'),(79,-1,0,'加载中',NULL,0,0,'','',0,0,0,'/neutralGear/index',0,'2022-07-29 19:39:43','explore'),(80,-1,0,'下载中心',NULL,0,0,'','',0,0,0,'/download/index',0,'2022-07-29 19:40:52','explore'),(81,101,0,'发票识别',NULL,1,0,'','',0,0,0,'/home/managementCenter/effect/attachmentUpload',0,'2022-07-29 19:41:32','explore'),(82,-1,0,'浏览器新开窗口',NULL,0,0,'','',0,0,0,'/home/managementCenter/effect/openTab',0,'2022-07-29 19:41:57','explore'),(83,101,0,'价格地图',NULL,1,0,'','',0,0,1,'/priceManage/index',0,'2022-07-29 19:42:37','explore'),(84,101,0,'活动素材',NULL,1,0,'','',0,0,0,'/vueForm/index',0,'2022-07-29 19:43:37','explore'),(85,101,0,'活动素材',NULL,1,0,'','',0,0,0,'/vueForm/index2',0,'2022-07-29 19:44:18','explore'),(86,101,0,'Schema生成器',NULL,1,0,'','',0,0,0,'/vueForm/formSchemaDesign/Editor',0,'2022-07-29 19:44:50','explore'),(87,101,0,'活动编辑器',NULL,1,0,'','',0,0,0,'/vueForm/activityEditor/Editor',0,'2022-07-29 19:45:15','explore'),(88,101,0,'打印编辑器',NULL,1,0,'','',0,0,0,'/printEditor/index',0,'2022-07-29 19:45:39','explore'),(89,-1,73,'首页',NULL,0,1,'','',0,0,0,'/home/homeIndex/index',0,'2022-07-29 19:46:50','explore'),(90,-1,73,'福气',NULL,0,1,'','',0,0,0,'/home/lottery/index',0,'2022-07-29 19:47:58','explore'),(91,-1,73,'真人',NULL,0,1,'','',0,0,0,'/home/realPerson/index',0,'2022-07-29 19:48:23','explore'),(92,-1,73,'体育',NULL,0,1,'','',0,0,0,'/home/sports/index',0,'2022-07-29 19:49:24','explore'),(93,-1,73,'电玩',NULL,0,1,'','',0,0,0,'/home/videoGame/index',0,'2022-07-29 19:49:53','explore'),(94,-1,73,'代理',NULL,0,1,'','',0,0,0,'/home/agentSystem/index',0,'2022-07-29 19:50:21','explore'),(95,-1,73,'管理中心',NULL,0,1,'','',0,0,0,'/home/managementCenter/index',0,'2022-07-29 19:52:00','explore'),(96,0,-1,'标签样式',NULL,0,0,'tagStyle','',0,0,0,'',0,'2022-07-29 20:09:49','explore'),(97,0,-1,'javaScript',NULL,0,0,'javaScript','',0,0,0,'',0,'2022-07-29 20:10:58','explore'),(98,0,-1,'vue知识点',NULL,0,0,'knowledge','',0,0,0,'',0,'2022-07-29 20:11:26','explore'),(99,0,-1,'vue功能集',NULL,0,0,'effect','',0,0,0,'',0,'2022-07-29 20:11:55','explore'),(100,0,-1,'vue插件',NULL,0,0,'plugin','',0,0,0,'',0,'2022-07-29 20:12:17','explore'),(101,0,-1,'项目报表',NULL,0,0,'reportForm','',0,0,0,'',0,'2022-07-29 20:12:41','explore'),(102,0,-1,'动画',NULL,0,0,'animation','',0,0,0,'',0,'2022-07-29 20:13:04','explore'),(103,0,-1,'拓展知识',NULL,0,0,'expand','',0,0,0,'',0,'2022-07-29 20:13:36','explore'),(104,0,-1,'面试要谈',NULL,0,0,'talk','',0,0,0,'',0,'2022-07-29 20:14:03','explore'),(105,0,95,'设置',NULL,0,2,'','',0,0,1,'/home/managementCenter/crux',0,'2022-07-29 20:16:32','explore'),(106,96,95,'样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/css',0,'2022-07-29 21:19:07','explore'),(107,96,95,'标签',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/tags',0,'2022-07-29 21:20:37','explore'),(108,96,95,'flex弹性布局',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/flex',0,'2022-07-29 21:21:33','explore'),(109,96,95,'样式例子',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/cssDemo',0,'2022-07-29 21:22:22','explore'),(110,96,95,'完整table',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/table',0,'2022-07-29 21:22:57','explore'),(111,96,95,'样式例子2',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/cssDemo2',0,'2022-07-29 21:23:38','explore'),(112,96,95,'锚点',NULL,1,2,'','',0,0,0,'/home/managementCenter/tagStyle/anchorPoint',0,'2022-07-29 21:24:14','explore'),(113,97,95,'字符串',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isString',0,'2022-07-29 21:25:26','explore'),(114,97,95,'对象',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isObject',0,'2022-07-29 21:26:06','explore'),(115,97,95,'数组',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isArray',0,'2022-07-29 21:27:01','explore'),(116,97,95,'必学1',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn1',0,'2022-07-29 21:27:28','explore'),(117,97,95,'必学2',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn2',0,'2022-07-29 21:27:57','explore'),(118,97,95,'必学3',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/learn3',0,'2022-07-29 21:28:19','explore'),(119,97,95,'异步顺序',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/asynchronous',0,'2022-07-29 21:28:42','explore'),(120,97,95,'es6',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/es6',0,'2022-07-29 21:29:10','explore'),(121,97,95,'js例子',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/jsDemo',0,'2022-07-29 21:29:37','explore'),(122,97,95,'赋值-浅拷贝-深拷贝',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/research',0,'2022-07-29 21:30:17','explore'),(123,97,95,'url_base64_blob',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/url_base64_blob',0,'2022-07-29 21:30:47','explore'),(124,97,95,'时间日期',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isDate',0,'2022-07-29 21:31:22','explore'),(125,97,95,'类',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/isClass',0,'2022-07-29 21:32:05','explore'),(126,97,95,'事件',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/incident',0,'2022-07-29 21:32:33','explore'),(127,97,95,'函数',NULL,1,2,'','',0,0,0,'/home/managementCenter/javaScript/means',0,'2022-07-29 21:33:04','explore'),(128,98,95,'vue指令',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/v_tag',0,'2022-07-29 21:33:54','explore'),(129,98,95,'vue修饰符',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/modifier',0,'2022-07-29 21:34:29','explore'),(130,98,95,'生命周期',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/lifeCycle',0,'2022-07-29 21:34:57','explore'),(131,98,95,'vuex',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vuex',0,'2022-07-29 21:35:42','explore'),(132,98,95,'路由传参',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/router',0,'2022-07-29 21:36:11','explore'),(133,98,95,'动态样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/class',0,'2022-07-29 21:36:48','explore'),(134,98,95,'导出与导入',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/exportImport/index',0,'2022-07-29 21:37:16','explore'),(135,98,95,'子父通讯',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/parent/index',0,'2022-07-29 21:37:48','explore'),(136,98,95,'全局方法',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/public',0,'2022-07-29 21:38:11','explore'),(137,98,95,'watch监听',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/watch',0,'2022-07-29 21:38:40','explore'),(138,98,95,'computed',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/computed',0,'2022-07-29 21:39:08','explore'),(139,98,95,'filters过滤器',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/filters',0,'2022-07-29 21:39:35','explore'),(140,98,95,'transition动画',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/transition',0,'2022-07-29 21:40:03','explore'),(141,98,95,'refs操作Dom',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/refs',0,'2022-07-29 21:40:33','explore'),(142,98,95,'mock模拟接口',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/mock',0,'2022-07-29 21:41:01','explore'),(143,98,95,'浏览器缓存',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/cache',0,'2022-07-29 21:41:25','explore'),(144,98,95,'axios配置',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/axios',0,'2022-07-29 21:41:50','explore'),(145,98,95,'图片相对路径',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/relativePath',0,'2022-07-29 21:42:24','explore'),(146,98,95,'mixins混合',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vueMixin',0,'2022-07-29 21:42:52','explore'),(147,98,95,'render动态渲染',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/vueExtend/index',0,'2022-07-29 21:43:27','explore'),(148,98,95,'less预处理样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/isLess',0,'2022-07-29 21:43:57','explore'),(149,98,95,'scss预处理样式',NULL,1,2,'','',0,0,0,'/home/managementCenter/knowledge/sassScss/scssParent',0,'2022-07-29 21:44:22','explore'),(150,99,95,'下载',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/download',0,'2022-07-29 21:44:58','explore'),(151,99,95,'字段变量',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/field',0,'2022-07-29 21:46:12','explore'),(152,99,95,'返回顶部',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/backToTop',0,'2022-07-29 21:46:38','explore'),(153,99,95,'分页封装',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/pagination',0,'2022-07-29 21:47:08','explore'),(154,99,95,'上传图片',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/upload/index',0,'2022-07-29 21:47:39','explore'),(155,99,95,'懒加载',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/lazy',0,'2022-07-29 21:48:03','explore'),(156,99,95,'视频',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/video',0,'2022-07-29 21:48:29','explore'),(157,99,95,'浏览器监听',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/listener',0,'2022-07-29 21:49:01','explore'),(158,99,95,'websocket',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/websocket',0,'2022-07-29 21:49:25','explore'),(159,99,95,'开新窗口',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/windowTab',0,'2022-07-29 21:49:50','explore'),(160,99,95,'音频',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/isAudio',0,'2022-07-29 21:50:18','explore'),(161,99,95,'表单校验',NULL,1,2,'','',0,0,0,'/home/managementCenter/effect/inputeCheck',0,'2022-07-29 21:50:46','explore'),(162,100,95,'copy复制',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/copy',0,'2022-07-29 21:51:17','explore'),(163,100,95,'二维码',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/vueqr',0,'2022-07-29 21:51:46','explore'),(164,100,95,'富文本编辑器',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/editor',0,'2022-07-29 21:52:11','explore'),(165,100,95,'分步引导',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/guide/index',0,'2022-07-29 21:54:12','explore'),(166,100,95,'全屏',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/screenfull',0,'2022-07-29 21:54:38','explore'),(167,100,95,'图片预览',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/previewPictures',0,'2022-07-29 21:55:02','explore'),(168,100,95,'svg',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/svgIcons',0,'2022-07-29 21:55:41','explore'),(169,100,95,'font-awesome',NULL,1,2,'','',0,0,0,'/home/managementCenter/plugin/awesomeIcons',0,'2022-07-29 21:56:06','explore'),(170,101,95,'echart图表',NULL,1,2,'','',0,0,99,'/home/managementCenter/reportForm/barLine',0,'2022-07-29 21:56:44','explore'),(171,102,95,'悬浮图片',NULL,1,2,'','',0,0,0,'/home/managementCenter/animation/suspension',0,'2022-07-29 21:57:53','explore'),(172,103,95,'canvas',NULL,1,2,'','',0,0,0,'/home/managementCenter/expand/canvas',0,'2022-07-29 21:58:29','explore'),(173,103,95,'base64解密',NULL,1,2,'','',0,0,0,'/home/managementCenter/expand/base64',0,'2022-07-29 21:59:00','explore'),(174,104,95,'面试要点1',NULL,1,2,'','',0,0,0,'/home/managementCenter/talk/talk1',0,'2022-07-29 21:59:33','explore'),(175,-1,0,'首页',NULL,0,0,'','',0,0,0,'/home',0,'2022-07-31 18:21:12','reportForms'),(176,-1,0,'价格地图',NULL,0,0,'','',0,0,0,'/priceManage/index',0,'2022-07-31 18:23:09','reportForms'),(177,-1,0,'价格详情',NULL,0,0,'','',0,0,0,'/priceManage/PriceAnalysis',0,'2022-07-31 18:23:53','reportForms'),(178,-1,0,'应收账款',NULL,0,0,'','',0,0,0,'/receivable/AR',0,'2022-08-01 06:36:12','reportForms'),(179,-1,0,'抽奖活动',NULL,0,0,'','',0,0,0,'/luckDraw/index',0,'2022-08-01 06:36:50','reportForms'),(180,-1,0,'抽奖活动2',NULL,0,0,'','',0,0,0,'/luckDraw/index2',0,'2022-08-01 06:37:18','reportForms'),(181,-1,0,'下拉刷新',NULL,0,0,'','',0,0,0,'/loadmore/index',0,'2022-08-01 06:37:50','reportForms'),(182,-1,0,'隐私政策',NULL,0,0,'','',0,0,0,'/privacy/index',0,'2022-08-01 06:38:16','reportForms'),(183,-1,0,'搜索页',NULL,0,0,'','',0,0,0,'/searchFor/index',0,'2022-08-01 06:38:47','reportForms'),(184,-1,0,'裁切头像',NULL,0,0,'','',0,0,0,'/customAvatar/index',0,'2022-08-01 06:39:11','reportForms'),(185,-1,0,'直播间',NULL,0,0,'','',0,0,0,'/liveBroadcast/index',0,'2022-08-01 06:48:35','reportForms'),(186,-1,0,'注册',NULL,0,0,'','',0,0,0,'/registerUnit/index',0,'2022-08-01 06:49:14','reportForms'),(187,-1,0,'忘记密码',NULL,0,0,'','',0,0,0,'/forgetPasswordUnit/index',0,'2022-08-01 06:49:44','reportForms'),(188,-1,0,'主页',NULL,0,0,'','',0,0,0,'/essentialsUnit/index',0,'2022-08-01 06:50:36','reportForms'),(189,-1,188,'首页',NULL,0,1,'','',0,0,0,'/essentialsUnit/homePage/index',0,'2022-08-01 06:51:09','reportForms'),(190,-1,188,'分类',NULL,0,1,'','',0,0,0,'/essentialsUnit/classify/index',0,'2022-08-01 06:52:34','reportForms'),(191,-1,188,'专题',NULL,0,1,'','',0,0,0,'/essentialsUnit/special/index',0,'2022-08-01 06:53:39','reportForms'),(192,-1,188,'我的',NULL,0,1,'','',0,0,0,'/essentialsUnit/customer/index',0,'2022-08-01 06:54:13','reportForms'),(193,-1,0,'个人中心',NULL,0,0,'','',0,0,0,'/personalCenterUnit/index',0,'2022-08-01 06:55:00','reportForms'),(194,-1,0,'个人信息',NULL,0,0,'','',0,0,0,'/personalCenterUnit/personalInfo/index',0,'2022-08-01 06:55:50','reportForms'),(195,-1,0,'修改密码',NULL,0,0,'','',0,0,0,'/personalCenterUnit/changePassword/index',0,'2022-08-01 06:56:21','reportForms'),(196,-1,0,'修改手机',NULL,0,0,'','',0,0,0,'/personalCenterUnit/changePhone/index',0,'2022-08-01 06:56:49','reportForms'),(197,-1,0,'会员中心',NULL,0,0,'','',0,0,0,'/personalCenterUnit/memberCenter/index',0,'2022-08-01 06:57:18','reportForms'),(198,-1,0,'我的积分',NULL,0,0,'','',0,0,0,'/integralUnit/index',0,'2022-08-01 06:57:44','reportForms'),(199,-1,0,'我的优惠券',NULL,0,0,'','',0,0,0,'/couponUnit/index',0,'2022-08-01 06:58:11','reportForms'),(200,-1,0,'优惠券详情',NULL,0,0,'','',0,0,0,'/couponUnit/couponDetails/index',0,'2022-08-01 06:59:10','reportForms'),(201,-1,0,'关注',NULL,0,0,'','',0,0,0,'/followUnit/index',0,'2022-08-01 06:59:37','reportForms'),(202,-1,0,'关注详情',NULL,0,0,'','',0,0,0,'/followUnit/followDetails/index',0,'2022-08-01 07:00:04','reportForms'),(203,-1,0,'订单',NULL,0,0,'','',0,0,0,'/orderUnit/index',0,'2022-08-01 07:02:16','reportForms'),(204,-1,0,'支付订单',NULL,0,0,'','',0,0,0,'/orderUnit/payOrder/index',0,'2022-08-01 07:02:49','reportForms'),(205,-1,0,'支付成功',NULL,0,0,'','',0,0,0,'/orderUnit/paySuccess/index',0,'2022-08-01 07:03:17','reportForms'),(206,-1,0,'订单跟踪',NULL,0,0,'','',0,0,0,'/orderUnit/logistics/index',0,'2022-08-01 07:04:34','reportForms'),(207,-1,0,'购物车',NULL,0,0,'','',0,0,0,'/orderUnit/shoppingCart/index',0,'2022-08-01 07:05:00','reportForms'),(208,-1,0,'填写订单',NULL,0,0,'','',0,0,0,'/orderUnit/fillOrder/index',0,'2022-08-01 07:05:34','reportForms'),(209,-1,0,'地址管理',NULL,0,0,'','',0,0,0,'/orderUnit/address/index',0,'2022-08-01 07:06:06','reportForms'),(210,-1,0,'新增收货人',NULL,0,0,'','',0,0,0,'/orderUnit/address/addressEdit/index',0,'2022-08-01 07:06:43','reportForms'),(211,-1,0,'发布评价',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/addEvaluate/index',0,'2022-08-01 07:07:16','reportForms'),(212,-1,0,'评价详情',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/evaluateDetails/index',0,'2022-08-01 07:08:25','reportForms'),(213,-1,0,'我的评价',NULL,0,0,'','',0,0,0,'/orderUnit/evaluate/evaluateList/index',0,'2022-08-01 07:09:03','reportForms'),(214,-1,0,'退换售后',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/afterSalesList/index',0,'2022-08-01 07:09:40','reportForms'),(215,-1,0,'申请退货',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/applyReturn/index',0,'2022-08-01 07:10:11','reportForms'),(216,-1,0,'记录详情',NULL,0,0,'','',0,0,0,'/orderUnit/afterSales/applyReturnDetails/index',0,'2022-08-01 07:10:40','reportForms'),(217,-1,0,'我的收藏',NULL,0,0,'','',0,0,0,'/collectionUnit/index',0,'2022-08-01 07:11:15','reportForms'),(218,-1,0,'商品信息',NULL,0,0,'','',0,0,0,'/productDetails/index',0,'2022-08-01 07:12:00','reportForms'),(219,-1,0,'专题详情',NULL,0,0,'','',0,0,0,'/subjectDetails/index',0,'2022-08-01 07:12:27','reportForms'),(220,-1,0,'参与话题',NULL,0,0,'','',0,0,0,'/topicDetails/index',0,'2022-08-01 07:13:25','reportForms'),(221,-1,0,'我的足迹',NULL,0,0,'','',0,0,0,'/footprintUnit/index',0,'2022-08-01 07:14:12','reportForms'),(222,-1,0,'服务中心',NULL,0,0,'','',0,0,0,'/serviceCenter/index',0,'2022-08-01 07:14:38','reportForms'),(223,-1,0,'问题详情',NULL,0,0,'','',0,0,0,'/serviceCenter/problem/index',0,'2022-08-01 07:15:05','reportForms'),(224,-1,0,'系统设置',NULL,0,0,'','',0,0,0,'/systemSettings/index',0,'2022-08-01 07:15:54','reportForms'),(225,-1,0,'意见反馈',NULL,0,0,'','',0,0,0,'/systemSettings/feedback/index',0,'2022-08-01 07:16:22','reportForms'),(226,-1,0,'关于我们',NULL,0,0,'','',0,0,0,'/systemSettings/aboutUs/index',0,'2022-08-01 07:16:51','reportForms'),(227,-1,0,'版本说明',NULL,0,0,'','',0,0,0,'/systemSettings/versionDescription/index',0,'2022-08-01 07:17:35','reportForms'),(228,-1,0,'消息中心',NULL,0,0,'','',0,0,0,'/messageCenter/index',0,'2022-08-01 07:18:08','reportForms'),(229,-1,0,'搜索',NULL,0,0,'','',0,0,0,'/searchUnit/index',0,'2022-08-01 07:18:37','reportForms'),(230,-1,0,'搜索商品',NULL,0,0,'','',0,0,0,'/searchUnit/searchProducts/index',0,'2022-08-01 07:19:04','reportForms'),(234,62,62,'新增用户','user:add',-1,2,'','',0,1,0,'',0,'2022-11-05 13:43:10','crm'),(235,62,62,'编辑用户','user:edit',-1,2,'','',0,0,0,'',0,'2022-11-05 14:16:59','crm'),(236,96,0,'定位',NULL,1,0,'','',0,NULL,0,'/home/managementCenter/tagStyle/position/index',0,'2023-06-06 13:38:52','explore'),(237,96,95,'css变量',NULL,1,2,'','',0,NULL,0,'/home/managementCenter/tagStyle/rootVariable',0,'2023-06-11 12:54:35','explore'),(238,32,2,'切换主题皮肤',NULL,1,1,'','',0,NULL,0,'/home/season/themeUnit/index',0,'2023-06-12 11:36:54','crm');
 /*!40000 ALTER TABLE `ums_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2319,20 +2319,20 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_permission`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_permission` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `pid` bigint DEFAULT NULL COMMENT '父级权限id',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `pid` bigint(20) DEFAULT NULL COMMENT '父级权限id',
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
   `value` varchar(200) DEFAULT NULL COMMENT '权限值',
   `icon` varchar(500) DEFAULT NULL COMMENT '图标',
-  `type` int DEFAULT NULL COMMENT '权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）',
+  `type` int(11) DEFAULT NULL COMMENT '权限类型：0->目录；1->菜单；2->按钮（接口绑定权限）',
   `uri` varchar(200) DEFAULT NULL COMMENT '前端资源路径',
-  `status` int DEFAULT NULL COMMENT '启用状态；0->禁用；1->启用',
+  `status` int(11) DEFAULT NULL COMMENT '启用状态；0->禁用；1->启用',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `sort` int DEFAULT NULL COMMENT '排序',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='后台用户权限表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2351,16 +2351,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_resource`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_resource` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `name` varchar(200) DEFAULT NULL COMMENT '资源名称',
   `url` varchar(200) DEFAULT NULL COMMENT '资源URL',
   `description` varchar(500) DEFAULT NULL COMMENT '描述',
-  `category_id` bigint DEFAULT NULL COMMENT '资源分类ID',
+  `category_id` bigint(20) DEFAULT NULL COMMENT '资源分类ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3 COMMENT='后台资源表';
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='后台资源表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2379,14 +2379,14 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_resource_category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_resource_category` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `name` varchar(200) DEFAULT NULL COMMENT '分类名称',
-  `sort` int DEFAULT NULL COMMENT '排序',
+  `sort` int(11) DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COMMENT='资源分类表';
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COMMENT='资源分类表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2405,18 +2405,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_role` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL COMMENT '名称',
   `role_code` varchar(255) DEFAULT NULL COMMENT '角色编码',
   `description` varchar(500) DEFAULT NULL COMMENT '描述',
-  `admin_count` int DEFAULT NULL COMMENT '后台用户数量',
+  `admin_count` int(11) DEFAULT NULL COMMENT '后台用户数量',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `status` int DEFAULT '1' COMMENT '启用状态：0->禁用；1->启用',
-  `sort` int DEFAULT '0',
+  `status` int(11) DEFAULT '1' COMMENT '启用状态：0->禁用；1->启用',
+  `sort` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户角色表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='后台用户角色表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2435,13 +2435,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_role_menu_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_role_menu_relation` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `role_id` bigint DEFAULT NULL COMMENT '角色ID',
-  `menu_id` bigint DEFAULT NULL COMMENT '菜单ID',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
+  `menu_id` bigint(20) DEFAULT NULL COMMENT '菜单ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=610 DEFAULT CHARSET=utf8mb3 COMMENT='后台角色菜单关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=610 DEFAULT CHARSET=utf8 COMMENT='后台角色菜单关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2460,13 +2460,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_role_permission_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_role_permission_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `role_id` bigint DEFAULT NULL,
-  `permission_id` bigint DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) DEFAULT NULL,
+  `permission_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COMMENT='后台用户角色和权限关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='后台用户角色和权限关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2485,13 +2485,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `ums_role_resource_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ums_role_resource_relation` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `role_id` bigint DEFAULT NULL COMMENT '角色ID',
-  `resource_id` bigint DEFAULT NULL COMMENT '资源ID',
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) DEFAULT NULL COMMENT '角色ID',
+  `resource_id` bigint(20) DEFAULT NULL COMMENT '资源ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=228 DEFAULT CHARSET=utf8mb3 COMMENT='后台角色资源关系表';
+) ENGINE=InnoDB AUTO_INCREMENT=228 DEFAULT CHARSET=utf8 COMMENT='后台角色资源关系表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2510,21 +2510,21 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user2222`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user2222` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '用户名',
-  `password` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '密码',
-  `nickname` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '昵称',
-  `sex` tinyint DEFAULT NULL COMMENT '性别',
-  `phone_num` char(15) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '手机号码',
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '用户名',
+  `password` varchar(100) COLLATE utf8_bin DEFAULT NULL COMMENT '密码',
+  `nickname` varchar(200) COLLATE utf8_bin DEFAULT NULL COMMENT '昵称',
+  `sex` tinyint(4) DEFAULT NULL COMMENT '性别',
+  `phone_num` char(15) COLLATE utf8_bin DEFAULT NULL COMMENT '手机号码',
   `birth` date DEFAULT NULL COMMENT '生日',
-  `location` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '哪里人',
-  `avator` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin DEFAULT NULL COMMENT '头像',
+  `location` varchar(45) COLLATE utf8_bin DEFAULT NULL COMMENT '哪里人',
+  `avator` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '头像',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10003 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10003 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2543,11 +2543,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_to_role2222`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user_to_role2222` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `user_id` int unsigned NOT NULL DEFAULT '0',
-  `role_id` int NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `role_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -2571,4 +2571,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-17 11:00:55
+-- Dump completed on 2023-06-14 21:58:31
