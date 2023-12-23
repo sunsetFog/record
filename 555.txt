@@ -1,1 +1,30 @@
 方法声明、方法调用或语句，例如   if  、   do-while  、   try-catch   或   return   。按   Ctrl   Shift   Enter   可将语句补全为语法正确的结构
+
+
+
+
+
+ERROR in ./src/App.vue?vue&type=style&index=0&id=7ba5bd90&lang=scss (./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=style&index=0&id=7ba5bd90&lang=scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import "D:\2023\sunsetFog\skyCloud\styles\platform\bd\scssVariable.scss";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  src\App.vue 1:9  root stylesheet
+ERROR in ./src/views/home/managementCenter/foundation/platform.vue?vue&type=style&index=0&id=2ebb7abe&lang=scss (./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/home/managementCenter/foundation/platform.vue?vue&type=style&index=0&id=2ebb7abe&lang=scss)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import "D:\2023\sunsetFog\skyCloud\styles\platform\bd\scssVariable.scss";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  src\views\home\managementCenter\foundation\platform.vue 1:9  root stylesheet
+ERROR in ./src/views/home/managementCenter/foundation/sassScss/scssParent.vue?vue&type=style&index=0&id=14458f30&lang=scss&scoped=true (./node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/home/managementCenter/foundation/sassScss/scssParent.vue?vue&type=style&index=0&id=14458f30&lang=scss&scoped=true)
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+SassError: Can't find stylesheet to import.
+  ╷
+1 │ @import "D:\2023\sunsetFog\skyCloud\styles\platform\bd\scssVariable.scss";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+  src\views\home\managementCenter\foundation\sassScss\scssParent.vue 1:9  root stylesheet
