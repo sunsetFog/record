@@ -16,6 +16,12 @@ https://wenku.baidu.com/aggs/1226bd17866fb84ae45c8d56.html?_wkts_=1706840243227&
 
 https://www.nanss.com/xuexi/3880.html
 
+node 14.18.0
+npm uninstall sass-loader
+npm uninstall node-sass
+
+npm i node-sass@4.14.1 sass-loader@7.0.1 --save-dev
+
 
 
 
