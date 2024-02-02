@@ -3,6 +3,20 @@ start
 
 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
 
+https://vue-json-schema-form.lljj.me/zh/guide/basic-config.html#schema
+
+
+https://wenku.baidu.com/view/bc356829340cba1aa8114431b90d6c85ed3a8811.html?fr=aladdin664466&ind=1&_wkts_=1706840051611&bdQuery=%E5%B8%B8%E7%94%A8%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD1000%E5%8F%A5%E6%9C%80%E5%85%A8%E6%9C%80%E5%AE%8C%E6%95%B4
+
+https://baijiahao.baidu.com/s?id=1740030090161039386&wfr=spider&for=pc
+
+常用英语口语1000句最全最完整
+
+https://wenku.baidu.com/aggs/1226bd17866fb84ae45c8d56.html?_wkts_=1706840243227&bdQuery=%E5%B8%B8%E7%94%A8%E8%8B%B1%E8%AF%AD%E5%8F%A3%E8%AF%AD1000%E5%8F%A5%E6%9C%80%E5%85%A8%E6%9C%80%E5%AE%8C%E6%95%B4
+
+https://www.nanss.com/xuexi/3880.html
+
+
 
 
 触控板
