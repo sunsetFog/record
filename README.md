@@ -22,6 +22,12 @@ npm uninstall node-sass
 
 npm i node-sass@4.14.1 sass-loader@7.0.1 --save-dev
 
+phpstudy
+Hbuilderx
+ApiPost6
+postman
+Skype
+
 
 
 
